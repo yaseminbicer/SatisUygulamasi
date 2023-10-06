@@ -1,6 +1,6 @@
 ﻿namespace SatisUygulamaForm
 {
-    partial class LoginPanel
+    partial class frmLogin
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPanel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             pictureBox1 = new PictureBox();
             label1 = new Label();
             label3 = new Label();
@@ -45,71 +45,69 @@
             // 
             pictureBox1.BorderStyle = BorderStyle.Fixed3D;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(11, 43);
+            pictureBox1.Location = new Point(9, 28);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(195, 132);
+            pictureBox1.Size = new Size(147, 87);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Castellar", 24F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.Olive;
-            label1.Location = new Point(186, 79);
+            label1.Location = new Point(140, 51);
             label1.Name = "label1";
-            label1.Size = new Size(346, 48);
+            label1.Size = new Size(280, 39);
             label1.TabIndex = 1;
             label1.Text = "Cosmos Sales";
-            label1.Click += label1_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe Script", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label3.Location = new Point(366, 127);
+            label3.Location = new Point(274, 82);
             label3.Name = "label3";
-            label3.Size = new Size(213, 33);
+            label3.Size = new Size(170, 27);
             label3.TabIndex = 3;
             label3.Text = "Hızlı Satış Sistemi";
-            label3.Click += label3_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(157, 177);
+            label2.Location = new Point(117, 115);
             label2.Name = "label2";
-            label2.Size = new Size(128, 28);
+            label2.Size = new Size(103, 21);
             label2.TabIndex = 4;
             label2.Text = "Kullanıcı Adı:";
-            label2.Click += label2_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(227, 205);
+            label4.Location = new Point(165, 149);
             label4.Name = "label4";
-            label4.Size = new Size(58, 28);
+            label4.Size = new Size(48, 21);
             label4.TabIndex = 5;
             label4.Text = "Şifre:";
-            label4.Click += label4_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(291, 177);
+            textBox1.Location = new Point(219, 118);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(183, 27);
+            textBox1.Size = new Size(139, 21);
             textBox1.TabIndex = 6;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(291, 211);
+            textBox2.Location = new Point(219, 149);
+            textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(183, 27);
+            textBox2.Size = new Size(139, 21);
             textBox2.TabIndex = 7;
             textBox2.UseSystemPasswordChar = true;
             // 
@@ -119,9 +117,10 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogin.ForeColor = SystemColors.ActiveCaptionText;
-            btnLogin.Location = new Point(326, 243);
+            btnLogin.Location = new Point(233, 183);
+            btnLogin.Margin = new Padding(3, 2, 3, 2);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(119, 45);
+            btnLogin.Size = new Size(89, 29);
             btnLogin.TabIndex = 8;
             btnLogin.Text = "Giriş Yap";
             btnLogin.UseVisualStyleBackColor = false;
@@ -133,20 +132,19 @@
             label5.BackColor = SystemColors.AppWorkspace;
             label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.Brown;
-            label5.Location = new Point(37, 291);
+            label5.Location = new Point(179, 214);
             label5.Name = "label5";
-            label5.Size = new Size(240, 25);
+            label5.Size = new Size(205, 20);
             label5.TabIndex = 9;
             label5.Text = "Kullanıcı Adı veya Şifre hatalı!";
             label5.Visible = false;
             // 
-            // LoginPanel
+            // frmLogin
             // 
             AcceptButton = btnLogin;
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(631, 319);
+            ClientSize = new Size(480, 243);
             Controls.Add(label5);
             Controls.Add(btnLogin);
             Controls.Add(textBox2);
@@ -156,10 +154,11 @@
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
-            Name = "LoginPanel";
+            IconOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("frmLogin.IconOptions.SvgImage");
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
-            Load += Form1_Load;
+            Text = "Kullanıcı Girişi";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

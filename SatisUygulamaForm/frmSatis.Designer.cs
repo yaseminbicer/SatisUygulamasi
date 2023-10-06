@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSatis));
             splitContainer1 = new SplitContainer();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -38,13 +37,6 @@
             tMiktar = new TextBox();
             label1 = new Label();
             Barkod = new Label();
-            GridSatisListesi = new DataGridView();
-            Barkd = new DataGridViewTextBoxColumn();
-            UrunAdi = new DataGridViewTextBoxColumn();
-            br = new DataGridViewTextBoxColumn();
-            Miktar = new DataGridViewTextBoxColumn();
-            Birimi = new DataGridViewTextBoxColumn();
-            toplam = new DataGridViewTextBoxColumn();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel2 = new Panel();
             button15 = new Button();
@@ -63,6 +55,11 @@
             button3 = new Button();
             b2 = new Button();
             b1 = new Button();
+            gridControl1 = new DevExpress.XtraGrid.GridControl();
+            gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             label3 = new Label();
             label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -71,9 +68,10 @@
             splitContainer1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)GridSatisListesi).BeginInit();
             tableLayoutPanel2.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -102,8 +100,8 @@
             // 
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(gridControl1, 0, 1);
             tableLayoutPanel1.Controls.Add(panel1, 0, 0);
-            tableLayoutPanel1.Controls.Add(GridSatisListesi, 0, 1);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
@@ -177,70 +175,6 @@
             Barkod.TabIndex = 0;
             Barkod.Text = "Barkod";
             Barkod.Click += Barkod_Click;
-            // 
-            // GridSatisListesi
-            // 
-            GridSatisListesi.AllowUserToAddRows = false;
-            GridSatisListesi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            GridSatisListesi.BackgroundColor = Color.Silver;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.RoyalBlue;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(3);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            GridSatisListesi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            GridSatisListesi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            GridSatisListesi.Columns.AddRange(new DataGridViewColumn[] { Barkd, UrunAdi, br, Miktar, Birimi, toplam });
-            GridSatisListesi.Dock = DockStyle.Fill;
-            GridSatisListesi.EnableHeadersVisualStyles = false;
-            GridSatisListesi.Location = new Point(3, 81);
-            GridSatisListesi.Name = "GridSatisListesi";
-            GridSatisListesi.RowHeadersVisible = false;
-            GridSatisListesi.RowHeadersWidth = 51;
-            GridSatisListesi.RowTemplate.Height = 25;
-            GridSatisListesi.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            GridSatisListesi.Size = new Size(485, 338);
-            GridSatisListesi.TabIndex = 1;
-            GridSatisListesi.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // Barkd
-            // 
-            Barkd.HeaderText = "Barkod";
-            Barkd.MinimumWidth = 6;
-            Barkd.Name = "Barkd";
-            // 
-            // UrunAdi
-            // 
-            UrunAdi.HeaderText = "Ürün Adı";
-            UrunAdi.MinimumWidth = 6;
-            UrunAdi.Name = "UrunAdi";
-            // 
-            // br
-            // 
-            br.HeaderText = "Br Fiyat";
-            br.MinimumWidth = 6;
-            br.Name = "br";
-            // 
-            // Miktar
-            // 
-            Miktar.HeaderText = "Miktar";
-            Miktar.MinimumWidth = 6;
-            Miktar.Name = "Miktar";
-            // 
-            // Birimi
-            // 
-            Birimi.HeaderText = "Birimi";
-            Birimi.MinimumWidth = 6;
-            Birimi.Name = "Birimi";
-            // 
-            // toplam
-            // 
-            toplam.HeaderText = "Genel Toplam";
-            toplam.MinimumWidth = 6;
-            toplam.Name = "toplam";
             // 
             // tableLayoutPanel2
             // 
@@ -457,6 +391,52 @@
             b1.Text = "1";
             b1.UseVisualStyleBackColor = true;
             // 
+            // gridControl1
+            // 
+            gridControl1.Dock = DockStyle.Fill;
+            gridControl1.EmbeddedNavigator.Margin = new Padding(3, 2, 3, 2);
+            gridControl1.Location = new Point(3, 80);
+            gridControl1.MainView = gridView1;
+            gridControl1.Margin = new Padding(3, 2, 3, 2);
+            gridControl1.Name = "gridControl1";
+            gridControl1.Size = new Size(485, 340);
+            gridControl1.TabIndex = 2;
+            gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView1 });
+            // 
+            // gridView1
+            // 
+            gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { gridColumn1, gridColumn2, gridColumn3 });
+            gridView1.DetailHeight = 262;
+            gridView1.GridControl = gridControl1;
+            gridView1.Name = "gridView1";
+            gridView1.OptionsEditForm.PopupEditFormWidth = 700;
+            gridView1.OptionsView.ShowAutoFilterRow = true;
+            gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            gridColumn1.FieldName = "Barkod";
+            gridColumn1.Name = "gridColumn1";
+            gridColumn1.Visible = true;
+            gridColumn1.VisibleIndex = 0;
+            gridColumn1.Width = 66;
+            // 
+            // gridColumn2
+            // 
+            gridColumn2.Caption = "Stok Adı";
+            gridColumn2.FieldName = "StokAdi";
+            gridColumn2.Name = "gridColumn2";
+            gridColumn2.Visible = true;
+            gridColumn2.VisibleIndex = 1;
+            gridColumn2.Width = 66;
+            // 
+            // gridColumn3
+            // 
+            gridColumn3.Name = "gridColumn3";
+            gridColumn3.Visible = true;
+            gridColumn3.VisibleIndex = 2;
+            gridColumn3.Width = 66;
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -494,10 +474,11 @@
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)GridSatisListesi).EndInit();
             tableLayoutPanel2.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)gridControl1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -538,5 +519,10 @@
         private TextBox textBox5;
         private DataGridViewTextBoxColumn Birimi;
         private Button Ara;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }

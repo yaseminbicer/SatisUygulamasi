@@ -18,7 +18,6 @@ namespace SatisUygulamaForm
             InitializeComponent();
             fis.Tarih = DateTime.Now;
             fis.FisNo = DateTime.Now.ToString("yyyyMMddHHmmss");
-            GridSatisListesi.AutoGenerateColumns = false;
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -122,7 +121,7 @@ namespace SatisUygulamaForm
                     StokKodu = arananUrun.Barkod,
                     Birim = arananUrun.Birimi
                 });
-                GridSatisListesi.DataSource = fis.FisSatirlari;
+                gridControl1.DataSource = fis.FisSatirlari;
                 //GridSatisListesi.Rows.Clear(); // DataGridView'i temizle
                 //GridSatisListesi.Rows.Add(arananUrun.Barkod, arananUrun.ÜrünAdı, arananUrun.BrFiyat, arananUrun.Miktar, arananUrun.Birimi, arananUrun.GenelToplam);
             }
