@@ -31,6 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSatis));
             splitContainer1 = new SplitContainer();
             tableLayoutPanel1 = new TableLayoutPanel();
+            gridControl1 = new DevExpress.XtraGrid.GridControl();
+            gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             panel1 = new Panel();
             Ara = new Button();
             tBarkod = new TextBox();
@@ -38,9 +45,10 @@
             label1 = new Label();
             Barkod = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
+            btnBarkod = new Button();
             panel2 = new Panel();
             button15 = new Button();
-            textBox5 = new TextBox();
+            tNumarator = new TextBox();
             beks = new Button();
             bart = new Button();
             bent = new Button();
@@ -55,23 +63,27 @@
             button3 = new Button();
             b2 = new Button();
             b1 = new Button();
-            gridControl1 = new DevExpress.XtraGrid.GridControl();
-            gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            label3 = new Label();
-            label4 = new Label();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            btnKulaklik = new Button();
+            btnDefter = new Button();
+            btnZeytin = new Button();
+            btnTuvaletkagidi = new Button();
+            btnSalatalik = new Button();
+            btnDomates = new Button();
+            btnSut = new Button();
+            btnSilgi = new Button();
+            btnKalem = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
             panel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
+            tableLayoutPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
@@ -88,8 +100,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Controls.Add(label3);
-            splitContainer1.Panel2.Controls.Add(label4);
+            splitContainer1.Panel2.Controls.Add(tableLayoutPanel3);
             splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint_1;
             splitContainer1.Size = new Size(1117, 618);
             splitContainer1.SplitterDistance = 491;
@@ -114,6 +125,67 @@
             tableLayoutPanel1.Size = new Size(491, 618);
             tableLayoutPanel1.TabIndex = 0;
             tableLayoutPanel1.Paint += tableLayoutPanel1_Paint_2;
+            // 
+            // gridControl1
+            // 
+            gridControl1.Dock = DockStyle.Fill;
+            gridControl1.EmbeddedNavigator.Margin = new Padding(3, 2, 3, 2);
+            gridControl1.Location = new Point(3, 80);
+            gridControl1.MainView = gridView1;
+            gridControl1.Margin = new Padding(3, 2, 3, 2);
+            gridControl1.Name = "gridControl1";
+            gridControl1.Size = new Size(485, 340);
+            gridControl1.TabIndex = 2;
+            gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView1 });
+            // 
+            // gridView1
+            // 
+            gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { gridColumn1, gridColumn2, gridColumn3, gridColumn4, gridColumn5 });
+            gridView1.DetailHeight = 262;
+            gridView1.GridControl = gridControl1;
+            gridView1.Name = "gridView1";
+            gridView1.OptionsEditForm.PopupEditFormWidth = 700;
+            gridView1.OptionsView.ShowAutoFilterRow = true;
+            gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            gridColumn1.FieldName = "Barkod";
+            gridColumn1.Name = "gridColumn1";
+            gridColumn1.Visible = true;
+            gridColumn1.VisibleIndex = 0;
+            gridColumn1.Width = 66;
+            // 
+            // gridColumn2
+            // 
+            gridColumn2.Caption = "Ürün Adı";
+            gridColumn2.FieldName = "StokAdi";
+            gridColumn2.Name = "gridColumn2";
+            gridColumn2.Visible = true;
+            gridColumn2.VisibleIndex = 1;
+            gridColumn2.Width = 66;
+            // 
+            // gridColumn3
+            // 
+            gridColumn3.Caption = "BrFiyat";
+            gridColumn3.Name = "gridColumn3";
+            gridColumn3.Visible = true;
+            gridColumn3.VisibleIndex = 2;
+            gridColumn3.Width = 66;
+            // 
+            // gridColumn4
+            // 
+            gridColumn4.Caption = "Birimi";
+            gridColumn4.Name = "gridColumn4";
+            gridColumn4.Visible = true;
+            gridColumn4.VisibleIndex = 3;
+            // 
+            // gridColumn5
+            // 
+            gridColumn5.Caption = "Tutar";
+            gridColumn5.Name = "gridColumn5";
+            gridColumn5.Visible = true;
+            gridColumn5.VisibleIndex = 4;
             // 
             // panel1
             // 
@@ -181,6 +253,7 @@
             tableLayoutPanel2.ColumnCount = 2;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 47.42268F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 52.57732F));
+            tableLayoutPanel2.Controls.Add(btnBarkod, 1, 0);
             tableLayoutPanel2.Controls.Add(panel2, 0, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(3, 425);
@@ -191,10 +264,20 @@
             tableLayoutPanel2.Size = new Size(485, 190);
             tableLayoutPanel2.TabIndex = 2;
             // 
+            // btnBarkod
+            // 
+            btnBarkod.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBarkod.Location = new Point(233, 3);
+            btnBarkod.Name = "btnBarkod";
+            btnBarkod.Size = new Size(96, 33);
+            btnBarkod.TabIndex = 0;
+            btnBarkod.Text = "Barkod";
+            btnBarkod.Click += btnbarkod;
+            // 
             // panel2
             // 
             panel2.Controls.Add(button15);
-            panel2.Controls.Add(textBox5);
+            panel2.Controls.Add(tNumarator);
             panel2.Controls.Add(beks);
             panel2.Controls.Add(bart);
             panel2.Controls.Add(bent);
@@ -220,21 +303,24 @@
             // 
             button15.BackgroundImage = (Image)resources.GetObject("button15.BackgroundImage");
             button15.BackgroundImageLayout = ImageLayout.Stretch;
-            button15.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button15.Font = new Font("Segoe UI Light", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button15.ForeColor = SystemColors.ButtonHighlight;
             button15.Location = new Point(157, 3);
             button15.Margin = new Padding(1);
             button15.Name = "button15";
             button15.Size = new Size(46, 33);
             button15.TabIndex = 15;
+            button15.Text = "x";
             button15.UseVisualStyleBackColor = true;
+            button15.Click += btnX_Click;
             // 
-            // textBox5
+            // tNumarator
             // 
-            textBox5.Location = new Point(13, 3);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(144, 33);
-            textBox5.TabIndex = 14;
+            tNumarator.Location = new Point(13, 3);
+            tNumarator.Multiline = true;
+            tNumarator.Name = "tNumarator";
+            tNumarator.Size = new Size(144, 33);
+            tNumarator.TabIndex = 14;
             // 
             // beks
             // 
@@ -269,6 +355,7 @@
             bent.Size = new Size(46, 68);
             bent.TabIndex = 10;
             bent.UseVisualStyleBackColor = true;
+            bent.Click += bent_Click;
             // 
             // b7
             // 
@@ -280,6 +367,7 @@
             b7.TabIndex = 9;
             b7.Text = "7";
             b7.UseVisualStyleBackColor = true;
+            b7.Click += btnX_Click;
             // 
             // b8
             // 
@@ -291,6 +379,7 @@
             b8.TabIndex = 8;
             b8.Text = "8";
             b8.UseVisualStyleBackColor = true;
+            b8.Click += btnX_Click;
             // 
             // b9
             // 
@@ -302,6 +391,7 @@
             b9.TabIndex = 7;
             b9.Text = "9";
             b9.UseVisualStyleBackColor = true;
+            b9.Click += btnX_Click;
             // 
             // b4
             // 
@@ -313,6 +403,7 @@
             b4.TabIndex = 6;
             b4.Text = "4";
             b4.UseVisualStyleBackColor = true;
+            b4.Click += btnX_Click;
             // 
             // b5
             // 
@@ -324,6 +415,7 @@
             b5.TabIndex = 5;
             b5.Text = "5";
             b5.UseVisualStyleBackColor = true;
+            b5.Click += btnX_Click;
             // 
             // b6
             // 
@@ -335,6 +427,7 @@
             b6.TabIndex = 4;
             b6.Text = "6";
             b6.UseVisualStyleBackColor = true;
+            b6.Click += btnX_Click;
             // 
             // bv
             // 
@@ -346,6 +439,7 @@
             bv.TabIndex = 3;
             bv.Text = ",";
             bv.UseVisualStyleBackColor = true;
+            bv.Click += btnX_Click;
             // 
             // b3
             // 
@@ -357,6 +451,7 @@
             b3.TabIndex = 3;
             b3.Text = "3";
             b3.UseVisualStyleBackColor = true;
+            b3.Click += btnX_Click;
             // 
             // button3
             // 
@@ -368,6 +463,7 @@
             button3.TabIndex = 2;
             button3.Text = "0";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += btnX_Click;
             // 
             // b2
             // 
@@ -379,6 +475,7 @@
             b2.TabIndex = 1;
             b2.Text = "2";
             b2.UseVisualStyleBackColor = true;
+            b2.Click += btnX_Click;
             // 
             // b1
             // 
@@ -390,70 +487,166 @@
             b1.TabIndex = 0;
             b1.Text = "1";
             b1.UseVisualStyleBackColor = true;
+            b1.Click += btnX_Click;
             // 
-            // gridControl1
+            // tableLayoutPanel3
             // 
-            gridControl1.Dock = DockStyle.Fill;
-            gridControl1.EmbeddedNavigator.Margin = new Padding(3, 2, 3, 2);
-            gridControl1.Location = new Point(3, 80);
-            gridControl1.MainView = gridView1;
-            gridControl1.Margin = new Padding(3, 2, 3, 2);
-            gridControl1.Name = "gridControl1";
-            gridControl1.Size = new Size(485, 340);
-            gridControl1.TabIndex = 2;
-            gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView1 });
+            tableLayoutPanel3.ColumnCount = 3;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel3.Controls.Add(btnKulaklik, 2, 2);
+            tableLayoutPanel3.Controls.Add(btnDefter, 1, 2);
+            tableLayoutPanel3.Controls.Add(btnZeytin, 0, 2);
+            tableLayoutPanel3.Controls.Add(btnTuvaletkagidi, 2, 1);
+            tableLayoutPanel3.Controls.Add(btnSalatalik, 1, 1);
+            tableLayoutPanel3.Controls.Add(btnDomates, 0, 1);
+            tableLayoutPanel3.Controls.Add(btnSut, 2, 0);
+            tableLayoutPanel3.Controls.Add(btnSilgi, 1, 0);
+            tableLayoutPanel3.Controls.Add(btnKalem, 0, 0);
+            tableLayoutPanel3.Location = new Point(3, 0);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 3;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel3.Size = new Size(619, 420);
+            tableLayoutPanel3.TabIndex = 0;
             // 
-            // gridView1
+            // btnKulaklik
             // 
-            gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { gridColumn1, gridColumn2, gridColumn3 });
-            gridView1.DetailHeight = 262;
-            gridView1.GridControl = gridControl1;
-            gridView1.Name = "gridView1";
-            gridView1.OptionsEditForm.PopupEditFormWidth = 700;
-            gridView1.OptionsView.ShowAutoFilterRow = true;
-            gridView1.OptionsView.ShowGroupPanel = false;
+            btnKulaklik.BackColor = Color.LightSalmon;
+            btnKulaklik.Dock = DockStyle.Fill;
+            btnKulaklik.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnKulaklik.ForeColor = Color.Black;
+            btnKulaklik.Location = new Point(413, 279);
+            btnKulaklik.Margin = new Padding(1);
+            btnKulaklik.Name = "btnKulaklik";
+            btnKulaklik.Size = new Size(205, 140);
+            btnKulaklik.TabIndex = 9;
+            btnKulaklik.Text = "Kulaklık";
+            btnKulaklik.UseVisualStyleBackColor = false;
+            btnKulaklik.Click += btnKulaklik_Click;
             // 
-            // gridColumn1
+            // btnDefter
             // 
-            gridColumn1.FieldName = "Barkod";
-            gridColumn1.Name = "gridColumn1";
-            gridColumn1.Visible = true;
-            gridColumn1.VisibleIndex = 0;
-            gridColumn1.Width = 66;
+            btnDefter.BackColor = Color.LightSalmon;
+            btnDefter.Dock = DockStyle.Fill;
+            btnDefter.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDefter.ForeColor = Color.Black;
+            btnDefter.Location = new Point(207, 279);
+            btnDefter.Margin = new Padding(1);
+            btnDefter.Name = "btnDefter";
+            btnDefter.Size = new Size(204, 140);
+            btnDefter.TabIndex = 8;
+            btnDefter.Text = "Defter";
+            btnDefter.UseVisualStyleBackColor = false;
+            btnDefter.Click += btnDefter_Click;
             // 
-            // gridColumn2
+            // btnZeytin
             // 
-            gridColumn2.Caption = "Stok Adı";
-            gridColumn2.FieldName = "StokAdi";
-            gridColumn2.Name = "gridColumn2";
-            gridColumn2.Visible = true;
-            gridColumn2.VisibleIndex = 1;
-            gridColumn2.Width = 66;
+            btnZeytin.BackColor = Color.LightSalmon;
+            btnZeytin.Dock = DockStyle.Fill;
+            btnZeytin.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnZeytin.ForeColor = Color.Black;
+            btnZeytin.Location = new Point(1, 279);
+            btnZeytin.Margin = new Padding(1);
+            btnZeytin.Name = "btnZeytin";
+            btnZeytin.Size = new Size(204, 140);
+            btnZeytin.TabIndex = 7;
+            btnZeytin.Text = "Zeytin";
+            btnZeytin.UseVisualStyleBackColor = false;
+            btnZeytin.Click += btnZeytin_Click;
             // 
-            // gridColumn3
+            // btnTuvaletkagidi
             // 
-            gridColumn3.Name = "gridColumn3";
-            gridColumn3.Visible = true;
-            gridColumn3.VisibleIndex = 2;
-            gridColumn3.Width = 66;
+            btnTuvaletkagidi.BackColor = Color.LightSalmon;
+            btnTuvaletkagidi.Dock = DockStyle.Fill;
+            btnTuvaletkagidi.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTuvaletkagidi.ForeColor = Color.Black;
+            btnTuvaletkagidi.Location = new Point(413, 140);
+            btnTuvaletkagidi.Margin = new Padding(1);
+            btnTuvaletkagidi.Name = "btnTuvaletkagidi";
+            btnTuvaletkagidi.Size = new Size(205, 137);
+            btnTuvaletkagidi.TabIndex = 6;
+            btnTuvaletkagidi.Text = "Tuvalet Kağıdı";
+            btnTuvaletkagidi.UseVisualStyleBackColor = false;
+            btnTuvaletkagidi.Click += btnTuvaletkagidi_Click;
             // 
-            // label3
+            // btnSalatalik
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(273, 177);
-            label3.Name = "label3";
-            label3.Size = new Size(38, 15);
-            label3.TabIndex = 1;
-            label3.Text = "label3";
+            btnSalatalik.BackColor = Color.LightSalmon;
+            btnSalatalik.Dock = DockStyle.Fill;
+            btnSalatalik.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSalatalik.ForeColor = Color.Black;
+            btnSalatalik.Location = new Point(207, 140);
+            btnSalatalik.Margin = new Padding(1);
+            btnSalatalik.Name = "btnSalatalik";
+            btnSalatalik.Size = new Size(204, 137);
+            btnSalatalik.TabIndex = 5;
+            btnSalatalik.Text = "Salatalık";
+            btnSalatalik.UseVisualStyleBackColor = false;
+            btnSalatalik.Click += btnSalatalik_Click;
             // 
-            // label4
+            // btnDomates
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(133, 146);
-            label4.Name = "label4";
-            label4.Size = new Size(38, 15);
-            label4.TabIndex = 1;
-            label4.Text = "label4";
+            btnDomates.BackColor = Color.LightSalmon;
+            btnDomates.Dock = DockStyle.Fill;
+            btnDomates.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDomates.ForeColor = Color.Black;
+            btnDomates.Location = new Point(1, 140);
+            btnDomates.Margin = new Padding(1);
+            btnDomates.Name = "btnDomates";
+            btnDomates.Size = new Size(204, 137);
+            btnDomates.TabIndex = 4;
+            btnDomates.Text = "Domates";
+            btnDomates.UseVisualStyleBackColor = false;
+            btnDomates.Click += btnDomates_Click;
+            // 
+            // btnSut
+            // 
+            btnSut.BackColor = Color.LightSalmon;
+            btnSut.Dock = DockStyle.Fill;
+            btnSut.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSut.ForeColor = Color.Black;
+            btnSut.Location = new Point(413, 1);
+            btnSut.Margin = new Padding(1);
+            btnSut.Name = "btnSut";
+            btnSut.Size = new Size(205, 137);
+            btnSut.TabIndex = 3;
+            btnSut.Text = "Süt";
+            btnSut.UseVisualStyleBackColor = false;
+            btnSut.Click += btnSut_Click;
+            // 
+            // btnSilgi
+            // 
+            btnSilgi.BackColor = Color.LightSalmon;
+            btnSilgi.Dock = DockStyle.Fill;
+            btnSilgi.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSilgi.ForeColor = Color.Black;
+            btnSilgi.Location = new Point(207, 1);
+            btnSilgi.Margin = new Padding(1);
+            btnSilgi.Name = "btnSilgi";
+            btnSilgi.Size = new Size(204, 137);
+            btnSilgi.TabIndex = 2;
+            btnSilgi.Text = "Silgi";
+            btnSilgi.UseVisualStyleBackColor = false;
+            btnSilgi.Click += btnSilgi_Click;
+            // 
+            // btnKalem
+            // 
+            btnKalem.BackColor = Color.LightSalmon;
+            btnKalem.Dock = DockStyle.Fill;
+            btnKalem.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnKalem.ForeColor = Color.Black;
+            btnKalem.Location = new Point(1, 1);
+            btnKalem.Margin = new Padding(1);
+            btnKalem.Name = "btnKalem";
+            btnKalem.Size = new Size(204, 137);
+            btnKalem.TabIndex = 1;
+            btnKalem.Text = "Kalem";
+            btnKalem.UseVisualStyleBackColor = false;
+            btnKalem.Click += btnKalem_Click;
             // 
             // frmSatis
             // 
@@ -464,21 +657,21 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmSatis";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form3";
-            Load += Form3_Load;
+            Text = "Satış İşlemi";
+            Load += SatisIslemi_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
-            splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gridControl1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)gridControl1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
+            tableLayoutPanel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -486,11 +679,9 @@
 
         private SplitContainer splitContainer1;
         private Label Barkod;
-        private Label label4;
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel1;
         private Label label1;
-        private Label label3;
         private TextBox tBarkod;
         private TextBox tMiktar;
         private DataGridView GridSatisListesi;
@@ -516,7 +707,7 @@
         private Button b1;
         private Button beks;
         private Button button15;
-        private TextBox textBox5;
+        private TextBox tNumarator;
         private DataGridViewTextBoxColumn Birimi;
         private Button Ara;
         private DevExpress.XtraGrid.GridControl gridControl1;
@@ -524,5 +715,18 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Button btnKulaklik;
+        private Button btnDefter;
+        private Button btnZeytin;
+        private Button btnTuvaletkagidi;
+        private Button btnSalatalik;
+        private Button btnDomates;
+        private Button btnSut;
+        private Button btnSilgi;
+        private Button btnKalem;
+        private Button btnBarkod;
     }
 }

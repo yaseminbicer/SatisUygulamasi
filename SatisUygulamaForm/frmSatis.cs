@@ -50,10 +50,13 @@ namespace SatisUygulamaForm
 
         }
 
-        private void Form3_Load(object sender, EventArgs e)
+        private void SatisIslemi_Load(object sender, EventArgs e)
         {
 
         }
+
+
+
 
         private void tableLayoutPanel1_Paint_2(object sender, PaintEventArgs e)
         {
@@ -115,7 +118,7 @@ namespace SatisUygulamaForm
                 fis.FisSatirlari.Add(new FisSatir
                 {
                     Barkod = arananUrun.Barkod,
-                    BirimFiyat = arananUrun.BrFiyat,
+                    BrFiyat = arananUrun.BrFiyat,
                     Miktar = Convert.ToDecimal(tMiktar.Text),
                     StokAdi = arananUrun.ÜrünAdı,
                     StokKodu = arananUrun.Barkod,
@@ -136,6 +139,104 @@ namespace SatisUygulamaForm
         {
 
         }
+        private void btnX_Click(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            if (b.Text == ",")
+            {
+                int vırgul = tNumarator.Text.Count(x => x == ',');
+
+                if (vırgul < 1)
+                {
+                    tNumarator.Text += b.Text;
+                }
+            }
+            else if (b.Text == "x")
+            {
+                if (tNumarator.Text.Length > 0)
+                {
+                    tNumarator.Text = tNumarator.Text.Substring(0, tNumarator.Text.Length - 1);
+                }
+
+            }
+
+            else
+            {
+                tNumarator.Text += b.Text;
+            }
+
+
+        }
+
+        private void btnSalatalik_Click(object sender, EventArgs e)
+        {
+            tBarkod.Text = "5";
+        }
+
+        private void btnTuvaletkagidi_Click(object sender, EventArgs e)
+        {
+            tBarkod.Text = "6";
+        }
+
+        private void btnSut_Click(object sender, EventArgs e)
+        {
+            tBarkod.Text = "3";
+        }
+
+        private void btnSilgi_Click(object sender, EventArgs e)
+        {
+            tBarkod.Text = "2";
+        }
+
+        private void btnKalem_Click(object sender, EventArgs e)
+        {
+            tBarkod.Text = "1";
+        }
+
+        private void bent_Click(object sender, EventArgs e)
+        {
+            if (tNumarator.Text != "")
+            {
+                tMiktar.Text = tNumarator.Text;
+                tNumarator.Clear();
+                tBarkod.Clear();
+                tBarkod.Focus();
+
+            }
+        }
+
+        private void btnbarkod(object sender, EventArgs e)
+        {
+            if (tNumarator.Text != "")
+            {
+                tBarkod.Text = tNumarator.Text;
+                tNumarator.Clear();
+
+
+            }
+        }
+
+        private void btnDomates_Click(object sender, EventArgs e)
+        {
+            tBarkod.Text = "4";
+        }
+
+        private void btnZeytin_Click(object sender, EventArgs e)
+        {
+            tBarkod.Text = "7";
+        }
+
+        private void btnDefter_Click(object sender, EventArgs e)
+        {
+            tBarkod.Text = "8";
+        }
+
+        private void btnKulaklik_Click(object sender, EventArgs e)
+        {
+            tBarkod.Text = "9";
+        }
     }
+
+
 }
 

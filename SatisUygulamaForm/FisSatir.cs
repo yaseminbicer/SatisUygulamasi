@@ -13,7 +13,7 @@ namespace SatisUygulamaForm
         public string Barkod { get; set; }
         public string Birim { get; set; }
         public decimal Miktar { get; set; }
-        public decimal BirimFiyat { get; set; }
-        public decimal Tutar => Miktar * BirimFiyat;
+        public decimal BrFiyat { get; set; }
+        public decimal Tutar => Miktar * BrFiyat;
     }
 }
