@@ -89,7 +89,7 @@
             btnSut = new Button();
             btnSilgi = new Button();
             btnKalem = new Button();
-            button1 = new Button();
+            btnUrunEkle = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -119,7 +119,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Controls.Add(button1);
+            splitContainer1.Panel2.Controls.Add(btnUrunEkle);
             splitContainer1.Panel2.Controls.Add(btnKolonya);
             splitContainer1.Panel2.Controls.Add(btncay);
             splitContainer1.Panel2.Controls.Add(btncikolata);
@@ -845,16 +845,17 @@
             btnKalem.UseVisualStyleBackColor = false;
             btnKalem.Click += btnKalem_Click;
             // 
-            // button1
+            // btnUrunEkle
             // 
-            button1.BackColor = Color.CornflowerBlue;
-            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(4, 570);
-            button1.Name = "button1";
-            button1.Size = new Size(96, 43);
-            button1.TabIndex = 9;
-            button1.Text = "Fiş Yazdır";
-            button1.UseVisualStyleBackColor = false;
+            btnUrunEkle.BackColor = Color.CornflowerBlue;
+            btnUrunEkle.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUrunEkle.Location = new Point(4, 570);
+            btnUrunEkle.Name = "btnUrunEkle";
+            btnUrunEkle.Size = new Size(96, 43);
+            btnUrunEkle.TabIndex = 9;
+            btnUrunEkle.Text = "Ürün Ekle";
+            btnUrunEkle.UseVisualStyleBackColor = false;
+            btnUrunEkle.Click += btnUrunEkle_Click;
             // 
             // frmSatis
             // 
@@ -954,6 +955,6 @@
         private Button btncay;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private Button btnEnter2;
-        private Button button1;
+        private Button btnUrunEkle;
     }
 }

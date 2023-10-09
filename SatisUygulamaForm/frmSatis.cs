@@ -276,6 +276,12 @@ namespace SatisUygulamaForm
 
             }
         }
+
+        private void btnUrunEkle_Click(object sender, EventArgs e)
+        {
+            frmUrunEkle frmUrunEkle = new frmUrunEkle();
+            frmUrunEkle.Show();
+        }
     }
 
 
