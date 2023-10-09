@@ -47,6 +47,7 @@
             Barkod = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel2 = new Panel();
+            btnEnter2 = new Button();
             button15 = new Button();
             tNumarator = new TextBox();
             beks = new Button();
@@ -64,7 +65,6 @@
             b2 = new Button();
             b1 = new Button();
             panel3 = new Panel();
-            btnEnter2 = new Button();
             vGridControl1 = new DevExpress.XtraVerticalGrid.VGridControl();
             row = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             row1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
@@ -89,6 +89,7 @@
             btnSut = new Button();
             btnSilgi = new Button();
             btnKalem = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -118,6 +119,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            splitContainer1.Panel2.Controls.Add(button1);
             splitContainer1.Panel2.Controls.Add(btnKolonya);
             splitContainer1.Panel2.Controls.Add(btncay);
             splitContainer1.Panel2.Controls.Add(btncikolata);
@@ -329,6 +331,20 @@
             panel2.TabIndex = 0;
             panel2.Paint += panel2_Paint;
             // 
+            // btnEnter2
+            // 
+            btnEnter2.BackgroundImage = (Image)resources.GetObject("btnEnter2.BackgroundImage");
+            btnEnter2.BackgroundImageLayout = ImageLayout.Zoom;
+            btnEnter2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEnter2.Location = new Point(157, 112);
+            btnEnter2.Margin = new Padding(1);
+            btnEnter2.Name = "btnEnter2";
+            btnEnter2.Size = new Size(46, 68);
+            btnEnter2.TabIndex = 11;
+            btnEnter2.UseVisualStyleBackColor = true;
+            btnEnter2.Visible = false;
+            btnEnter2.Click += btnEnter2_Click;
+            // 
             // button15
             // 
             button15.BackgroundImage = (Image)resources.GetObject("button15.BackgroundImage");
@@ -527,20 +543,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(268, 188);
             panel3.TabIndex = 1;
-            // 
-            // btnEnter2
-            // 
-            btnEnter2.BackgroundImage = (Image)resources.GetObject("btnEnter2.BackgroundImage");
-            btnEnter2.BackgroundImageLayout = ImageLayout.Zoom;
-            btnEnter2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEnter2.Location = new Point(157, 112);
-            btnEnter2.Margin = new Padding(1);
-            btnEnter2.Name = "btnEnter2";
-            btnEnter2.Size = new Size(46, 68);
-            btnEnter2.TabIndex = 11;
-            btnEnter2.UseVisualStyleBackColor = true;
-            btnEnter2.Visible = false;
-            btnEnter2.Click += btnEnter2_Click;
             // 
             // vGridControl1
             // 
@@ -843,6 +845,17 @@
             btnKalem.UseVisualStyleBackColor = false;
             btnKalem.Click += btnKalem_Click;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.CornflowerBlue;
+            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(4, 570);
+            button1.Name = "button1";
+            button1.Size = new Size(96, 43);
+            button1.TabIndex = 9;
+            button1.Text = "Fiş Yazdır";
+            button1.UseVisualStyleBackColor = false;
+            // 
             // frmSatis
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -941,5 +954,6 @@
         private Button btncay;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private Button btnEnter2;
+        private Button button1;
     }
 }
