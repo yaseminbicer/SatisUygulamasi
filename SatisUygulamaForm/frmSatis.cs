@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -107,7 +108,6 @@ namespace SatisUygulamaForm
         }
 
         private void Ara_Click(object sender, EventArgs e)
-
         {
 
             string girilenBarkod = tBarkod.Text;
@@ -120,11 +120,15 @@ namespace SatisUygulamaForm
                     Barkod = arananUrun.Barkod,
                     BrFiyat = arananUrun.BrFiyat,
                     Miktar = Convert.ToDecimal(tMiktar.Text),
-                    StokAdi = arananUrun.ÜrünAdı,
+                    UrunAdi = arananUrun.ÜrünAdı,
                     StokKodu = arananUrun.Barkod,
-                    Birim = arananUrun.Birimi
+                    Birimi = arananUrun.Birimi
                 });
                 gridControl1.DataSource = fis.FisSatirlari;
+                gridControl1.Refresh();
+                gridControl1.RefreshDataSource();
+                bent.Show();
+                btnEnter2.Hide();
                 //GridSatisListesi.Rows.Clear(); // DataGridView'i temizle
                 //GridSatisListesi.Rows.Add(arananUrun.Barkod, arananUrun.ÜrünAdı, arananUrun.BrFiyat, arananUrun.Miktar, arananUrun.Birimi, arananUrun.GenelToplam);
             }
@@ -201,8 +205,14 @@ namespace SatisUygulamaForm
                 tNumarator.Clear();
                 tBarkod.Clear();
                 tBarkod.Focus();
+                bent.Hide();
+                btnEnter2.Show();
 
             }
+        }
+        private void enterDongusu(object sender, EventArgs e)
+        {
+
         }
 
         private void btnbarkod(object sender, EventArgs e)
@@ -234,6 +244,37 @@ namespace SatisUygulamaForm
         private void btnKulaklik_Click(object sender, EventArgs e)
         {
             tBarkod.Text = "9";
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btncikolata_Click(object sender, EventArgs e)
+        {
+            tBarkod.Text = "0";
+        }
+
+        private void btncay_Click(object sender, EventArgs e)
+        {
+            tBarkod.Text = "11";
+        }
+
+        private void btnKolonya_Click(object sender, EventArgs e)
+        {
+            tBarkod.Text = "22";
+        }
+
+        private void btnEnter2_Click(object sender, EventArgs e)
+        {
+            if (tNumarator.Text != "")
+            {
+                tBarkod.Text = tNumarator.Text;
+                tNumarator.Clear();
+
+
+            }
         }
     }
 

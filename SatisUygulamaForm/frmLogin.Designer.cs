@@ -144,7 +144,7 @@
             AcceptButton = btnLogin;
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(480, 243);
+            ClientSize = new Size(480, 241);
             Controls.Add(label5);
             Controls.Add(btnLogin);
             Controls.Add(textBox2);
@@ -159,6 +159,7 @@
             Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Kullanıcı Girişi";
+            Load += frmLogin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

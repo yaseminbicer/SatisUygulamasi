@@ -29,5 +29,10 @@ namespace SatisUygulamaForm
             }
 
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

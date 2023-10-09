@@ -23,16 +23,19 @@ namespace SatisUygulamaForm
         public static List<Urun> urunListesi = new List<Urun>
 
         {
-            new Urun { ÜrünAdı = "Kalem", Barkod = "1", BrFiyat = 10, Birimi = "Adet" },
-            new Urun { ÜrünAdı = "Silgi", Barkod = "2", BrFiyat = 20, Birimi = "Adet" },
-            new Urun { ÜrünAdı = "Süt", Barkod = "3", BrFiyat = 10, Birimi = "Litre" },
+            new Urun { ÜrünAdı = "Kalem", Barkod = "1", BrFiyat = 38, Birimi = "Adet" },
+            new Urun { ÜrünAdı = "Silgi", Barkod = "2", BrFiyat = 15, Birimi = "Adet" },
+            new Urun { ÜrünAdı = "Süt", Barkod = "3", BrFiyat = 30, Birimi = "Litre" },
             new Urun { ÜrünAdı = "Domates", Barkod = "4", BrFiyat = 20, Birimi = "Kilogram" },
             new Urun { ÜrünAdı = "Salatalık", Barkod = "5", BrFiyat = 10, Birimi = "Kilogram" },
-            new Urun { ÜrünAdı = "Tuvalet Kağıdı", Barkod = "6", BrFiyat = 20, Birimi = "Adet" },
+            new Urun { ÜrünAdı = "Tuvalet Kağıdı", Barkod = "6", BrFiyat = 199, Birimi = "Adet" },
             new Urun { ÜrünAdı = "Zeytin", Barkod = "7", BrFiyat = 10, Birimi = "Kilogram" },
-            new Urun { ÜrünAdı = "Defter", Barkod = "8", BrFiyat = 20, Birimi = "Adet" },
-            new Urun { ÜrünAdı = "Kulaklık", Barkod = "9", BrFiyat = 10, Birimi = "Adet" },
-            new Urun { ÜrünAdı = "Çikolata", Barkod = "0", BrFiyat = 20, Birimi = "Adet" },
+            new Urun { ÜrünAdı = "Defter", Barkod = "8", BrFiyat = 42, Birimi = "Adet" },
+            new Urun { ÜrünAdı = "Kulaklık", Barkod = "9", BrFiyat = 1000, Birimi = "Adet" },
+            new Urun { ÜrünAdı = "Çikolata", Barkod = "0", BrFiyat = 9, Birimi = "Adet" },
+            new Urun { ÜrünAdı = "Çay", Barkod = "11", BrFiyat = 80, Birimi = "Paket" },
+            new Urun { ÜrünAdı = "Kolonya", Barkod = "22", BrFiyat = 120, Birimi = "Şişe" },
+
         };
        
     }
