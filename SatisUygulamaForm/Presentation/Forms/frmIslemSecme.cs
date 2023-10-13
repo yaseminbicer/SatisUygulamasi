@@ -37,10 +37,17 @@ namespace SatisUygulamaForm
             //frmLogin frmLogin = new frmLogin();
             //frmLogin.Show();
             var loginForm = Application.OpenForms[0];
-            if(loginForm != null && loginForm is frmLogin)
+            if (loginForm != null && loginForm is frmLogin)
             {
                 ((frmLogin)loginForm).Show();
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmUrunEkle urunEkle = new frmUrunEkle();
+            urunEkle.Show();    
         }
     }
 }

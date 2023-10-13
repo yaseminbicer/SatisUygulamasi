@@ -42,16 +42,12 @@
             panel1 = new Panel();
             Ara = new Button();
             tBarkod = new TextBox();
-            tMiktar = new TextBox();
-            label1 = new Label();
             Barkod = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel2 = new Panel();
             button15 = new Button();
-            tNumarator = new TextBox();
             beks = new Button();
             bart = new Button();
-            bent = new Button();
             b7 = new Button();
             b8 = new Button();
             b9 = new Button();
@@ -64,13 +60,13 @@
             b2 = new Button();
             b1 = new Button();
             panel3 = new Panel();
-            btnEnter2 = new Button();
             vGridControl1 = new DevExpress.XtraVerticalGrid.VGridControl();
             row = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             row1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             row2 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             row3 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             row4 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            btnUrunEkle = new Button();
             btnKolonya = new Button();
             btncay = new Button();
             btncikolata = new Button();
@@ -118,6 +114,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            splitContainer1.Panel2.Controls.Add(btnUrunEkle);
             splitContainer1.Panel2.Controls.Add(btnKolonya);
             splitContainer1.Panel2.Controls.Add(btncay);
             splitContainer1.Panel2.Controls.Add(btncikolata);
@@ -230,8 +227,6 @@
             // 
             panel1.Controls.Add(Ara);
             panel1.Controls.Add(tBarkod);
-            panel1.Controls.Add(tMiktar);
-            panel1.Controls.Add(label1);
             panel1.Controls.Add(Barkod);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 3);
@@ -257,24 +252,6 @@
             tBarkod.Size = new Size(202, 23);
             tBarkod.TabIndex = 2;
             tBarkod.TextChanged += tBarkod_TextChanged;
-            // 
-            // tMiktar
-            // 
-            tMiktar.Location = new Point(27, 45);
-            tMiktar.Name = "tMiktar";
-            tMiktar.Size = new Size(64, 23);
-            tMiktar.TabIndex = 1;
-            tMiktar.TextChanged += tMiktar_TextChanged;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(27, 21);
-            label1.Name = "label1";
-            label1.Size = new Size(57, 21);
-            label1.TabIndex = 0;
-            label1.Text = "Miktar";
             // 
             // Barkod
             // 
@@ -305,12 +282,9 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(btnEnter2);
             panel2.Controls.Add(button15);
-            panel2.Controls.Add(tNumarator);
             panel2.Controls.Add(beks);
             panel2.Controls.Add(bart);
-            panel2.Controls.Add(bent);
             panel2.Controls.Add(b7);
             panel2.Controls.Add(b8);
             panel2.Controls.Add(b9);
@@ -335,27 +309,19 @@
             button15.BackgroundImageLayout = ImageLayout.Stretch;
             button15.Font = new Font("Segoe UI Light", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             button15.ForeColor = SystemColors.ButtonHighlight;
-            button15.Location = new Point(157, 8);
+            button15.Location = new Point(159, 42);
             button15.Margin = new Padding(1);
             button15.Name = "button15";
             button15.Size = new Size(46, 33);
             button15.TabIndex = 15;
             button15.Text = "x";
             button15.UseVisualStyleBackColor = true;
-            button15.Click += btnX_Click;
-            // 
-            // tNumarator
-            // 
-            tNumarator.Location = new Point(13, 8);
-            tNumarator.Multiline = true;
-            tNumarator.Name = "tNumarator";
-            tNumarator.Size = new Size(144, 33);
-            tNumarator.TabIndex = 14;
+           
             // 
             // beks
             // 
             beks.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            beks.Location = new Point(157, 42);
+            beks.Location = new Point(157, 77);
             beks.Margin = new Padding(1);
             beks.Name = "beks";
             beks.Size = new Size(46, 33);
@@ -366,26 +332,13 @@
             // bart
             // 
             bart.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            bart.Location = new Point(157, 77);
+            bart.Location = new Point(157, 112);
             bart.Margin = new Padding(1);
             bart.Name = "bart";
             bart.Size = new Size(46, 33);
             bart.TabIndex = 1;
             bart.Text = "+";
             bart.UseVisualStyleBackColor = true;
-            // 
-            // bent
-            // 
-            bent.BackgroundImage = (Image)resources.GetObject("bent.BackgroundImage");
-            bent.BackgroundImageLayout = ImageLayout.Zoom;
-            bent.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            bent.Location = new Point(157, 112);
-            bent.Margin = new Padding(1);
-            bent.Name = "bent";
-            bent.Size = new Size(46, 68);
-            bent.TabIndex = 10;
-            bent.UseVisualStyleBackColor = true;
-            bent.Click += bent_Click;
             // 
             // b7
             // 
@@ -397,7 +350,7 @@
             b7.TabIndex = 9;
             b7.Text = "7";
             b7.UseVisualStyleBackColor = true;
-            b7.Click += btnX_Click;
+           
             // 
             // b8
             // 
@@ -409,7 +362,7 @@
             b8.TabIndex = 8;
             b8.Text = "8";
             b8.UseVisualStyleBackColor = true;
-            b8.Click += btnX_Click;
+           
             // 
             // b9
             // 
@@ -421,7 +374,7 @@
             b9.TabIndex = 7;
             b9.Text = "9";
             b9.UseVisualStyleBackColor = true;
-            b9.Click += btnX_Click;
+          
             // 
             // b4
             // 
@@ -433,7 +386,7 @@
             b4.TabIndex = 6;
             b4.Text = "4";
             b4.UseVisualStyleBackColor = true;
-            b4.Click += btnX_Click;
+            
             // 
             // b5
             // 
@@ -445,7 +398,7 @@
             b5.TabIndex = 5;
             b5.Text = "5";
             b5.UseVisualStyleBackColor = true;
-            b5.Click += btnX_Click;
+            
             // 
             // b6
             // 
@@ -457,7 +410,7 @@
             b6.TabIndex = 4;
             b6.Text = "6";
             b6.UseVisualStyleBackColor = true;
-            b6.Click += btnX_Click;
+            
             // 
             // bv
             // 
@@ -469,7 +422,7 @@
             bv.TabIndex = 3;
             bv.Text = ",";
             bv.UseVisualStyleBackColor = true;
-            bv.Click += btnX_Click;
+            
             // 
             // b3
             // 
@@ -481,7 +434,7 @@
             b3.TabIndex = 3;
             b3.Text = "3";
             b3.UseVisualStyleBackColor = true;
-            b3.Click += btnX_Click;
+          
             // 
             // button3
             // 
@@ -493,7 +446,7 @@
             button3.TabIndex = 2;
             button3.Text = "0";
             button3.UseVisualStyleBackColor = true;
-            button3.Click += btnX_Click;
+          
             // 
             // b2
             // 
@@ -505,7 +458,7 @@
             b2.TabIndex = 1;
             b2.Text = "2";
             b2.UseVisualStyleBackColor = true;
-            b2.Click += btnX_Click;
+           
             // 
             // b1
             // 
@@ -517,7 +470,7 @@
             b1.TabIndex = 0;
             b1.Text = "1";
             b1.UseVisualStyleBackColor = true;
-            b1.Click += btnX_Click;
+           
             // 
             // panel3
             // 
@@ -527,20 +480,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(268, 188);
             panel3.TabIndex = 1;
-            // 
-            // btnEnter2
-            // 
-            btnEnter2.BackgroundImage = (Image)resources.GetObject("btnEnter2.BackgroundImage");
-            btnEnter2.BackgroundImageLayout = ImageLayout.Zoom;
-            btnEnter2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEnter2.Location = new Point(157, 112);
-            btnEnter2.Margin = new Padding(1);
-            btnEnter2.Name = "btnEnter2";
-            btnEnter2.Size = new Size(46, 68);
-            btnEnter2.TabIndex = 11;
-            btnEnter2.UseVisualStyleBackColor = true;
-            btnEnter2.Visible = false;
-            btnEnter2.Click += btnEnter2_Click;
             // 
             // vGridControl1
             // 
@@ -590,6 +529,18 @@
             row4.Properties.Caption = "TOPLAM";
             row4.Properties.FieldName = "Toplam";
             // 
+            // btnUrunEkle
+            // 
+            btnUrunEkle.BackColor = Color.CornflowerBlue;
+            btnUrunEkle.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUrunEkle.Location = new Point(4, 569);
+            btnUrunEkle.Name = "btnUrunEkle";
+            btnUrunEkle.Size = new Size(94, 43);
+            btnUrunEkle.TabIndex = 9;
+            btnUrunEkle.Text = "Ürün Ekle";
+            btnUrunEkle.UseVisualStyleBackColor = false;
+            btnUrunEkle.Click += btnUrunEkle_Click;
+            // 
             // btnKolonya
             // 
             btnKolonya.BackColor = Color.LightSalmon;
@@ -633,9 +584,9 @@
             // 
             btnUrunSil.BackColor = Color.CornflowerBlue;
             btnUrunSil.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnUrunSil.Location = new Point(512, 570);
+            btnUrunSil.Location = new Point(473, 570);
             btnUrunSil.Name = "btnUrunSil";
-            btnUrunSil.Size = new Size(96, 43);
+            btnUrunSil.Size = new Size(86, 43);
             btnUrunSil.TabIndex = 5;
             btnUrunSil.Text = "Ürün Sil";
             btnUrunSil.UseVisualStyleBackColor = false;
@@ -644,9 +595,9 @@
             // 
             btnFisİptal.BackColor = Color.CornflowerBlue;
             btnFisİptal.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnFisİptal.Location = new Point(410, 570);
+            btnFisİptal.Location = new Point(385, 570);
             btnFisİptal.Name = "btnFisİptal";
-            btnFisİptal.Size = new Size(96, 43);
+            btnFisİptal.Size = new Size(82, 43);
             btnFisİptal.TabIndex = 2;
             btnFisİptal.Text = "Fiş İptal";
             btnFisİptal.UseVisualStyleBackColor = false;
@@ -655,9 +606,9 @@
             // 
             btnOdemeAl.BackColor = Color.CornflowerBlue;
             btnOdemeAl.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnOdemeAl.Location = new Point(308, 570);
+            btnOdemeAl.Location = new Point(287, 570);
             btnOdemeAl.Name = "btnOdemeAl";
-            btnOdemeAl.Size = new Size(96, 43);
+            btnOdemeAl.Size = new Size(92, 43);
             btnOdemeAl.TabIndex = 3;
             btnOdemeAl.Text = "Ödeme Al";
             btnOdemeAl.UseVisualStyleBackColor = false;
@@ -666,9 +617,9 @@
             // 
             btnIndirim.BackColor = Color.CornflowerBlue;
             btnIndirim.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnIndirim.Location = new Point(206, 570);
+            btnIndirim.Location = new Point(195, 569);
             btnIndirim.Name = "btnIndirim";
-            btnIndirim.Size = new Size(96, 43);
+            btnIndirim.Size = new Size(86, 43);
             btnIndirim.TabIndex = 1;
             btnIndirim.Text = "İndirim";
             btnIndirim.UseVisualStyleBackColor = false;
@@ -677,9 +628,9 @@
             // 
             btnFisYazdır.BackColor = Color.CornflowerBlue;
             btnFisYazdır.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnFisYazdır.Location = new Point(104, 570);
+            btnFisYazdır.Location = new Point(104, 569);
             btnFisYazdır.Name = "btnFisYazdır";
-            btnFisYazdır.Size = new Size(96, 43);
+            btnFisYazdır.Size = new Size(85, 42);
             btnFisYazdır.TabIndex = 4;
             btnFisYazdır.Text = "Fiş Yazdır";
             btnFisYazdır.UseVisualStyleBackColor = false;
@@ -865,7 +816,6 @@
             panel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)vGridControl1).EndInit();
             tableLayoutPanel3.ResumeLayout(false);
@@ -878,9 +828,7 @@
         private Label Barkod;
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel1;
-        private Label label1;
         private TextBox tBarkod;
-        private TextBox tMiktar;
         private DataGridView GridSatisListesi;
         private DataGridViewTextBoxColumn Barkd;
         private DataGridViewTextBoxColumn UrunAdi;
@@ -890,7 +838,6 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Button bart;
         private Panel panel2;
-        private Button bent;
         private Button b7;
         private Button b8;
         private Button b9;
@@ -904,7 +851,6 @@
         private Button b1;
         private Button beks;
         private Button button15;
-        private TextBox tNumarator;
         private DataGridViewTextBoxColumn Birimi;
         private Button Ara;
         private DevExpress.XtraGrid.GridControl gridControl1;
@@ -940,6 +886,6 @@
         private Button btnKolonya;
         private Button btncay;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private Button btnEnter2;
+        private Button btnUrunEkle;
     }
 }

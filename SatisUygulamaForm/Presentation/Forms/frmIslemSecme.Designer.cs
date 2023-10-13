@@ -32,7 +32,7 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            button4 = new Button();
+            btnUrunEkle = new Button();
             button5 = new Button();
             btnKullaniciDegistir = new Button();
             btnCikis = new Button();
@@ -89,17 +89,18 @@
             button3.Text = "Stok Takibi";
             button3.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnUrunEkle
             // 
-            button4.BackColor = Color.FromArgb(130, 168, 82);
-            button4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(196, 140);
-            button4.Name = "button4";
-            button4.Size = new Size(160, 88);
-            button4.TabIndex = 8;
-            button4.Text = "Ürün Ekle";
-            button4.UseVisualStyleBackColor = false;
+            btnUrunEkle.BackColor = Color.FromArgb(130, 168, 82);
+            btnUrunEkle.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUrunEkle.ForeColor = Color.White;
+            btnUrunEkle.Location = new Point(196, 140);
+            btnUrunEkle.Name = "btnUrunEkle";
+            btnUrunEkle.Size = new Size(160, 88);
+            btnUrunEkle.TabIndex = 8;
+            btnUrunEkle.Text = "Ürün Ekle";
+            btnUrunEkle.UseVisualStyleBackColor = false;
+            btnUrunEkle.Click += button4_Click;
             // 
             // button5
             // 
@@ -148,7 +149,7 @@
             Controls.Add(btnCikis);
             Controls.Add(btnKullaniciDegistir);
             Controls.Add(button5);
-            Controls.Add(button4);
+            Controls.Add(btnUrunEkle);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -167,7 +168,7 @@
         private Button button1;
         private Button button2;
         private Button button3;
-        private Button button4;
+        private Button btnUrunEkle;
         private Button button5;
         private Button btnCikis;
     }
