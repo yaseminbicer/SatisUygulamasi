@@ -1,4 +1,6 @@
 ﻿using DevExpress.XtraEditors;
+using SatisUygulamaForm.Domain.Entity;
+using SatisUygulamaForm.Persistence;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -109,9 +111,9 @@ namespace SatisUygulamaForm
 
         private void Ara_Click(object sender, EventArgs e)
         {
-
             string girilenBarkod = tBarkod.Text;
-            Urun arananUrun = UrunList.urunListesi.Find(urun => urun.Barkod == girilenBarkod);
+            AppDbContext db = new AppDbContext();
+            Urun arananUrun = db.Urun.FirstOrDefault(urun => urun.Barkod == girilenBarkod);
 
             if (arananUrun != null)
             {
@@ -119,16 +121,16 @@ namespace SatisUygulamaForm
                 {
                     Barkod = arananUrun.Barkod,
                     BrFiyat = arananUrun.BrFiyat,
-                    Miktar = Convert.ToDecimal(tMiktar.Text),
-                    UrunAdi = arananUrun.ÜrünAdı,
+                    Miktar = Convert.ToDecimal(tBarkod.Text),
+                    UrunAdi = arananUrun.ÜrünAdi,
                     StokKodu = arananUrun.Barkod,
                     Birimi = arananUrun.Birimi
                 });
                 gridControl1.DataSource = fis.FisSatirlari;
                 gridControl1.Refresh();
                 gridControl1.RefreshDataSource();
-                bent.Show();
-                btnEnter2.Hide();
+                
+                
                 //GridSatisListesi.Rows.Clear(); // DataGridView'i temizle
                 //GridSatisListesi.Rows.Add(arananUrun.Barkod, arananUrun.ÜrünAdı, arananUrun.BrFiyat, arananUrun.Miktar, arananUrun.Birimi, arananUrun.GenelToplam);
             }
@@ -143,7 +145,7 @@ namespace SatisUygulamaForm
         {
 
         }
-        private void btnX_Click(object sender, EventArgs e)
+        /*private void btnX_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
             if (b.Text == ",")
@@ -170,7 +172,7 @@ namespace SatisUygulamaForm
             }
 
 
-        }
+        }*/
 
         private void btnSalatalik_Click(object sender, EventArgs e)
         {
@@ -197,34 +199,13 @@ namespace SatisUygulamaForm
             tBarkod.Text = "1";
         }
 
-        private void bent_Click(object sender, EventArgs e)
-        {
-            if (tNumarator.Text != "")
-            {
-                tMiktar.Text = tNumarator.Text;
-                tNumarator.Clear();
-                tBarkod.Clear();
-                tBarkod.Focus();
-                bent.Hide();
-                btnEnter2.Show();
-
-            }
-        }
+       
         private void enterDongusu(object sender, EventArgs e)
         {
 
         }
 
-        private void btnbarkod(object sender, EventArgs e)
-        {
-            if (tNumarator.Text != "")
-            {
-                tBarkod.Text = tNumarator.Text;
-                tNumarator.Clear();
-
-
-            }
-        }
+       
 
         private void btnDomates_Click(object sender, EventArgs e)
         {
@@ -266,22 +247,15 @@ namespace SatisUygulamaForm
             tBarkod.Text = "22";
         }
 
-        private void btnEnter2_Click(object sender, EventArgs e)
-        {
-            if (tNumarator.Text != "")
-            {
-                tBarkod.Text = tNumarator.Text;
-                tNumarator.Clear();
-
-
-            }
-        }
+       
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
             frmUrunEkle frmUrunEkle = new frmUrunEkle();
             frmUrunEkle.Show();
         }
+
+        
     }
 
 
