@@ -165,13 +165,14 @@
             btnGirisYap.Size = new Size(89, 32);
             btnGirisYap.TabIndex = 16;
             btnGirisYap.Text = "Giriş Yap";
+            btnGirisYap.Click += btnGirisYap_Click_1;
             btnGirisYap.Enter += btnGirisYap_Click;
             // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(549, 283);
+            ClientSize = new Size(549, 281);
             Controls.Add(btnGirisYap);
             Controls.Add(labelControl3);
             Controls.Add(labelControl2);

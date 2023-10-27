@@ -243,7 +243,7 @@
             Ara.TabIndex = 3;
             Ara.Text = "Ara";
             Ara.UseVisualStyleBackColor = true;
-            Ara.Click += Ara_Click;
+            Ara.Click += Ara_Click_1;
             // 
             // tBarkod
             // 
@@ -316,7 +316,6 @@
             button15.TabIndex = 15;
             button15.Text = "x";
             button15.UseVisualStyleBackColor = true;
-           
             // 
             // beks
             // 
@@ -350,7 +349,6 @@
             b7.TabIndex = 9;
             b7.Text = "7";
             b7.UseVisualStyleBackColor = true;
-           
             // 
             // b8
             // 
@@ -362,7 +360,6 @@
             b8.TabIndex = 8;
             b8.Text = "8";
             b8.UseVisualStyleBackColor = true;
-           
             // 
             // b9
             // 
@@ -374,7 +371,6 @@
             b9.TabIndex = 7;
             b9.Text = "9";
             b9.UseVisualStyleBackColor = true;
-          
             // 
             // b4
             // 
@@ -386,7 +382,6 @@
             b4.TabIndex = 6;
             b4.Text = "4";
             b4.UseVisualStyleBackColor = true;
-            
             // 
             // b5
             // 
@@ -398,7 +393,6 @@
             b5.TabIndex = 5;
             b5.Text = "5";
             b5.UseVisualStyleBackColor = true;
-            
             // 
             // b6
             // 
@@ -410,7 +404,6 @@
             b6.TabIndex = 4;
             b6.Text = "6";
             b6.UseVisualStyleBackColor = true;
-            
             // 
             // bv
             // 
@@ -422,7 +415,6 @@
             bv.TabIndex = 3;
             bv.Text = ",";
             bv.UseVisualStyleBackColor = true;
-            
             // 
             // b3
             // 
@@ -434,7 +426,6 @@
             b3.TabIndex = 3;
             b3.Text = "3";
             b3.UseVisualStyleBackColor = true;
-          
             // 
             // button3
             // 
@@ -446,7 +437,6 @@
             button3.TabIndex = 2;
             button3.Text = "0";
             button3.UseVisualStyleBackColor = true;
-          
             // 
             // b2
             // 
@@ -458,7 +448,6 @@
             b2.TabIndex = 1;
             b2.Text = "2";
             b2.UseVisualStyleBackColor = true;
-           
             // 
             // b1
             // 
@@ -470,7 +459,6 @@
             b1.TabIndex = 0;
             b1.Text = "1";
             b1.UseVisualStyleBackColor = true;
-           
             // 
             // panel3
             // 
@@ -533,7 +521,7 @@
             // 
             btnUrunEkle.BackColor = Color.CornflowerBlue;
             btnUrunEkle.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnUrunEkle.Location = new Point(4, 569);
+            btnUrunEkle.Location = new Point(2, 567);
             btnUrunEkle.Name = "btnUrunEkle";
             btnUrunEkle.Size = new Size(94, 43);
             btnUrunEkle.TabIndex = 9;
@@ -584,18 +572,19 @@
             // 
             btnUrunSil.BackColor = Color.CornflowerBlue;
             btnUrunSil.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnUrunSil.Location = new Point(473, 570);
+            btnUrunSil.Location = new Point(460, 567);
             btnUrunSil.Name = "btnUrunSil";
             btnUrunSil.Size = new Size(86, 43);
             btnUrunSil.TabIndex = 5;
             btnUrunSil.Text = "Ürün Sil";
             btnUrunSil.UseVisualStyleBackColor = false;
+            btnUrunSil.Click += btnUrunSil_Click;
             // 
             // btnFisİptal
             // 
             btnFisİptal.BackColor = Color.CornflowerBlue;
             btnFisİptal.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnFisİptal.Location = new Point(385, 570);
+            btnFisİptal.Location = new Point(375, 567);
             btnFisİptal.Name = "btnFisİptal";
             btnFisİptal.Size = new Size(82, 43);
             btnFisİptal.TabIndex = 2;
@@ -606,7 +595,7 @@
             // 
             btnOdemeAl.BackColor = Color.CornflowerBlue;
             btnOdemeAl.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnOdemeAl.Location = new Point(287, 570);
+            btnOdemeAl.Location = new Point(280, 567);
             btnOdemeAl.Name = "btnOdemeAl";
             btnOdemeAl.Size = new Size(92, 43);
             btnOdemeAl.TabIndex = 3;
@@ -617,7 +606,7 @@
             // 
             btnIndirim.BackColor = Color.CornflowerBlue;
             btnIndirim.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnIndirim.Location = new Point(195, 569);
+            btnIndirim.Location = new Point(188, 567);
             btnIndirim.Name = "btnIndirim";
             btnIndirim.Size = new Size(86, 43);
             btnIndirim.TabIndex = 1;
@@ -628,7 +617,7 @@
             // 
             btnFisYazdır.BackColor = Color.CornflowerBlue;
             btnFisYazdır.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnFisYazdır.Location = new Point(104, 569);
+            btnFisYazdır.Location = new Point(102, 568);
             btnFisYazdır.Name = "btnFisYazdır";
             btnFisYazdır.Size = new Size(85, 42);
             btnFisYazdır.TabIndex = 4;
@@ -887,5 +876,7 @@
         private Button btncay;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private Button btnUrunEkle;
+        private DevExpress.XtraEditors.SimpleButton btnHome;
+
     }
 }

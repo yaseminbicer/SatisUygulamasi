@@ -109,10 +109,20 @@ namespace SatisUygulamaForm
 
         }
 
+
         private void Ara_Click(object sender, EventArgs e)
         {
+            #region Veri Nasıl Eklenir?
+            #endregion
+            AppDbContext db = new();
+            //Urun urun = new()
+            //{
+            //    UrunAdi = "A Ürünü",
+            //    Fiyat = 1000
+            //};
             string girilenBarkod = tBarkod.Text;
-            AppDbContext db = new AppDbContext();
+
+
             Urun arananUrun = db.Urun.FirstOrDefault(urun => urun.Barkod == girilenBarkod);
 
             if (arananUrun != null)
@@ -129,8 +139,8 @@ namespace SatisUygulamaForm
                 gridControl1.DataSource = fis.FisSatirlari;
                 gridControl1.Refresh();
                 gridControl1.RefreshDataSource();
-                
-                
+
+
                 //GridSatisListesi.Rows.Clear(); // DataGridView'i temizle
                 //GridSatisListesi.Rows.Add(arananUrun.Barkod, arananUrun.ÜrünAdı, arananUrun.BrFiyat, arananUrun.Miktar, arananUrun.Birimi, arananUrun.GenelToplam);
             }
@@ -140,6 +150,7 @@ namespace SatisUygulamaForm
             }
 
         }
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -199,13 +210,13 @@ namespace SatisUygulamaForm
             tBarkod.Text = "1";
         }
 
-       
+
         private void enterDongusu(object sender, EventArgs e)
         {
 
         }
 
-       
+
 
         private void btnDomates_Click(object sender, EventArgs e)
         {
@@ -247,7 +258,7 @@ namespace SatisUygulamaForm
             tBarkod.Text = "22";
         }
 
-       
+
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
@@ -255,9 +266,28 @@ namespace SatisUygulamaForm
             frmUrunEkle.Show();
         }
 
-        
+
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var frmIslemSecme = Application.OpenForms[1];
+            if (frmIslemSecme != null && frmIslemSecme is frmIslemSecme)
+            {
+                ((frmIslemSecme)frmIslemSecme).Show();
+            }
+        }
+
+        private void btnUrunSil_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Ara_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
-}
-
+};

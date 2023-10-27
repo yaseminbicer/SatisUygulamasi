@@ -38,14 +38,14 @@ namespace SatisUygulamaForm
             RegistryKey RegKey = BaseFolderPath;
             RegistryKey SubKey = RegKey.OpenSubKey(SubFolderPath);
 
-            return SubKey==null ? "" : SubKey.GetValue(key).ToString();
+            return SubKey == null ? "" : SubKey.GetValue(key).ToString();
 
         }
 
-       private void frmLogin_Load(object sender, EventArgs e)
+        private void frmLogin_Load(object sender, EventArgs e)
         {
-            
-            
+
+
             txtKullaniciAdi.Text = Registry_oku(KullaniciAdi);
             txtSifre.Text = Registry_oku(Sifre);
 
@@ -100,7 +100,10 @@ namespace SatisUygulamaForm
              */
         }
 
+        private void btnGirisYap_Click_1(object sender, EventArgs e)
+        {
 
+        }
     }
 }
 

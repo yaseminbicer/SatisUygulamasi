@@ -43,11 +43,18 @@ namespace SatisUygulamaForm
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+      
+
+        private void frmIslemSecme_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUrunEkle_Click(object sender, EventArgs e)
         {
             this.Hide();
             frmUrunEkle urunEkle = new frmUrunEkle();
-            urunEkle.Show();    
+            urunEkle.Show();
         }
     }
 }

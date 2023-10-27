@@ -53,6 +53,8 @@
             label8 = new Label();
             label9 = new Label();
             panel2 = new Panel();
+            gridUrunEkle = new DevExpress.XtraGrid.GridControl();
+            gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtKdvOrani.Properties).BeginInit();
@@ -64,6 +66,9 @@
             ((System.ComponentModel.ISupportInitialize)txtUrunAciklama.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cmbxBrimi.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cmbxUrunGrubu.Properties).BeginInit();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gridUrunEkle).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -137,7 +142,6 @@
             btnIptal.Size = new Size(98, 58);
             btnIptal.TabIndex = 42;
             btnIptal.Text = "İptal";
-            btnIptal.Click += btnIptal_Click;
             // 
             // btnBarkodOlustur
             // 
@@ -150,7 +154,6 @@
             btnBarkodOlustur.Size = new Size(101, 58);
             btnBarkodOlustur.TabIndex = 41;
             btnBarkodOlustur.Text = "Barkod \r\nOluştur";
-            btnBarkodOlustur.Click += btnBarkodOlustur_Click;
             // 
             // btnUrunGrubuEkle
             // 
@@ -163,67 +166,65 @@
             btnUrunGrubuEkle.Size = new Size(99, 58);
             btnUrunGrubuEkle.TabIndex = 40;
             btnUrunGrubuEkle.Text = "Ürün Grubu\r\nEkle";
-            btnUrunGrubuEkle.Click += btnUrunGrubuEkle_Click;
             // 
             // txtKdvOrani
             // 
-            txtKdvOrani.Location = new Point(603, 135);
+            txtKdvOrani.Location = new Point(599, 133);
             txtKdvOrani.Name = "txtKdvOrani";
-            txtKdvOrani.Size = new Size(98, 28);
+            txtKdvOrani.Size = new Size(98, 20);
             txtKdvOrani.TabIndex = 39;
             // 
             // txtAlisFiyati
             // 
             txtAlisFiyati.EditValue = "0";
-            txtAlisFiyati.Location = new Point(499, 36);
+            txtAlisFiyati.Location = new Point(495, 34);
             txtAlisFiyati.Name = "txtAlisFiyati";
-            txtAlisFiyati.Size = new Size(98, 28);
+            txtAlisFiyati.Size = new Size(98, 20);
             txtAlisFiyati.TabIndex = 38;
             // 
             // txtSatisFiyati
             // 
             txtSatisFiyati.EditValue = "0";
-            txtSatisFiyati.Location = new Point(499, 72);
+            txtSatisFiyati.Location = new Point(495, 68);
             txtSatisFiyati.Name = "txtSatisFiyati";
-            txtSatisFiyati.Size = new Size(98, 28);
+            txtSatisFiyati.Size = new Size(98, 20);
             txtSatisFiyati.TabIndex = 37;
             // 
             // txtMiktar
             // 
             txtMiktar.EditValue = "0";
-            txtMiktar.Location = new Point(499, 103);
+            txtMiktar.Location = new Point(495, 101);
             txtMiktar.Name = "txtMiktar";
-            txtMiktar.Size = new Size(98, 28);
+            txtMiktar.Size = new Size(98, 20);
             txtMiktar.TabIndex = 36;
             // 
             // txtBarkod
             // 
             txtBarkod.Location = new Point(150, 38);
             txtBarkod.Name = "txtBarkod";
-            txtBarkod.Size = new Size(206, 28);
+            txtBarkod.Size = new Size(206, 20);
             txtBarkod.TabIndex = 34;
-            txtBarkod.EditValueChanged += txtBarkod_EditValueChanged;
             // 
             // txtUrunAdi
             // 
             txtUrunAdi.Location = new Point(150, 72);
             txtUrunAdi.Name = "txtUrunAdi";
-            txtUrunAdi.Size = new Size(206, 28);
+            txtUrunAdi.Size = new Size(206, 20);
             txtUrunAdi.TabIndex = 33;
             // 
             // txtUrunAciklama
             // 
             txtUrunAciklama.Location = new Point(150, 103);
             txtUrunAciklama.Name = "txtUrunAciklama";
-            txtUrunAciklama.Size = new Size(206, 28);
+            txtUrunAciklama.Size = new Size(206, 20);
             txtUrunAciklama.TabIndex = 0;
             // 
             // cmbxBrimi
             // 
-            cmbxBrimi.Location = new Point(499, 135);
+            cmbxBrimi.Location = new Point(495, 133);
             cmbxBrimi.Name = "cmbxBrimi";
             cmbxBrimi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cmbxBrimi.Size = new Size(98, 28);
+            cmbxBrimi.Size = new Size(98, 20);
             cmbxBrimi.TabIndex = 32;
             // 
             // cmbxUrunGrubu
@@ -231,106 +232,123 @@
             cmbxUrunGrubu.Location = new Point(150, 135);
             cmbxUrunGrubu.Name = "cmbxUrunGrubu";
             cmbxUrunGrubu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            cmbxUrunGrubu.Size = new Size(206, 28);
+            cmbxUrunGrubu.Size = new Size(206, 20);
             cmbxUrunGrubu.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(603, 104);
+            label1.Location = new Point(599, 102);
             label1.Name = "label1";
-            label1.Size = new Size(84, 21);
+            label1.Size = new Size(88, 21);
             label1.TabIndex = 30;
-            label1.Text = "KDV Oranı";
+            label1.Text = "KDV Oranı:";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(441, 136);
+            label2.Location = new Point(437, 132);
             label2.Name = "label2";
-            label2.Size = new Size(52, 21);
+            label2.Size = new Size(56, 21);
             label2.TabIndex = 26;
-            label2.Text = "Birimi";
+            label2.Text = "Birimi:";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(436, 104);
+            label3.Location = new Point(435, 104);
             label3.Name = "label3";
-            label3.Size = new Size(57, 21);
+            label3.Size = new Size(62, 21);
             label3.TabIndex = 25;
-            label3.Text = "Miktar";
+            label3.Text = "Miktar:";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(407, 73);
+            label4.Location = new Point(407, 67);
             label4.Name = "label4";
-            label4.Size = new Size(86, 21);
+            label4.Size = new Size(90, 21);
             label4.TabIndex = 24;
-            label4.Text = "Satış Fiyatı";
+            label4.Text = "Satış Fiyatı:";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(415, 39);
+            label5.Location = new Point(411, 33);
             label5.Name = "label5";
-            label5.Size = new Size(78, 21);
+            label5.Size = new Size(82, 21);
             label5.TabIndex = 23;
-            label5.Text = "Alış Fiyatı";
+            label5.Text = "Alış Fiyatı:";
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(50, 142);
+            label6.Location = new Point(50, 136);
             label6.Name = "label6";
-            label6.Size = new Size(94, 21);
+            label6.Size = new Size(98, 21);
             label6.TabIndex = 19;
-            label6.Text = "Ürün Grubu";
+            label6.Text = "Ürün Grubu:";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(30, 110);
+            label7.Location = new Point(30, 104);
             label7.Name = "label7";
-            label7.Size = new Size(114, 21);
+            label7.Size = new Size(118, 21);
             label7.TabIndex = 18;
-            label7.Text = "Ürün Açıklama";
+            label7.Text = "Ürün Açıklama:";
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(70, 79);
+            label8.Location = new Point(70, 71);
             label8.Name = "label8";
-            label8.Size = new Size(74, 21);
+            label8.Size = new Size(78, 21);
             label8.TabIndex = 17;
-            label8.Text = "Ürün Adı";
+            label8.Text = "Ürün Adı:";
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(82, 45);
+            label9.Location = new Point(82, 37);
             label9.Name = "label9";
-            label9.Size = new Size(62, 21);
+            label9.Size = new Size(66, 21);
             label9.TabIndex = 16;
-            label9.Text = "Barkod";
+            label9.Text = "Barkod:";
             // 
             // panel2
             // 
+            panel2.Controls.Add(gridUrunEkle);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(3, 251);
             panel2.Name = "panel2";
             panel2.Size = new Size(815, 242);
             panel2.TabIndex = 1;
+            // 
+            // gridUrunEkle
+            // 
+            gridUrunEkle.Dock = DockStyle.Fill;
+            gridUrunEkle.Location = new Point(0, 0);
+            gridUrunEkle.MainView = gridView1;
+            gridUrunEkle.Name = "gridUrunEkle";
+            gridUrunEkle.Size = new Size(815, 242);
+            gridUrunEkle.TabIndex = 0;
+            gridUrunEkle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView1 });
+            // 
+            // gridView1
+            // 
+            gridView1.GridControl = gridUrunEkle;
+            gridView1.Name = "gridView1";
+            gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // frmUrunEkle
             // 
@@ -354,6 +372,9 @@
             ((System.ComponentModel.ISupportInitialize)txtUrunAciklama.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)cmbxBrimi.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)cmbxUrunGrubu.Properties).EndInit();
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gridUrunEkle).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -383,5 +404,7 @@
         private DevExpress.XtraEditors.TextEdit txtUrunAciklama;
         private DevExpress.XtraEditors.SimpleButton btnKaydet;
         private DevExpress.XtraEditors.SimpleButton btnIptal;
+        private DevExpress.XtraGrid.GridControl gridUrunEkle;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

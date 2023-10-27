@@ -1,5 +1,7 @@
 namespace SatisUygulamaForm
 {
+
+   
     internal static class Program
     {
         /// <summary>
