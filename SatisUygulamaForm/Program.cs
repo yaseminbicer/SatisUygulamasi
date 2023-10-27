@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using SatisUygulamaForm.Persistence;
+
 namespace SatisUygulamaForm
 {
 
@@ -13,6 +16,8 @@ namespace SatisUygulamaForm
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            var dbContext = new AppDbContext();
+            dbContext.Database.Migrate();
             Application.Run(new frmLogin());
         }
     }

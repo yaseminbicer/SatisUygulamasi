@@ -8,7 +8,11 @@ using System.Threading.Tasks;
 
 namespace SatisUygulamaForm.Domain.Entity
 {
-    internal class Kullanici
+    public class Kullanici : BaseEntity
     {
+        public string KullaniciAdi { get; set; }
+        public string Sifre { get; set; }
+        public string AdSoyad { get; set; }
+        public bool Yonetici { get; set; }
     }
 }

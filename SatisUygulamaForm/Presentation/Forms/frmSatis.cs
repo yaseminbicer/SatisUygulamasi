@@ -123,19 +123,19 @@ namespace SatisUygulamaForm
             string girilenBarkod = tBarkod.Text;
 
 
-            Urun arananUrun = db.Urun.FirstOrDefault(urun => urun.Barkod == girilenBarkod);
+            Stok arananUrun = db.Stok.FirstOrDefault(urun => urun.Barkod == girilenBarkod);
 
             if (arananUrun != null)
             {
-                fis.FisSatirlari.Add(new FisSatir
-                {
-                    Barkod = arananUrun.Barkod,
-                    BrFiyat = arananUrun.BrFiyat,
-                    Miktar = Convert.ToDecimal(tBarkod.Text),
-                    UrunAdi = arananUrun.ÜrünAdi,
-                    StokKodu = arananUrun.Barkod,
-                    Birimi = arananUrun.Birimi
-                });
+                //fis.FisSatirlari.Add(new FisSatir
+                //{
+                //    Barkod = arananUrun.Barkod,
+                //    BrFiyat = arananUrun.BrFiyat,
+                //    Miktar = Convert.ToDecimal(tBarkod.Text),
+                //    UrunAdi = arananUrun.ÜrünAdi,
+                //    StokKodu = arananUrun.Barkod,
+                //    Birimi = arananUrun.Birimi
+                //});
                 gridControl1.DataSource = fis.FisSatirlari;
                 gridControl1.Refresh();
                 gridControl1.RefreshDataSource();

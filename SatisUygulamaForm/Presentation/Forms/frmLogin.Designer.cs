@@ -32,7 +32,6 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             label3 = new Label();
-            label5 = new Label();
             txtKullaniciAdi = new DevExpress.XtraEditors.TextEdit();
             txtSifre = new DevExpress.XtraEditors.TextEdit();
             chkbtnBeniHatirla = new DevExpress.XtraEditors.CheckButton();
@@ -78,19 +77,6 @@
             label3.TabIndex = 3;
             label3.Text = "Hızlı Satış Sistemi";
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = SystemColors.AppWorkspace;
-            label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = Color.Brown;
-            label5.Location = new Point(195, 256);
-            label5.Name = "label5";
-            label5.Size = new Size(205, 20);
-            label5.TabIndex = 9;
-            label5.Text = "Kullanıcı Adı veya Şifre hatalı!";
-            label5.Visible = false;
-            // 
             // txtKullaniciAdi
             // 
             txtKullaniciAdi.Location = new Point(235, 116);
@@ -134,7 +120,6 @@
             labelControl2.Size = new Size(93, 21);
             labelControl2.TabIndex = 14;
             labelControl2.Text = "Kullanıcı Adı:";
-            labelControl2.Click += labelControl2_Click;
             // 
             // labelControl3
             // 
@@ -165,11 +150,11 @@
             btnGirisYap.Size = new Size(89, 32);
             btnGirisYap.TabIndex = 16;
             btnGirisYap.Text = "Giriş Yap";
-            btnGirisYap.Click += btnGirisYap_Click_1;
-            btnGirisYap.Enter += btnGirisYap_Click;
+            btnGirisYap.Click += btnGirisYap_Click;
             // 
             // frmLogin
             // 
+            AcceptButton = btnGirisYap;
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(549, 281);
@@ -180,7 +165,6 @@
             Controls.Add(chkbtnBeniHatirla);
             Controls.Add(txtSifre);
             Controls.Add(txtKullaniciAdi);
-            Controls.Add(label5);
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
@@ -202,7 +186,6 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Label label3;
-        private Label label5;
         private DevExpress.XtraEditors.TextEdit txtKullaniciAdi;
         private DevExpress.XtraEditors.TextEdit txtSifre;
         private DevExpress.XtraEditors.CheckButton chkbtnBeniHatirla;

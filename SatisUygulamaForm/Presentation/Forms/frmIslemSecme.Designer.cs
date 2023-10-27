@@ -37,6 +37,7 @@
             button9 = new Button();
             button10 = new Button();
             button11 = new Button();
+            btnKullanicilar = new DevExpress.XtraEditors.SimpleButton();
             SuspendLayout();
             // 
             // label1
@@ -151,12 +152,26 @@
             button11.TextImageRelation = TextImageRelation.ImageBeforeText;
             button11.UseVisualStyleBackColor = false;
             // 
+            // btnKullanicilar
+            // 
+            btnKullanicilar.Appearance.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnKullanicilar.Appearance.Options.UseFont = true;
+            btnKullanicilar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            btnKullanicilar.ImageOptions.SvgImage = Properties.Resources.allowuserstoeditranges;
+            btnKullanicilar.Location = new Point(53, 246);
+            btnKullanicilar.Name = "btnKullanicilar";
+            btnKullanicilar.Size = new Size(159, 74);
+            btnKullanicilar.TabIndex = 19;
+            btnKullanicilar.Text = "Kullanıcılar";
+            btnKullanicilar.Click += btnKullanicilar_Click;
+            // 
             // frmIslemSecme
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(595, 288);
+            ClientSize = new Size(595, 357);
+            Controls.Add(btnKullanicilar);
             Controls.Add(button4);
             Controls.Add(button6);
             Controls.Add(button7);
@@ -169,6 +184,7 @@
             Name = "frmIslemSecme";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "İşlemler";
+            FormClosed += frmIslemSecme_FormClosed;
             Load += frmIslemSecme_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -183,5 +199,6 @@
         private Button button9;
         private Button button10;
         private Button button11;
+        private DevExpress.XtraEditors.SimpleButton btnKullanicilar;
     }
 }

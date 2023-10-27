@@ -11,12 +11,15 @@ namespace SatisUygulamaForm
 {
     public class FisSatir:BaseEntity
     {
-        public string StokKodu { get; set; }
-        public string UrunAdi { get; set; }
-        public string Barkod { get; set; }
-        public string Birimi { get; set; }
+        [ForeignKey(nameof(Fis))]
+        public int FisId { get; set; }
+        [ForeignKey(nameof(Stok))]
+        public int StokId { get; set; }
         public decimal Miktar { get; set; }
-        public decimal BrFiyat { get; set; }
-        public decimal Tutar => Miktar * BrFiyat;
+        public decimal BirimFiyat { get; set; }
+        public decimal Iskonto { get; set; }
+        public decimal Tutar => Miktar * BirimFiyat;
+        public virtual Fis Fis { get; set; }
+        public virtual Stok Stok { get; set; }
     }
 }

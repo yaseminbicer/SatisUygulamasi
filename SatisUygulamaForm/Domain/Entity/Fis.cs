@@ -14,12 +14,15 @@ namespace SatisUygulamaForm
 
         public Fis()
         {
-            FisSatirlari = new List<FisSatir>();
+            FisSatirlari = new HashSet<FisSatir>();
         }
+
         public DateTime Tarih { get; set; }
         public string MusteriAdi { get; set; }
         public string FisNo { get; set; }
-
-        public List<FisSatir> FisSatirlari { get; set; }
+        [ForeignKey(nameof(Musteri))]
+        public int MusteriId { get; set; }
+        public Musteri Musteri { get; set; }
+        public ICollection<FisSatir> FisSatirlari { get; set; }
     }
 }

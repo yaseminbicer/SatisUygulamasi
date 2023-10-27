@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SatisUygulamaForm.Presentation.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,7 +44,7 @@ namespace SatisUygulamaForm
             }
         }
 
-      
+
 
         private void frmIslemSecme_Load(object sender, EventArgs e)
         {
@@ -55,6 +56,16 @@ namespace SatisUygulamaForm
             this.Hide();
             frmUrunEkle urunEkle = new frmUrunEkle();
             urunEkle.Show();
+        }
+
+        private void frmIslemSecme_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnKullanicilar_Click(object sender, EventArgs e)
+        {
+            new frmKullanicilar().ShowDialog();
         }
     }
 }

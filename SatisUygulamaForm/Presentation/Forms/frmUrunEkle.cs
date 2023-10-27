@@ -37,20 +37,14 @@ namespace SatisUygulamaForm
         public void btnKaydet_Click(object sender, EventArgs e)
         {
             AppDbContext db = new();
-            Urun yeniUrun = new()
+            Stok yeniUrun = new()
             {
-                ÜrünAdi = txtUrunAdi.Text,
+                Ad = txtUrunAdi.Text,
                 Barkod = txtBarkod.Text,
-                UrunAciklama = txtUrunAciklama.Text,
-                UrunGrubu = cmbxUrunGrubu.Text,
+                Aciklama = txtUrunAciklama.Text,
                 AlisFiyati = System.Convert.ToDouble(txtAlisFiyati.Text),
                 SatisFiyati = System.Convert.ToDouble(txtSatisFiyati.Text),
-                KdvOrani = System.Convert.ToInt32(txtKdvOrani.Text),
-                Miktar = System.Convert.ToDecimal(txtMiktar.Text),
-                Birimi = cmbxBrimi.Text,
-                Tarih = DateTime.Now,
-
-                
+                KdvOrani = System.Convert.ToInt32(txtKdvOrani.Text),                
              };
             
           
