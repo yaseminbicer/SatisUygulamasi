@@ -12,14 +12,13 @@ namespace SatisUygulamaForm
 
     {
         public string Barkod { get; set; }
-        public string Kod { get; set; }
         public string Ad { get; set; }
-        public decimal BirimFiyat { get; set; }
         public string Birim { get; set; }
         public string Aciklama { get; set; }
-        public double AlisFiyati { get; set; }
-        public double SatisFiyati { get; set; }
+        public decimal AlisFiyati { get; set; }
+        public decimal SatisFiyati { get; set; }
         public int KdvOrani { get; set; }
+        public string UrunGrubu { get; set; }
 
     }
 

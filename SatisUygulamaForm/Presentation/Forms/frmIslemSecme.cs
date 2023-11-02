@@ -27,10 +27,6 @@ namespace SatisUygulamaForm
             Satisİslemi.Show();
         }
 
-        private void btnCikis_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void btnKullaniciDegistir_Click(object sender, EventArgs e)
         {
@@ -66,6 +62,28 @@ namespace SatisUygulamaForm
         private void btnKullanicilar_Click(object sender, EventArgs e)
         {
             new frmKullanicilar().ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new frmLogin().Show();
+        }
+
+        private void btnCikis_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnKullaniciDegistir_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            //frmLogin frmLogin = new frmLogin();
+            //frmLogin.Show();
+            var loginForm = Application.OpenForms[0];
+            if (loginForm != null && loginForm is frmLogin)
+            {
+                ((frmLogin)loginForm).Show();
+            }
         }
     }
 }

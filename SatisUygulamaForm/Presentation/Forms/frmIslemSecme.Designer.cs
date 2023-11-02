@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIslemSecme));
             label1 = new Label();
-            button4 = new Button();
-            button6 = new Button();
+            btnCikis = new Button();
+            btnKullaniciDegistir = new Button();
             button7 = new Button();
             btnUrunEkle = new Button();
             button9 = new Button();
@@ -51,33 +51,35 @@
             label1.TabIndex = 5;
             label1.Text = "Cosmos Sales";
             // 
-            // button4
+            // btnCikis
             // 
-            button4.BackColor = Color.FromArgb(250, 74, 59);
-            button4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = Color.White;
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.Location = new Point(473, 152);
-            button4.Name = "button4";
-            button4.Size = new Size(72, 88);
-            button4.TabIndex = 18;
-            button4.Text = "Çıkış";
-            button4.TextImageRelation = TextImageRelation.ImageAboveText;
-            button4.UseVisualStyleBackColor = false;
+            btnCikis.BackColor = Color.FromArgb(250, 74, 59);
+            btnCikis.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCikis.ForeColor = Color.White;
+            btnCikis.Image = (Image)resources.GetObject("btnCikis.Image");
+            btnCikis.Location = new Point(473, 152);
+            btnCikis.Name = "btnCikis";
+            btnCikis.Size = new Size(72, 88);
+            btnCikis.TabIndex = 18;
+            btnCikis.Text = "Çıkış";
+            btnCikis.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnCikis.UseVisualStyleBackColor = false;
+            btnCikis.Click += btnCikis_Click_1;
             // 
-            // button6
+            // btnKullaniciDegistir
             // 
-            button6.BackColor = Color.FromArgb(225, 185, 95);
-            button6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.ForeColor = Color.White;
-            button6.Image = (Image)resources.GetObject("button6.Image");
-            button6.Location = new Point(385, 152);
-            button6.Name = "button6";
-            button6.Size = new Size(82, 88);
-            button6.TabIndex = 17;
-            button6.Text = "Kullanıcı Değiştir";
-            button6.TextImageRelation = TextImageRelation.ImageAboveText;
-            button6.UseVisualStyleBackColor = false;
+            btnKullaniciDegistir.BackColor = Color.FromArgb(225, 185, 95);
+            btnKullaniciDegistir.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnKullaniciDegistir.ForeColor = Color.White;
+            btnKullaniciDegistir.Image = (Image)resources.GetObject("btnKullaniciDegistir.Image");
+            btnKullaniciDegistir.Location = new Point(385, 152);
+            btnKullaniciDegistir.Name = "btnKullaniciDegistir";
+            btnKullaniciDegistir.Size = new Size(82, 88);
+            btnKullaniciDegistir.TabIndex = 17;
+            btnKullaniciDegistir.Text = "Kullanıcı Değiştir";
+            btnKullaniciDegistir.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnKullaniciDegistir.UseVisualStyleBackColor = false;
+            btnKullaniciDegistir.Click += btnKullaniciDegistir_Click_1;
             // 
             // button7
             // 
@@ -172,8 +174,8 @@
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(595, 357);
             Controls.Add(btnKullanicilar);
-            Controls.Add(button4);
-            Controls.Add(button6);
+            Controls.Add(btnCikis);
+            Controls.Add(btnKullaniciDegistir);
             Controls.Add(button7);
             Controls.Add(btnUrunEkle);
             Controls.Add(button9);
@@ -192,8 +194,8 @@
 
         #endregion
         private Label label1;
-        private Button button4;
-        private Button button6;
+        private Button btnCikis;
+        private Button btnKullaniciDegistir;
         private Button button7;
         private Button btnUrunEkle;
         private Button button9;
