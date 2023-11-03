@@ -37,7 +37,7 @@ namespace SatisUygulamaForm.Presentation.Forms
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            foreach (var kullanici in Kullanicilar.Where(s=>s.Id==0))
+            foreach (var kullanici in Kullanicilar.Where(s => s.Id == 0))
             {
                 dbContext.Add(kullanici);
             }
@@ -49,6 +49,11 @@ namespace SatisUygulamaForm.Presentation.Forms
             var kullanici = (Kullanici)viewKullanici.GetFocusedRow();
             dbContext.Remove(kullanici);
             viewKullanici.DeleteRow(viewKullanici.FocusedRowHandle);
+        }
+
+        private void gridKullanici_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

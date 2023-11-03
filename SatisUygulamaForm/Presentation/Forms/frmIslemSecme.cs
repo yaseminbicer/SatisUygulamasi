@@ -85,5 +85,10 @@ namespace SatisUygulamaForm
                 ((frmLogin)loginForm).Show();
             }
         }
+
+        private void btnMusteriler_Click(object sender, EventArgs e)
+        {
+            new frmMusteriler().ShowDialog();
+        }
     }
 }

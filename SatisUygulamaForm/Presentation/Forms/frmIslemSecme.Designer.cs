@@ -38,6 +38,7 @@
             button10 = new Button();
             button11 = new Button();
             btnKullanicilar = new DevExpress.XtraEditors.SimpleButton();
+            btnMusteriler = new DevExpress.XtraEditors.SimpleButton();
             SuspendLayout();
             // 
             // label1
@@ -167,12 +168,26 @@
             btnKullanicilar.Text = "Kullanıcılar";
             btnKullanicilar.Click += btnKullanicilar_Click;
             // 
+            // btnMusteriler
+            // 
+            btnMusteriler.Appearance.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnMusteriler.Appearance.Options.UseFont = true;
+            btnMusteriler.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            btnMusteriler.ImageOptions.SvgImage = Properties.Resources.allowuserstoeditranges;
+            btnMusteriler.Location = new Point(220, 246);
+            btnMusteriler.Name = "btnMusteriler";
+            btnMusteriler.Size = new Size(159, 74);
+            btnMusteriler.TabIndex = 20;
+            btnMusteriler.Text = "Müşteriler";
+            btnMusteriler.Click += btnMusteriler_Click;
+            // 
             // frmIslemSecme
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(595, 357);
+            Controls.Add(btnMusteriler);
             Controls.Add(btnKullanicilar);
             Controls.Add(btnCikis);
             Controls.Add(btnKullaniciDegistir);
@@ -202,5 +217,6 @@
         private Button button10;
         private Button button11;
         private DevExpress.XtraEditors.SimpleButton btnKullanicilar;
+        private DevExpress.XtraEditors.SimpleButton btnMusteriler;
     }
 }

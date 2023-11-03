@@ -48,6 +48,7 @@
             gridKullanici.Size = new Size(792, 525);
             gridKullanici.TabIndex = 0;
             gridKullanici.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { viewKullanici });
+            gridKullanici.Click += gridKullanici_Click;
             // 
             // viewKullanici
             // 
