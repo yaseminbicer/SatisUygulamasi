@@ -34,11 +34,12 @@
             btnKullaniciDegistir = new Button();
             button7 = new Button();
             btnUrunEkle = new Button();
-            button9 = new Button();
+            btnStokTakibi = new Button();
             button10 = new Button();
             button11 = new Button();
             btnKullanicilar = new DevExpress.XtraEditors.SimpleButton();
             btnMusteriler = new DevExpress.XtraEditors.SimpleButton();
+            btnStokListesi = new Button();
             SuspendLayout();
             // 
             // label1
@@ -111,19 +112,20 @@
             btnUrunEkle.UseVisualStyleBackColor = false;
             btnUrunEkle.Click += btnUrunEkle_Click;
             // 
-            // button9
+            // btnStokTakibi
             // 
-            button9.BackColor = Color.FromArgb(245, 145, 120);
-            button9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button9.ForeColor = Color.White;
-            button9.Image = (Image)resources.GetObject("button9.Image");
-            button9.Location = new Point(219, 62);
-            button9.Name = "button9";
-            button9.Size = new Size(160, 88);
-            button9.TabIndex = 14;
-            button9.Text = "Stok Takibi";
-            button9.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button9.UseVisualStyleBackColor = false;
+            btnStokTakibi.BackColor = Color.FromArgb(245, 145, 120);
+            btnStokTakibi.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnStokTakibi.ForeColor = Color.White;
+            btnStokTakibi.Image = (Image)resources.GetObject("btnStokTakibi.Image");
+            btnStokTakibi.Location = new Point(219, 62);
+            btnStokTakibi.Name = "btnStokTakibi";
+            btnStokTakibi.Size = new Size(160, 88);
+            btnStokTakibi.TabIndex = 14;
+            btnStokTakibi.Text = "Stok Takibi";
+            btnStokTakibi.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnStokTakibi.UseVisualStyleBackColor = false;
+            btnStokTakibi.Click += btnStokTakibi_Click;
             // 
             // button10
             // 
@@ -182,19 +184,34 @@
             btnMusteriler.Text = "Müşteriler";
             btnMusteriler.Click += btnMusteriler_Click;
             // 
+            // btnStokListesi
+            // 
+            btnStokListesi.BackColor = Color.FromArgb(225, 185, 95);
+            btnStokListesi.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnStokListesi.ForeColor = Color.White;
+            btnStokListesi.Location = new Point(385, 247);
+            btnStokListesi.Name = "btnStokListesi";
+            btnStokListesi.Size = new Size(160, 78);
+            btnStokListesi.TabIndex = 21;
+            btnStokListesi.Text = "Stok Listesi";
+            btnStokListesi.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnStokListesi.UseVisualStyleBackColor = false;
+            btnStokListesi.Click += btnStokListesi_Click;
+            // 
             // frmIslemSecme
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(595, 357);
+            Controls.Add(btnStokListesi);
             Controls.Add(btnMusteriler);
             Controls.Add(btnKullanicilar);
             Controls.Add(btnCikis);
             Controls.Add(btnKullaniciDegistir);
             Controls.Add(button7);
             Controls.Add(btnUrunEkle);
-            Controls.Add(button9);
+            Controls.Add(btnStokTakibi);
             Controls.Add(button10);
             Controls.Add(button11);
             Controls.Add(label1);
@@ -214,10 +231,11 @@
         private Button btnKullaniciDegistir;
         private Button button7;
         private Button btnUrunEkle;
-        private Button button9;
+        private Button btnStokTakibi;
         private Button button10;
         private Button button11;
         private DevExpress.XtraEditors.SimpleButton btnKullanicilar;
         private DevExpress.XtraEditors.SimpleButton btnMusteriler;
+        private Button btnStokListesi;
     }
 }

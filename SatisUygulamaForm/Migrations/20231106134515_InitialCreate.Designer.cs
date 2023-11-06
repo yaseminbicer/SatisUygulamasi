@@ -12,8 +12,8 @@ using SatisUygulamaForm.Persistence;
 namespace SatisUygulamaForm.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231027120219_Update202310271502")]
-    partial class Update202310271502
+    [Migration("20231106134515_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -163,8 +163,8 @@ namespace SatisUygulamaForm.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("AlisFiyati")
-                        .HasColumnType("float");
+                    b.Property<decimal>("AlisFiyati")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Barkod")
                         .IsRequired()
@@ -174,18 +174,15 @@ namespace SatisUygulamaForm.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("BirimFiyat")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<int>("KdvOrani")
                         .HasColumnType("int");
 
-                    b.Property<string>("Kod")
+                    b.Property<decimal>("SatisFiyati")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("UrunGrubu")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("SatisFiyati")
-                        .HasColumnType("float");
 
                     b.HasKey("Id");
 

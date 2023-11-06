@@ -19,7 +19,7 @@ namespace SatisUygulamaForm
         public decimal SatisFiyati { get; set; }
         public int KdvOrani { get; set; }
         public string UrunGrubu { get; set; }
-
+       
     }
 
 }
