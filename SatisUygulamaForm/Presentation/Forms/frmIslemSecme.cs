@@ -20,14 +20,6 @@ namespace SatisUygulamaForm
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmSatis Satisİslemi = new frmSatis();
-            Satisİslemi.Show();
-        }
-
-
         private void btnKullaniciDegistir_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -84,6 +76,13 @@ namespace SatisUygulamaForm
             {
                 ((frmLogin)loginForm).Show();
             }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmSatis Satisİslemi = new frmSatis();
+            Satisİslemi.Show();
         }
 
         private void btnMusteriler_Click(object sender, EventArgs e)

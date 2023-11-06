@@ -31,17 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSatis));
             splitContainer1 = new SplitContainer();
             tableLayoutPanel1 = new TableLayoutPanel();
-            gridControl1 = new DevExpress.XtraGrid.GridControl();
+            gridsatis = new DevExpress.XtraGrid.GridControl();
             gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            SatisFiyati = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             panel1 = new Panel();
             Ara = new Button();
-            tBarkod = new TextBox();
+            txtBarkod = new TextBox();
             Barkod = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel2 = new Panel();
@@ -90,7 +88,7 @@
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridsatis).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
             panel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -124,17 +122,15 @@
             splitContainer1.Panel2.Controls.Add(btnIndirim);
             splitContainer1.Panel2.Controls.Add(btnFisYazdır);
             splitContainer1.Panel2.Controls.Add(tableLayoutPanel3);
-            splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint_1;
             splitContainer1.Size = new Size(1117, 618);
             splitContainer1.SplitterDistance = 491;
             splitContainer1.TabIndex = 0;
-            splitContainer1.SplitterMoved += splitContainer1_SplitterMoved;
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(gridControl1, 0, 1);
+            tableLayoutPanel1.Controls.Add(gridsatis, 0, 1);
             tableLayoutPanel1.Controls.Add(panel1, 0, 0);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
@@ -148,26 +144,24 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
             tableLayoutPanel1.Size = new Size(491, 618);
             tableLayoutPanel1.TabIndex = 0;
-            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint_2;
             // 
-            // gridControl1
+            // gridsatis
             // 
-            gridControl1.Dock = DockStyle.Fill;
-            gridControl1.EmbeddedNavigator.Margin = new Padding(3, 2, 3, 2);
-            gridControl1.Location = new Point(3, 80);
-            gridControl1.MainView = gridView1;
-            gridControl1.Margin = new Padding(3, 2, 3, 2);
-            gridControl1.Name = "gridControl1";
-            gridControl1.Size = new Size(485, 320);
-            gridControl1.TabIndex = 2;
-            gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView1 });
-            gridControl1.Click += gridControl1_Click;
+            gridsatis.Dock = DockStyle.Fill;
+            gridsatis.EmbeddedNavigator.Margin = new Padding(3, 2, 3, 2);
+            gridsatis.Location = new Point(3, 80);
+            gridsatis.MainView = gridView1;
+            gridsatis.Margin = new Padding(3, 2, 3, 2);
+            gridsatis.Name = "gridsatis";
+            gridsatis.Size = new Size(485, 320);
+            gridsatis.TabIndex = 2;
+            gridsatis.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView1 });
             // 
             // gridView1
             // 
-            gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { gridColumn1, gridColumn2, gridColumn3, gridColumn4, gridColumn5, gridColumn6 });
+            gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { gridColumn1, gridColumn2, SatisFiyati, gridColumn4 });
             gridView1.DetailHeight = 262;
-            gridView1.GridControl = gridControl1;
+            gridView1.GridControl = gridsatis;
             gridView1.Name = "gridView1";
             gridView1.OptionsEditForm.PopupEditFormWidth = 700;
             gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -183,50 +177,34 @@
             // 
             // gridColumn2
             // 
-            gridColumn2.Caption = "Ürün Adı";
-            gridColumn2.FieldName = "UrunAdi";
+            gridColumn2.Caption = "Ad";
+            gridColumn2.FieldName = "Ad";
             gridColumn2.Name = "gridColumn2";
             gridColumn2.Visible = true;
             gridColumn2.VisibleIndex = 1;
             gridColumn2.Width = 66;
             // 
-            // gridColumn3
+            // SatisFiyati
             // 
-            gridColumn3.Caption = "BrFiyat";
-            gridColumn3.FieldName = "BrFiyat";
-            gridColumn3.Name = "gridColumn3";
-            gridColumn3.Visible = true;
-            gridColumn3.VisibleIndex = 2;
-            gridColumn3.Width = 66;
+            SatisFiyati.Caption = "Fiyat";
+            SatisFiyati.FieldName = "SatisFiyati";
+            SatisFiyati.Name = "SatisFiyati";
+            SatisFiyati.Visible = true;
+            SatisFiyati.VisibleIndex = 2;
+            SatisFiyati.Width = 66;
             // 
             // gridColumn4
             // 
-            gridColumn4.Caption = "Birimi";
-            gridColumn4.FieldName = "Birimi";
+            gridColumn4.Caption = "Birim";
+            gridColumn4.FieldName = "Birim";
             gridColumn4.Name = "gridColumn4";
             gridColumn4.Visible = true;
             gridColumn4.VisibleIndex = 3;
             // 
-            // gridColumn5
-            // 
-            gridColumn5.Caption = "Miktar";
-            gridColumn5.FieldName = "Miktar";
-            gridColumn5.Name = "gridColumn5";
-            gridColumn5.Visible = true;
-            gridColumn5.VisibleIndex = 4;
-            // 
-            // gridColumn6
-            // 
-            gridColumn6.Caption = "Tutar";
-            gridColumn6.FieldName = "Tutar";
-            gridColumn6.Name = "gridColumn6";
-            gridColumn6.Visible = true;
-            gridColumn6.VisibleIndex = 5;
-            // 
             // panel1
             // 
             panel1.Controls.Add(Ara);
-            panel1.Controls.Add(tBarkod);
+            panel1.Controls.Add(txtBarkod);
             panel1.Controls.Add(Barkod);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 3);
@@ -243,15 +221,14 @@
             Ara.TabIndex = 3;
             Ara.Text = "Ara";
             Ara.UseVisualStyleBackColor = true;
-            Ara.Click += Ara_Click_1;
+            Ara.Click += Ara_Click;
             // 
-            // tBarkod
+            // txtBarkod
             // 
-            tBarkod.Location = new Point(97, 45);
-            tBarkod.Name = "tBarkod";
-            tBarkod.Size = new Size(202, 23);
-            tBarkod.TabIndex = 2;
-            tBarkod.TextChanged += tBarkod_TextChanged;
+            txtBarkod.Location = new Point(97, 45);
+            txtBarkod.Name = "txtBarkod";
+            txtBarkod.Size = new Size(202, 23);
+            txtBarkod.TabIndex = 2;
             // 
             // Barkod
             // 
@@ -262,7 +239,6 @@
             Barkod.Size = new Size(62, 21);
             Barkod.TabIndex = 0;
             Barkod.Text = "Barkod";
-            Barkod.Click += Barkod_Click;
             // 
             // tableLayoutPanel2
             // 
@@ -301,7 +277,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(205, 188);
             panel2.TabIndex = 0;
-            panel2.Paint += panel2_Paint;
             // 
             // button15
             // 
@@ -540,7 +515,7 @@
             btnKolonya.TabIndex = 8;
             btnKolonya.Text = "Kolonya";
             btnKolonya.UseVisualStyleBackColor = false;
-            btnKolonya.Click += btnKolonya_Click;
+            btnKolonya.Click += UrunYazdırbutonu_Click;
             // 
             // btncay
             // 
@@ -553,7 +528,7 @@
             btncay.TabIndex = 7;
             btncay.Text = "Çay";
             btncay.UseVisualStyleBackColor = false;
-            btncay.Click += btncay_Click;
+            btncay.Click += UrunYazdırbutonu_Click;
             // 
             // btncikolata
             // 
@@ -566,7 +541,7 @@
             btncikolata.TabIndex = 6;
             btncikolata.Text = "Çikolata";
             btncikolata.UseVisualStyleBackColor = false;
-            btncikolata.Click += btncikolata_Click;
+            btncikolata.Click += UrunYazdırbutonu_Click;
             // 
             // btnUrunSil
             // 
@@ -578,7 +553,6 @@
             btnUrunSil.TabIndex = 5;
             btnUrunSil.Text = "Ürün Sil";
             btnUrunSil.UseVisualStyleBackColor = false;
-            btnUrunSil.Click += btnUrunSil_Click;
             // 
             // btnFisİptal
             // 
@@ -661,7 +635,7 @@
             btnKulaklik.TabIndex = 9;
             btnKulaklik.Text = "Kulaklık";
             btnKulaklik.UseVisualStyleBackColor = false;
-            btnKulaklik.Click += btnKulaklik_Click;
+            btnKulaklik.Click += UrunYazdırbutonu_Click;
             // 
             // btnDefter
             // 
@@ -676,7 +650,7 @@
             btnDefter.TabIndex = 8;
             btnDefter.Text = "Defter";
             btnDefter.UseVisualStyleBackColor = false;
-            btnDefter.Click += btnDefter_Click;
+            btnDefter.Click += UrunYazdırbutonu_Click;
             // 
             // btnZeytin
             // 
@@ -691,7 +665,7 @@
             btnZeytin.TabIndex = 7;
             btnZeytin.Text = "Zeytin";
             btnZeytin.UseVisualStyleBackColor = false;
-            btnZeytin.Click += btnZeytin_Click;
+            btnZeytin.Click += UrunYazdırbutonu_Click;
             // 
             // btnTuvaletkagidi
             // 
@@ -706,7 +680,7 @@
             btnTuvaletkagidi.TabIndex = 6;
             btnTuvaletkagidi.Text = "Tuvalet Kağıdı";
             btnTuvaletkagidi.UseVisualStyleBackColor = false;
-            btnTuvaletkagidi.Click += btnTuvaletkagidi_Click;
+            btnTuvaletkagidi.Click += UrunYazdırbutonu_Click;
             // 
             // btnSalatalik
             // 
@@ -721,7 +695,7 @@
             btnSalatalik.TabIndex = 5;
             btnSalatalik.Text = "Salatalık";
             btnSalatalik.UseVisualStyleBackColor = false;
-            btnSalatalik.Click += btnSalatalik_Click;
+            btnSalatalik.Click += UrunYazdırbutonu_Click;
             // 
             // btnDomates
             // 
@@ -736,7 +710,7 @@
             btnDomates.TabIndex = 4;
             btnDomates.Text = "Domates";
             btnDomates.UseVisualStyleBackColor = false;
-            btnDomates.Click += btnDomates_Click;
+            btnDomates.Click += UrunYazdırbutonu_Click;
             // 
             // btnSut
             // 
@@ -751,7 +725,7 @@
             btnSut.TabIndex = 3;
             btnSut.Text = "Süt";
             btnSut.UseVisualStyleBackColor = false;
-            btnSut.Click += btnSut_Click;
+            btnSut.Click += UrunYazdırbutonu_Click;
             // 
             // btnSilgi
             // 
@@ -766,7 +740,7 @@
             btnSilgi.TabIndex = 2;
             btnSilgi.Text = "Silgi";
             btnSilgi.UseVisualStyleBackColor = false;
-            btnSilgi.Click += btnSilgi_Click;
+            btnSilgi.Click += UrunYazdırbutonu_Click;
             // 
             // btnKalem
             // 
@@ -781,7 +755,7 @@
             btnKalem.TabIndex = 1;
             btnKalem.Text = "Kalem";
             btnKalem.UseVisualStyleBackColor = false;
-            btnKalem.Click += btnKalem_Click;
+            btnKalem.Click += UrunYazdırbutonu_Click;
             // 
             // frmSatis
             // 
@@ -793,13 +767,12 @@
             Name = "frmSatis";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Satış İşlemi";
-            Load += SatisIslemi_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)gridControl1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridsatis).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -817,7 +790,7 @@
         private Label Barkod;
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel1;
-        private TextBox tBarkod;
+        private TextBox txtBarkod;
         private DataGridView GridSatisListesi;
         private DataGridViewTextBoxColumn Barkd;
         private DataGridViewTextBoxColumn UrunAdi;
@@ -842,13 +815,12 @@
         private Button button15;
         private DataGridViewTextBoxColumn Birimi;
         private Button Ara;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl gridsatis;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn SatisFiyati;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private TableLayoutPanel tableLayoutPanel3;
         private Button btnKulaklik;
         private Button btnDefter;
@@ -874,7 +846,6 @@
         private Button btnUrunSil;
         private Button btnKolonya;
         private Button btncay;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private Button btnUrunEkle;
         private DevExpress.XtraEditors.SimpleButton btnHome;
 

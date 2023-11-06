@@ -82,7 +82,7 @@
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(723, 543);
+            tableLayoutPanel1.Size = new Size(723, 541);
             tableLayoutPanel1.TabIndex = 16;
             // 
             // panel1
@@ -111,7 +111,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(717, 265);
+            panel1.Size = new Size(717, 264);
             panel1.TabIndex = 0;
             // 
             // txtBirimi
@@ -321,9 +321,9 @@
             // 
             panel2.Controls.Add(gridUrunEkle);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(3, 274);
+            panel2.Location = new Point(3, 273);
             panel2.Name = "panel2";
-            panel2.Size = new Size(717, 266);
+            panel2.Size = new Size(717, 265);
             panel2.TabIndex = 1;
             // 
             // gridUrunEkle
@@ -332,7 +332,7 @@
             gridUrunEkle.Location = new Point(0, 0);
             gridUrunEkle.MainView = gridView1;
             gridUrunEkle.Name = "gridUrunEkle";
-            gridUrunEkle.Size = new Size(717, 266);
+            gridUrunEkle.Size = new Size(717, 265);
             gridUrunEkle.TabIndex = 0;
             gridUrunEkle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridView1 });
             // 
@@ -341,14 +341,16 @@
             gridView1.DetailHeight = 303;
             gridView1.GridControl = gridUrunEkle;
             gridView1.Name = "gridView1";
+            gridView1.OptionsBehavior.Editable = false;
             gridView1.OptionsEditForm.PopupEditFormWidth = 686;
             gridView1.OptionsView.ShowGroupPanel = false;
+            gridView1.RowClick += gridView1_RowClick;
             // 
             // frmUrunEkle
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(723, 543);
+            ClientSize = new Size(723, 541);
             Controls.Add(tableLayoutPanel1);
             Name = "frmUrunEkle";
             StartPosition = FormStartPosition.CenterScreen;

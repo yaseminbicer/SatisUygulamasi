@@ -154,6 +154,7 @@
             button11.Text = "Satış İşlemi";
             button11.TextImageRelation = TextImageRelation.ImageBeforeText;
             button11.UseVisualStyleBackColor = false;
+            button11.Click += button11_Click;
             // 
             // btnKullanicilar
             // 
