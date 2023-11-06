@@ -47,7 +47,7 @@
             gridMusteri.Location = new Point(3, 41);
             gridMusteri.MainView = viewMusteri;
             gridMusteri.Name = "gridMusteri";
-            gridMusteri.Size = new Size(785, 397);
+            gridMusteri.Size = new Size(674, 387);
             gridMusteri.TabIndex = 0;
             gridMusteri.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { viewMusteri });
             // 
@@ -55,6 +55,7 @@
             // 
             viewMusteri.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { gridColumn1, gridColumn2, gridColumn3, gridColumn4, gridColumn5 });
             viewMusteri.GridControl = gridMusteri;
+            viewMusteri.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] { new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "") });
             viewMusteri.Name = "viewMusteri";
             viewMusteri.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditForm;
             viewMusteri.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
@@ -106,7 +107,7 @@
             btnSil.Appearance.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnSil.Appearance.Options.UseBackColor = true;
             btnSil.Appearance.Options.UseFont = true;
-            btnSil.Location = new Point(572, 6);
+            btnSil.Location = new Point(461, 8);
             btnSil.Name = "btnSil";
             btnSil.Size = new Size(105, 27);
             btnSil.TabIndex = 1;
@@ -119,7 +120,7 @@
             btnKaydet.Appearance.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnKaydet.Appearance.Options.UseBackColor = true;
             btnKaydet.Appearance.Options.UseFont = true;
-            btnKaydet.Location = new Point(461, 6);
+            btnKaydet.Location = new Point(350, 8);
             btnKaydet.Name = "btnKaydet";
             btnKaydet.Size = new Size(105, 27);
             btnKaydet.TabIndex = 0;
@@ -132,7 +133,7 @@
             btnIptal.Appearance.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnIptal.Appearance.Options.UseBackColor = true;
             btnIptal.Appearance.Options.UseFont = true;
-            btnIptal.Location = new Point(683, 6);
+            btnIptal.Location = new Point(572, 8);
             btnIptal.Name = "btnIptal";
             btnIptal.Size = new Size(105, 27);
             btnIptal.TabIndex = 2;
@@ -143,7 +144,7 @@
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 442);
+            ClientSize = new Size(685, 436);
             Controls.Add(btnIptal);
             Controls.Add(btnKaydet);
             Controls.Add(btnSil);

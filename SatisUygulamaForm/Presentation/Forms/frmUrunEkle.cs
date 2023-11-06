@@ -126,22 +126,29 @@ namespace SatisUygulamaForm
             UrunListele();
         }
 
+        private void Yazdir()
+        {
+            var guncellenecekStok = (Stok)gridView1.GetFocusedRow();
+            txtUrunAdi.Text = guncellenecekStok.Ad;
+            txtAlisFiyati.Text = Convert.ToString(guncellenecekStok.AlisFiyati);
+            txtBarkod.Text = guncellenecekStok.Barkod;
+            txtKdvOrani.Text = Convert.ToString(guncellenecekStok.KdvOrani);
+            txtSatisFiyati.Text = Convert.ToString(guncellenecekStok.SatisFiyati);
+            txtUrunAciklama.Text = guncellenecekStok.Aciklama;
+            txtBirimi.Text = guncellenecekStok.Birim;
+            txtUrunGrubu.Text = guncellenecekStok.UrunGrubu;
+
+        }
+
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             if (e.Clicks == 2)
             {
-                var guncellenecekStok = (Stok)gridView1.GetFocusedRow();
-                txtUrunAdi.Text = guncellenecekStok.Ad;
-                txtAlisFiyati.Text = Convert.ToString(guncellenecekStok.AlisFiyati);
-                txtBarkod.Text = guncellenecekStok.Barkod;
-                txtKdvOrani.Text = Convert.ToString(guncellenecekStok.KdvOrani);
-                txtSatisFiyati.Text = Convert.ToString(guncellenecekStok.SatisFiyati);
-                txtUrunAciklama.Text = guncellenecekStok.Aciklama;
-                txtBirimi.Text = guncellenecekStok.Birim;
-                txtUrunGrubu.Text = guncellenecekStok.UrunGrubu;
-
+                Yazdir();
             }
 
         }
+
+        
     }
 }

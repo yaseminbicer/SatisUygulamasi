@@ -20,6 +20,7 @@ namespace SatisUygulamaForm.Presentation.Forms
         public frmMusteriler()
         {
             InitializeComponent();
+
         }
 
         private void frmMusteriler_Load(object sender, EventArgs e)
