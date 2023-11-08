@@ -20,7 +20,7 @@ namespace SatisUygulamaForm.Migrations
                     KullaniciAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Sifre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AdSoyad = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Yonnetici = table.Column<bool>(type: "bit", nullable: false)
+                    Yonetici = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -51,14 +51,13 @@ namespace SatisUygulamaForm.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Barkod = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Kod = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Ad = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BirimFiyat = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Birim = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Aciklama = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AlisFiyati = table.Column<double>(type: "float", nullable: false),
-                    SatisFiyati = table.Column<double>(type: "float", nullable: false),
-                    KdvOrani = table.Column<int>(type: "int", nullable: false)
+                    AlisFiyati = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    SatisFiyati = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    KdvOrani = table.Column<int>(type: "int", nullable: false),
+                    UrunGrubu = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

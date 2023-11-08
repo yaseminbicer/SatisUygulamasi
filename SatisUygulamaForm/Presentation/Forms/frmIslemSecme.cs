@@ -23,8 +23,6 @@ namespace SatisUygulamaForm
         private void btnKullaniciDegistir_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //frmLogin frmLogin = new frmLogin();
-            //frmLogin.Show();
             var loginForm = Application.OpenForms[0];
             if (loginForm != null && loginForm is frmLogin)
             {
@@ -88,6 +86,20 @@ namespace SatisUygulamaForm
         private void btnMusteriler_Click(object sender, EventArgs e)
         {
             new frmMusteriler().ShowDialog();
+        }
+
+        private void btnStokTakibi_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmStokTakibi stokTakibi = new frmStokTakibi();
+            stokTakibi.Show();
+        }
+
+        private void btnStokListesi_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmStokListesi frmStokListesi = new frmStokListesi();
+            frmStokListesi.Show();
         }
     }
 }
