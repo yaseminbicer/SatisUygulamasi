@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using SatisUygulamaForm.Domain.Entity;
+using HizliSatis.Domain.Entities;
 
-namespace SatisUygulamaForm.Persistence
+namespace HizliSatis.Persistence.Context
 {
 
 

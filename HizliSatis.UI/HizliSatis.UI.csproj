@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Win.Design" Version="23.1.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\HizliSatis.Application\HizliSatis.Application.csproj" />
+    <ProjectReference Include="..\Core\HizliSatis.Domain\HizliSatis.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Forms\frmKullanicilar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\frmMusteriler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\frmStokTakibi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\frmUrunEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>

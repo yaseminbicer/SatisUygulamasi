@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\HizliSatis.Application\HizliSatis.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Forms\frmIslemSecme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\frmKartEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\frmKullanicilar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\frmMusteriler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\frmSatis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\frmStokListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\frmStokListesiDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\frmStokTakibi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\frmUrunEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>
