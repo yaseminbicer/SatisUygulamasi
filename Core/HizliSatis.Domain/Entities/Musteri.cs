@@ -12,7 +12,7 @@ namespace HizliSatis.Domain.Entities
         {
             Fisler = new HashSet<Fis>();
         }
-        public string Kod { get; set; }
+        public string AdSoyad { get; set; }
         public string Unvan { get; set; }
         public string Adres { get; set; }
         public string Telefon { get; set; }

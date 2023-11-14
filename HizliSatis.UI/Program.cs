@@ -1,5 +1,5 @@
 using HizliSatis.UI.Forms;
-
+using HizliSatis.Application;
 namespace HizliSatis.UI
 {
     internal static class Program
@@ -13,7 +13,7 @@ namespace HizliSatis.UI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmLogin());
+            System.Windows.Forms.Application.Run(new frmLogin());
         }
     }
 }

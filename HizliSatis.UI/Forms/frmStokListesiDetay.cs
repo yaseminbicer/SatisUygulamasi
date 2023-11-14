@@ -1,32 +1,37 @@
-﻿using HizliSatis.Domain.Entities;
+﻿using HizliSatis.Application.Abstractions;
+using HizliSatis.Domain.Entities;
+using HizliSatis.Persistence.Concretes;
 
 namespace HizliSatis.UI.Forms
 {
     public partial class frmStokListesiDetay : Form
     {
+        private readonly IProductService _productService = new ProductService();
         private int Id;
-        private AppDbContext db = new AppDbContext();
-        public frmStokListesiDetay(int id = 0)
+        public frmStokListesiDetay(int id)
         {
             InitializeComponent();
             Id = id;
+
             if (id > 0)
             {
-                var stok = db.Stok.Find(id);
-                txtUrunAciklama.Text = stok.Aciklama;
-                txtSatisFiyati.Text = Convert.ToString(stok.SatisFiyati);
-                txtUrunAdi.Text = stok.Ad;
-                txtAlisFiyati.Text = Convert.ToString(stok.AlisFiyati);
-                txtBarkod.Text = stok.Barkod;
-                txtBirimi.Text = stok.Birim;
-                txtKdvOrani.Text = Convert.ToString(stok.KdvOrani);
-                txtUrunGrubu.Text = stok.UrunGrubu;
+                var urun = _productService.GetStokById(Id);
+
+                if (urun != null)
+                {
+                    txtUrunAciklama.Text = urun.Aciklama;
+                    txtSatisFiyati.Text = Convert.ToString(urun.SatisFiyati);
+                    txtUrunAdi.Text = urun.Ad;
+                    txtAlisFiyati.Text = Convert.ToString(urun.AlisFiyati);
+                    txtBarkod.Text = urun.Barkod;
+                    txtBirimi.Text = urun.Birim;
+                    txtKdvOrani.Text = Convert.ToString(urun.KdvOrani);
+                    txtUrunGrubu.Text = urun.UrunGrubu;
+            
+                }
             }
 
         }
-
-
-
         private void frmStokListesiDetay_Load(object sender, EventArgs e)
         {
 
@@ -34,7 +39,7 @@ namespace HizliSatis.UI.Forms
 
         public void Kaydet()
         {
-            var stok = Id == 0 ? new Stok() : db.Stok.Find(Id);
+            var stok = Id == 0 ? new Stok() : _productService.GetStokById(Id);
 
             stok.Aciklama = txtUrunAciklama.Text;
             stok.SatisFiyati = Convert.ToDecimal(txtSatisFiyati.Text);
@@ -45,10 +50,10 @@ namespace HizliSatis.UI.Forms
             stok.KdvOrani = Convert.ToInt32(txtKdvOrani.Text);
             stok.UrunGrubu = txtUrunGrubu.Text;
             if (Id == 0)
-                db.Add(stok);
+                _productService.AddProduct(stok);
             else
-                db.Update(stok);
-                db.SaveChanges();
+                _productService.UpdateProduct(Id);
+                _productService.SaveChanges();
 
             Close();
 

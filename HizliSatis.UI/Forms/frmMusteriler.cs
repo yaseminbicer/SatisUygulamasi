@@ -1,4 +1,6 @@
-﻿using HizliSatis.Domain.Entities;
+﻿using HizliSatis.Application.Abstract;
+using HizliSatis.Application.Concretes;
+using HizliSatis.Domain.Entities;
 using System.ComponentModel;
 using System.Data;
 
@@ -6,7 +8,7 @@ namespace HizliSatis.UI.Forms
 {
     public partial class frmMusteriler : DevExpress.XtraEditors.XtraForm
     {
-        AppDbContext dbContext = new AppDbContext();
+        ICustomerService _CustomerService = new CustomerService();
         BindingList<Musteri> Musteriler { get; set; }
         public frmMusteriler()
         {
@@ -16,27 +18,29 @@ namespace HizliSatis.UI.Forms
 
         private void frmMusteriler_Load(object sender, EventArgs e)
         {
-            var data = dbContext.Musteri.ToList();
+            
+            var data = _CustomerService.GetCustomer();
             Musteriler = new BindingList<Musteri>(data);
             gridMusteri.DataSource = Musteriler;
-
         }
 
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            foreach (var musteri in Musteriler.Where(s => s.Id == 0))
+           
+            foreach (var Musteri in Musteriler.Where(s => s.Id == 0))
             {
-                dbContext.Add(musteri);
+                _CustomerService.AddCustomer(Musteri);
             }
-            int result = dbContext.SaveChanges();
+            int result = _CustomerService.SaveChanges();
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
             var musteri = (Musteri)viewMusteri.GetFocusedRow();
-            dbContext.Remove(musteri);
+            _CustomerService.RemoveCustomer(musteri);
             viewMusteri.DeleteRow(viewMusteri.FocusedRowHandle);
+
         }
 
 

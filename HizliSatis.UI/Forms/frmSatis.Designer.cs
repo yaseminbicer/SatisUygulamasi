@@ -767,6 +767,7 @@
             Name = "frmSatis";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Satış İşlemi";
+            FormClosed += frmSatis_FormClosed;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();

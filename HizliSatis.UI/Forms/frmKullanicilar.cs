@@ -1,7 +1,9 @@
 ﻿using DevExpress.XtraEditors;
 using HizliSatis.Application.Abstract;
+using HizliSatis.Application.Abstractions;
 using HizliSatis.Application.Concretes;
 using HizliSatis.Domain.Entities;
+using HizliSatis.Persistence.Concretes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +19,7 @@ namespace HizliSatis.UI.Forms
     public partial class frmKullanicilar : DevExpress.XtraEditors.XtraForm
     {
         IAccountService _accountService = new AccountService();
+    
         BindingList<Kullanici> Kullanicilar { get; set; }
         public frmKullanicilar()
         {
@@ -37,8 +40,10 @@ namespace HizliSatis.UI.Forms
             foreach (var kullanici in Kullanicilar.Where(s => s.Id == 0))
             {
                 _accountService.AddUser(kullanici);
+                
             }
-            int result = _accountService.SaveChanges();
+            _accountService.SaveChanges();
+
         }
 
         private void btnSil_Click(object sender, EventArgs e)

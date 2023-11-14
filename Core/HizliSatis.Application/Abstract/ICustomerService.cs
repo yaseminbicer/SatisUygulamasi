@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace HizliSatis.Application.Abstract
 {
-    public interface IAccountService
+    public interface ICustomerService
     {
-        List<Kullanici> GetUsers();
-        void AddUser(Kullanici user);
-        void RemoveUser(Kullanici user);
-        public bool AuthenticateUser(string kullaniciAdi, string sifre);
+        List<Musteri> GetCustomer();
+        void AddCustomer(Musteri Customer);
+        void RemoveCustomer(Musteri Customer);
         int SaveChanges();
     }
 }

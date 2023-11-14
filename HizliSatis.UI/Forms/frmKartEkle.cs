@@ -1,16 +1,18 @@
-﻿using HizliSatis.Domain.Entities;
+﻿using HizliSatis.Application.Abstractions;
+using HizliSatis.Domain.Entities;
+using HizliSatis.Persistence.Concretes;
 
 namespace HizliSatis.UI.Forms
 {
     public partial class frmKartEkle : Form
     {
+        private readonly IProductService _productService = new ProductService();
         public frmKartEkle()
         {
             InitializeComponent();
         }
         private void YeniKart()
         {
-            using var dbContextKart = new AppDbContext();
             var YeniKart = new Stok
             {
                 Ad = UrunAdi.Text,
@@ -22,8 +24,8 @@ namespace HizliSatis.UI.Forms
                
 
             };
-            dbContextKart.Add(YeniKart);
-            dbContextKart.SaveChanges();
+            _productService.AddProduct(YeniKart);
+            _productService.SaveChanges();
         }
 
 
@@ -42,15 +44,18 @@ namespace HizliSatis.UI.Forms
 
         public void Guncelle(int id)
         {
-            using var dbContextKart = new AppDbContext();
-            var GuncellenecekKart = dbContextKart.Stok.Find(id);
-            GuncellenecekKart.Ad = UrunAdi.Text;
-            GuncellenecekKart.Birim = txtBirimi.Text;
-            GuncellenecekKart.KdvOrani = Convert.ToInt32(txtKdvOrani.Text);
-            GuncellenecekKart.AlisFiyati = Convert.ToDecimal(txtAlisFiyati.Text);
-            GuncellenecekKart.SatisFiyati = Convert.ToDecimal(txtSatisFiyati.Text);
-            dbContextKart.Update(GuncellenecekKart);
-            dbContextKart.SaveChanges();
+            var guncellenecekStok = _productService.GetStokById(id);
+            if (guncellenecekStok != null)
+            {
+                guncellenecekStok.Ad = UrunAdi.Text;
+                guncellenecekStok.Birim = txtBirimi.Text;
+                guncellenecekStok.KdvOrani = Convert.ToInt32(txtKdvOrani.Text);
+                guncellenecekStok.AlisFiyati = Convert.ToDecimal(txtAlisFiyati.Text);
+                guncellenecekStok.SatisFiyati = Convert.ToDecimal(txtSatisFiyati.Text);
+                _productService.UpdateProduct(id);
+           
+            }
         }
+
     }
 }

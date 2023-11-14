@@ -1,10 +1,13 @@
 ﻿using DevExpress.XtraEditors;
+using HizliSatis.Application.Abstractions;
 using HizliSatis.Domain.Entities;
+using HizliSatis.Persistence.Concretes;
 
 namespace HizliSatis.UI.Forms
 {
     public partial class frmUrunEkle : XtraForm
     {
+        private readonly IProductService _productService = new ProductService();
         public frmUrunEkle()
         {
             InitializeComponent();
@@ -57,20 +60,23 @@ namespace HizliSatis.UI.Forms
 
         private void Guncelle(int id)
         {
-            using var dbContext = new AppDbContext();
-            var guncellenecekStok = dbContext.Stok.Find(id);
-            guncellenecekStok.Aciklama = txtUrunAciklama.Text;
-            guncellenecekStok.SatisFiyati = Convert.ToDecimal(txtSatisFiyati.EditValue);
-            guncellenecekStok.Ad = txtUrunAdi.Text;
-            guncellenecekStok.AlisFiyati = Convert.ToDecimal(txtAlisFiyati.EditValue);
-            guncellenecekStok.Barkod = txtBarkod.Text;
-            guncellenecekStok.Birim = txtBirimi.Text;
-            guncellenecekStok.KdvOrani = Convert.ToInt32(txtKdvOrani.Text);
-            guncellenecekStok.UrunGrubu = txtUrunGrubu.Text;
-            dbContext.Update(guncellenecekStok);
-            dbContext.SaveChanges();
-        }
+            var guncellenecekStok = _productService.GetStokById(id);
 
+            if(guncellenecekStok != null) 
+            { 
+                guncellenecekStok.Aciklama = txtUrunAciklama.Text;
+                guncellenecekStok.SatisFiyati = Convert.ToDecimal(txtSatisFiyati.EditValue);
+                guncellenecekStok.Ad = txtUrunAdi.Text;
+                guncellenecekStok.AlisFiyati = Convert.ToDecimal(txtAlisFiyati.EditValue);
+                guncellenecekStok.Barkod = txtBarkod.Text;
+                guncellenecekStok.Birim = txtBirimi.Text;
+                guncellenecekStok.KdvOrani = Convert.ToInt32(txtKdvOrani.Text);
+                guncellenecekStok.UrunGrubu = txtUrunGrubu.Text;
+
+            _productService.UpdateProduct(id);
+            
+            }
+        }
         private void Kaydet()
         {
             if (txtId.Text == "" || txtId.Text == "0")
@@ -81,7 +87,6 @@ namespace HizliSatis.UI.Forms
 
         private void Yeni()
         {
-            using var dbContext = new AppDbContext();
             var yeniStok = new Stok
             {
                 Aciklama = txtUrunAciklama.Text,
@@ -93,23 +98,20 @@ namespace HizliSatis.UI.Forms
                 KdvOrani = Convert.ToInt32(txtKdvOrani.Text),
                 UrunGrubu = txtUrunGrubu.Text
             };
-
-            dbContext.Add(yeniStok);
-            dbContext.SaveChanges();
+            _productService.AddProduct(yeniStok);
+            _productService.SaveChanges();
         }
 
         private void UrunListele()
         {
-            using var dbContext = new AppDbContext();
-            gridUrunEkle.DataSource = dbContext.Stok.ToList();
+            gridUrunEkle.DataSource = _productService.GetProducts();
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            using var dbContext = new AppDbContext();
             var silinecekUrun = (Stok)gridView1.GetFocusedRow();
-            dbContext.Remove(silinecekUrun);
-            dbContext.SaveChanges();
+            _productService.RemoveProduct(silinecekUrun);
+            _productService.SaveChanges();
             UrunListele();
         }
 
@@ -126,7 +128,6 @@ namespace HizliSatis.UI.Forms
             txtUrunGrubu.Text = guncellenecekStok.UrunGrubu;
 
         }
-
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             if (e.Clicks == 2)
@@ -135,7 +136,5 @@ namespace HizliSatis.UI.Forms
             }
 
         }
-
-
     }
 }

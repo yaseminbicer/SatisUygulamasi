@@ -1,6 +1,7 @@
 ﻿using HizliSatis.Application.Abstractions;
 using HizliSatis.Domain.Entities;
 using HizliSatis.Persistence.Concretes;
+using Microsoft.EntityFrameworkCore;
 
 namespace HizliSatis.UI.Forms
 {
@@ -66,18 +67,18 @@ namespace HizliSatis.UI.Forms
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
-        {
-            frmStokListesiDetay stokListesiDetay = new frmStokListesiDetay();
-            stokListesiDetay.ShowDialog();
+        { 
+                frmStokListesiDetay stokListesiDetay = new frmStokListesiDetay(0);
+                stokListesiDetay.ShowDialog();
+           
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            var stok = ((Stok)gridView1.GetFocusedRow());
-            using var dbcontext = new AppDbContext();
-            var silinecekStok = dbcontext.Stok.Find(stok.Id);
-            dbcontext.Remove(silinecekStok);
-            dbcontext.SaveChanges();
+            var silinecekStok = (Stok)gridView1.GetFocusedRow();
+            _productService.RemoveProduct(silinecekStok);
+            gridView1.DeleteRow(gridView1.FocusedRowHandle);
+
             UrunListele();
         }
     }

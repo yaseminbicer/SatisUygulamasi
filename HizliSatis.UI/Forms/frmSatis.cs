@@ -1,10 +1,13 @@
 ﻿using DevExpress.XtraEditors;
+using HizliSatis.Application.Abstractions;
 using HizliSatis.Domain.Entities;
+using HizliSatis.Persistence.Concretes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +18,7 @@ namespace HizliSatis.UI.Forms
 {
     public partial class frmSatis : Form
     {
-        AppDbContext dbContext = new AppDbContext();
+        private readonly IProductService _productService = new ProductService();
         BindingList<Stok> Stok { get; set; }
         Fis fis = new Fis();
         public frmSatis()
@@ -27,7 +30,7 @@ namespace HizliSatis.UI.Forms
 
         private void frmSatis_Load(object sender, EventArgs e)
         {
-            var data = dbContext.Stok.ToList();
+            var data = _productService.GetProducts();
             Stok = new BindingList<Stok>(data);
             gridsatis.DataSource = Stok;
         }
@@ -36,14 +39,14 @@ namespace HizliSatis.UI.Forms
 
 
             string girilenbarkod = txtBarkod.Text;
-            var arananUrun = dbContext.Stok.FirstOrDefault(stok => stok.Barkod == girilenbarkod);
+            var arananUrun = _productService.GetStokByAd(girilenbarkod);
 
             if (arananUrun != null)
             {
-                
+
                 List<Stok> urunListesi = gridsatis.DataSource as List<Stok>;
 
-             
+
                 if (urunListesi == null)
                 {
                     urunListesi = new List<Stok>();
@@ -58,44 +61,9 @@ namespace HizliSatis.UI.Forms
             {
                 MessageBox.Show("Ürün bulunamadı.");
             }
-            
+
 
         }
-
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        /*private void btnX_Click(object sender, EventArgs e)
-        {
-            Button b = (Button)sender;
-            if (b.Text == ",")
-            {
-                int vırgul = tNumarator.Text.Count(x => x == ',');
-
-                if (vırgul < 1)
-                {
-                    tNumarator.Text += b.Text;
-                }
-            }
-            else if (b.Text == "x")
-            {
-                if (tNumarator.Text.Length > 0)
-                {
-                    tNumarator.Text = tNumarator.Text.Substring(0, tNumarator.Text.Length - 1);
-                }
-
-            }
-
-            else
-            {
-                tNumarator.Text += b.Text;
-            }
-
-
-        }*/
-
 
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
@@ -103,60 +71,54 @@ namespace HizliSatis.UI.Forms
             frmUrunEkle frmUrunEkle = new frmUrunEkle();
             frmUrunEkle.Show();
         }
-
-
-
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var frmIslemSecme = Application.OpenForms[1];
-            if (frmIslemSecme != null && frmIslemSecme is frmIslemSecme)
+
+            var IslemSecme = System.Windows.Forms.Application.OpenForms[1];
+            if (IslemSecme != null && IslemSecme is frmIslemSecme)
             {
-                ((frmIslemSecme)frmIslemSecme).Show();
+                IslemSecme.Show();
             }
         }
 
         private void UrunYazdırbutonu_Click(object sender, EventArgs e)
         {
 
-            using (var context = new AppDbContext())
+            Button clickedButton = (Button)sender;
+            string buttonName = clickedButton.Text;
+
+            var EslesenUrun = _productService.GetStokByAd(buttonName);
+
+            if (EslesenUrun != null)
             {
 
-                Button clickedButton = (Button)sender;
-                string buttonName = clickedButton.Text;
+                List<Stok> urunListesi = gridsatis.DataSource as List<Stok>;
 
-                var EslesenUrun = context.Stok.FirstOrDefault(stok => stok.Ad == buttonName);
 
-              
-
-                if (EslesenUrun != null)
+                if (urunListesi == null)
                 {
-
-                    List<Stok> urunListesi = gridsatis.DataSource as List<Stok>;
-
-
-                    if (urunListesi == null)
-                    {
-                        urunListesi = new List<Stok>();
-                    }
-
-                    urunListesi.Add(EslesenUrun);
-                    gridsatis.DataSource = urunListesi;
-                    gridsatis.Refresh();
-                    gridsatis.RefreshDataSource();
-                }
-                else
-                {
-                    MessageBox.Show("Ürün bulunamadı.");
+                    urunListesi = new List<Stok>();
                 }
 
-
+                urunListesi.Add(EslesenUrun);
+                gridsatis.DataSource = urunListesi;
+                gridsatis.Refresh();
+                gridsatis.RefreshDataSource();
+            }
+            else
+            {
+                MessageBox.Show("Ürün bulunamadı.");
             }
 
 
         }
-        
 
+        private void frmSatis_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            System.Windows.Forms.Application.Exit();
+        }
     }
 
 

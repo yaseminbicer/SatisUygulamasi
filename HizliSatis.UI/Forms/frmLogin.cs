@@ -1,4 +1,6 @@
 ﻿using DevExpress.XtraEditors;
+using HizliSatis.Application.Abstract;
+using HizliSatis.Application.Concretes;
 using HizliSatis.Domain.Entities;
 using Microsoft.Win32;
 
@@ -6,7 +8,7 @@ namespace HizliSatis.UI.Forms
 {
     public partial class frmLogin : XtraForm
     {
-        AppDbContext dbContext = new AppDbContext();
+        IAccountService _accountService = new AccountService();
         public frmLogin()
         {
             InitializeComponent();
@@ -69,7 +71,8 @@ namespace HizliSatis.UI.Forms
 
         private bool GirisYap(string kullaniciAdi, string sifre)
         {
-            var kullanici = dbContext.Kullanici.FirstOrDefault(s => s.KullaniciAdi == kullaniciAdi && s.Sifre == sifre);
+
+            var kullanici = _accountService.AuthenticateUser(kullaniciAdi, sifre);
             return kullanici != null;
         }
 
@@ -77,7 +80,7 @@ namespace HizliSatis.UI.Forms
         {
             try
             {
-                var kullanicilar = dbContext.Kullanici.ToList();
+                var kullanicilar = _accountService.GetUsers();
                 if (!kullanicilar.Any())
                 {
                     var kullanici = new Kullanici();
@@ -85,8 +88,8 @@ namespace HizliSatis.UI.Forms
                     kullanici.Sifre = "admin1";
                     kullanici.AdSoyad = "Yönetici";
                     kullanici.Yonetici = true;
-                    dbContext.Add(kullanici);
-                    dbContext.SaveChanges();
+                    _accountService.AddUser(kullanici);
+                    _accountService.SaveChanges();
                 }
 
             }

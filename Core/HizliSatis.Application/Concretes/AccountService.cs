@@ -1,6 +1,7 @@
 ﻿using HizliSatis.Application.Abstract;
 using HizliSatis.Domain.Entities;
 using HizliSatis.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,13 @@ namespace HizliSatis.Application.Concretes
 
         public void AddUser(Kullanici user)
         {
-            dbContext.Add(user);
+            dbContext.Kullanici.Add(user);
+            SaveChanges();
+            /* if (user != null && user.Id > 0)
+             {
+                 dbContext.Kullanici.Add(user);
+                 SaveChanges();
+             }*/
         }
 
         public List<Kullanici> GetUsers()
@@ -25,8 +32,17 @@ namespace HizliSatis.Application.Concretes
 
         public void RemoveUser(Kullanici user)
         {
-            dbContext.Remove(user);
-            dbContext.SaveChanges();
+            if (user != null && user.Id > 0)
+            {
+                dbContext.Kullanici.Remove(user);
+                dbContext.SaveChanges();
+            }
+           
+        }
+        public bool AuthenticateUser(string kullaniciAdi, string sifre)
+        {
+            var kullanici = dbContext.Kullanici.FirstOrDefault(s => s.KullaniciAdi == kullaniciAdi && s.Sifre == sifre);
+            return kullanici != null;
         }
 
         public int SaveChanges()

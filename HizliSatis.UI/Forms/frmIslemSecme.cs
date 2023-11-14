@@ -21,10 +21,11 @@ namespace HizliSatis.UI.Forms
         private void btnKullaniciDegistir_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var loginForm = Application.OpenForms[0];
-            if (loginForm != null && loginForm is frmLogin)
+          
+            var loginform = System.Windows.Forms.Application.OpenForms[0];
+            if (loginform != null && loginform is frmLogin)
             {
-                ((frmLogin)loginForm).Show();
+                loginform.Show();
             }
         }
 
@@ -44,7 +45,7 @@ namespace HizliSatis.UI.Forms
 
         private void frmIslemSecme_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void btnKullanicilar_Click(object sender, EventArgs e)
@@ -59,18 +60,17 @@ namespace HizliSatis.UI.Forms
 
         private void btnCikis_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void btnKullaniciDegistir_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            //frmLogin frmLogin = new frmLogin();
-            //frmLogin.Show();
-            var loginForm = Application.OpenForms[0];
-            if (loginForm != null && loginForm is frmLogin)
+
+            var loginform = System.Windows.Forms.Application.OpenForms[0];
+            if (loginform != null && loginform is frmLogin)
             {
-                ((frmLogin)loginForm).Show();
+                loginform.Show();
             }
         }
 
