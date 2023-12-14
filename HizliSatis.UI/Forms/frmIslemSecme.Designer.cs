@@ -163,7 +163,6 @@
             btnKullanicilar.Appearance.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnKullanicilar.Appearance.Options.UseFont = true;
             btnKullanicilar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            
             btnKullanicilar.Location = new Point(53, 246);
             btnKullanicilar.Name = "btnKullanicilar";
             btnKullanicilar.Size = new Size(159, 74);
@@ -176,7 +175,6 @@
             btnMusteriler.Appearance.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnMusteriler.Appearance.Options.UseFont = true;
             btnMusteriler.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            
             btnMusteriler.Location = new Point(220, 246);
             btnMusteriler.Name = "btnMusteriler";
             btnMusteriler.Size = new Size(159, 74);

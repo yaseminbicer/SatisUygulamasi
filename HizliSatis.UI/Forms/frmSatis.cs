@@ -18,14 +18,20 @@ namespace HizliSatis.UI.Forms
 {
     public partial class frmSatis : Form
     {
-        private readonly IProductService _productService = new ProductService();
+        private readonly IProductService _productService;
+        private readonly Fis _fis;
+        public frmSatis(IProductService ProductService, Fis _fis)
+        {
+            _productService = ProductService;
+        }
+       
         BindingList<Stok> Stok { get; set; }
-        Fis fis = new Fis();
+       // Fis fis = new Fis();
         public frmSatis()
         {
             InitializeComponent();
-            fis.Tarih = DateTime.Now;
-            fis.FisNo = DateTime.Now.ToString("yyyyMMddHHmmss");
+            _fis.Tarih = DateTime.Now;
+            _fis.FisNo = DateTime.Now.ToString("yyyyMMddHHmmss");
         }
 
         private void frmSatis_Load(object sender, EventArgs e)
@@ -37,9 +43,8 @@ namespace HizliSatis.UI.Forms
         private void Ara_Click(object sender, EventArgs e)
         {
 
-
             string girilenbarkod = txtBarkod.Text;
-            var arananUrun = _productService.GetStokByAd(girilenbarkod);
+            var arananUrun = _productService.GetStokByName(girilenbarkod);
 
             if (arananUrun != null)
             {
@@ -71,16 +76,7 @@ namespace HizliSatis.UI.Forms
             frmUrunEkle frmUrunEkle = new frmUrunEkle();
             frmUrunEkle.Show();
         }
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            var IslemSecme = System.Windows.Forms.Application.OpenForms[1];
-            if (IslemSecme != null && IslemSecme is frmIslemSecme)
-            {
-                IslemSecme.Show();
-            }
-        }
+        
 
         private void UrunYazdırbutonu_Click(object sender, EventArgs e)
         {
@@ -88,7 +84,7 @@ namespace HizliSatis.UI.Forms
             Button clickedButton = (Button)sender;
             string buttonName = clickedButton.Text;
 
-            var EslesenUrun = _productService.GetStokByAd(buttonName);
+            var EslesenUrun = _productService.GetStokByName(buttonName);
 
             if (EslesenUrun != null)
             {
@@ -118,6 +114,17 @@ namespace HizliSatis.UI.Forms
         {
 
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            var IslemSecme = System.Windows.Forms.Application.OpenForms[1];
+            if (IslemSecme != null && IslemSecme is frmIslemSecme)
+            {
+                IslemSecme.Show();
+            }
         }
     }
 

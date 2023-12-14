@@ -12,30 +12,39 @@ namespace HizliSatis.Persistence.Concretes
 {
     public class ProductService : IProductService
     {
-        private readonly AppDbContext dbContext=new AppDbContext();
+        private readonly AppDbContext _dbContext= new AppDbContext();
+
+        public ProductService(AppDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
+        public ProductService()
+        {
+        }
+
         public List<Stok> GetProducts()
         {
-            return dbContext.Stok.ToList();
+            return _dbContext.Stok.ToList();
         }
         public void AddProduct(Stok product)
         {
-            dbContext.Add(product);
+            _dbContext.Add(product);
             SaveChanges();
         }
         public void RemoveProduct(Stok product)
         {
-            dbContext.Remove(product);
-            dbContext.SaveChanges();
+            _dbContext.Remove(product);
+           SaveChanges();
 
         }
         public Stok UpdateProduct(int id)
         {
-            var guncellenecekStok = dbContext.Stok.Find(id);
+            var guncellenecekStok = _dbContext.Stok.Find(id);
 
             if (guncellenecekStok != null)
             {
-                
-                dbContext.SaveChanges();
+                SaveChanges();
             }
 
             return guncellenecekStok;
@@ -43,16 +52,17 @@ namespace HizliSatis.Persistence.Concretes
         }
         public Stok GetStokById(int id)
         {
-            var stok = dbContext.Stok.FirstOrDefault(p => p.Id == id);
+            var stok = _dbContext.Stok.FirstOrDefault(p => p.Id == id);
             return stok;
         }
-        public Stok GetStokByAd(string ad)
+        public Stok GetStokByName(string ad)
         {
-            return dbContext.Stok.FirstOrDefault(stok => stok.Ad == ad);
+            return _dbContext.Stok.FirstOrDefault(stok => stok.Ad == ad);
         }
         public int SaveChanges()
         {
-            return dbContext.SaveChanges();
+            return _dbContext.SaveChanges();
         }
+
     }
 }

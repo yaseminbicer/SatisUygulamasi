@@ -11,27 +11,33 @@ namespace HizliSatis.Application.Concretes
 {
     public class CustomerService :ICustomerService
     {
-        private readonly AppDbContext dbContext = new AppDbContext();
-
+        private readonly AppDbContext _dbContext=new AppDbContext();
+        public CustomerService(AppDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+        public CustomerService()
+        {
+        }
         public void AddCustomer(Musteri Customer)
         {
-            dbContext.Add(Customer);
+            _dbContext.Add(Customer);
         }
        
         public List<Musteri> GetCustomer()
         {
-            return dbContext.Musteri.ToList();
+            return _dbContext.Musteri.ToList();
         }
 
         public void RemoveCustomer(Musteri Customer)
         {
-            dbContext.Remove(Customer);
-            dbContext.SaveChanges();
+            _dbContext.Remove(Customer);
+            _dbContext.SaveChanges();
         }
 
         public int SaveChanges()
         {
-            return dbContext.SaveChanges();
+            return _dbContext.SaveChanges();
         }
     }
 }

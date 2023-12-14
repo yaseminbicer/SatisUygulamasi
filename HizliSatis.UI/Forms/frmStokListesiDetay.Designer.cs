@@ -59,21 +59,21 @@
             // 
             txtBirimi.Location = new Point(516, 88);
             txtBirimi.Name = "txtBirimi";
-            txtBirimi.Size = new Size(84, 28);
+            txtBirimi.Size = new Size(84, 20);
             txtBirimi.TabIndex = 37;
             // 
             // txtUrunGrubu
             // 
             txtUrunGrubu.Location = new Point(167, 128);
             txtUrunGrubu.Name = "txtUrunGrubu";
-            txtUrunGrubu.Size = new Size(177, 28);
+            txtUrunGrubu.Size = new Size(177, 20);
             txtUrunGrubu.TabIndex = 34;
             // 
             // txtKdvOrani
             // 
             txtKdvOrani.Location = new Point(516, 122);
             txtKdvOrani.Name = "txtKdvOrani";
-            txtKdvOrani.Size = new Size(84, 28);
+            txtKdvOrani.Size = new Size(84, 20);
             txtKdvOrani.TabIndex = 38;
             // 
             // txtAlisFiyati
@@ -81,7 +81,7 @@
             txtAlisFiyati.EditValue = "0";
             txtAlisFiyati.Location = new Point(516, 23);
             txtAlisFiyati.Name = "txtAlisFiyati";
-            txtAlisFiyati.Size = new Size(84, 28);
+            txtAlisFiyati.Size = new Size(84, 20);
             txtAlisFiyati.TabIndex = 35;
             // 
             // txtSatisFiyati
@@ -89,28 +89,28 @@
             txtSatisFiyati.EditValue = "0";
             txtSatisFiyati.Location = new Point(516, 56);
             txtSatisFiyati.Name = "txtSatisFiyati";
-            txtSatisFiyati.Size = new Size(84, 28);
+            txtSatisFiyati.Size = new Size(84, 20);
             txtSatisFiyati.TabIndex = 36;
             // 
             // txtBarkod
             // 
             txtBarkod.Location = new Point(167, 21);
             txtBarkod.Name = "txtBarkod";
-            txtBarkod.Size = new Size(177, 28);
+            txtBarkod.Size = new Size(177, 20);
             txtBarkod.TabIndex = 31;
             // 
             // txtUrunAdi
             // 
             txtUrunAdi.Location = new Point(167, 54);
             txtUrunAdi.Name = "txtUrunAdi";
-            txtUrunAdi.Size = new Size(177, 28);
+            txtUrunAdi.Size = new Size(177, 20);
             txtUrunAdi.TabIndex = 32;
             // 
             // txtUrunAciklama
             // 
             txtUrunAciklama.Location = new Point(167, 88);
             txtUrunAciklama.Name = "txtUrunAciklama";
-            txtUrunAciklama.Size = new Size(177, 28);
+            txtUrunAciklama.Size = new Size(177, 20);
             txtUrunAciklama.TabIndex = 33;
             // 
             // label1

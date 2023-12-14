@@ -12,11 +12,20 @@ namespace HizliSatis.Application.Concretes
 {
     public class AccountService : IAccountService
     {
-        private readonly AppDbContext dbContext=new AppDbContext();
+        private readonly AppDbContext _dbContext= new AppDbContext();
+
+        public AccountService(AppDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
+        public AccountService()
+        {
+        }
 
         public void AddUser(Kullanici user)
         {
-            dbContext.Kullanici.Add(user);
+            _dbContext.Kullanici.Add(user);
             SaveChanges();
             /* if (user != null && user.Id > 0)
              {
@@ -27,27 +36,27 @@ namespace HizliSatis.Application.Concretes
 
         public List<Kullanici> GetUsers()
         {
-            return dbContext.Kullanici.ToList();
+            return _dbContext.Kullanici.ToList();
         }
 
         public void RemoveUser(Kullanici user)
         {
             if (user != null && user.Id > 0)
             {
-                dbContext.Kullanici.Remove(user);
-                dbContext.SaveChanges();
+                _dbContext.Kullanici.Remove(user);
+                _dbContext.SaveChanges();
             }
            
         }
         public bool AuthenticateUser(string kullaniciAdi, string sifre)
         {
-            var kullanici = dbContext.Kullanici.FirstOrDefault(s => s.KullaniciAdi == kullaniciAdi && s.Sifre == sifre);
+            var kullanici = _dbContext.Kullanici.FirstOrDefault(s => s.KullaniciAdi == kullaniciAdi && s.Sifre == sifre);
             return kullanici != null;
         }
 
         public int SaveChanges()
         {
-           return dbContext.SaveChanges();
+           return _dbContext.SaveChanges();
         }
     }
 }

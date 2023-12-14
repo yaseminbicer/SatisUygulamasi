@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Mvvm.POCO;
+using DevExpress.XtraEditors;
 using HizliSatis.Application.Abstract;
 using HizliSatis.Application.Concretes;
 using HizliSatis.Domain.Entities;
@@ -8,11 +9,13 @@ namespace HizliSatis.UI.Forms
 {
     public partial class frmLogin : XtraForm
     {
-        IAccountService _accountService = new AccountService();
-        public frmLogin()
+        private readonly IAccountService _accountService;
+        public frmLogin(IAccountService AccountService)
         {
             InitializeComponent();
+            _accountService = AccountService;
             KullanicilariOlustur();
+
         }
 
         private RegistryKey BaseFolderPath = Registry.CurrentUser;
@@ -90,7 +93,7 @@ namespace HizliSatis.UI.Forms
                     kullanici.Yonetici = true;
                     _accountService.AddUser(kullanici);
                     _accountService.SaveChanges();
-                }
+                    var form = Program.ServiceProvider.GetRequiredService<frmKullanicilar>();             }
 
             }
             catch (Exception ex)

@@ -64,6 +64,7 @@
             row2 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             row3 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             row4 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            button1 = new Button();
             btnUrunEkle = new Button();
             btnKolonya = new Button();
             btncay = new Button();
@@ -112,6 +113,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            splitContainer1.Panel2.Controls.Add(button1);
             splitContainer1.Panel2.Controls.Add(btnUrunEkle);
             splitContainer1.Panel2.Controls.Add(btnKolonya);
             splitContainer1.Panel2.Controls.Add(btncay);
@@ -492,13 +494,25 @@
             row4.Properties.Caption = "TOPLAM";
             row4.Properties.FieldName = "Toplam";
             // 
+            // button1
+            // 
+            button1.BackColor = Color.CornflowerBlue;
+            button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(535, 569);
+            button1.Name = "button1";
+            button1.Size = new Size(81, 43);
+            button1.TabIndex = 10;
+            button1.Text = "Home";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // btnUrunEkle
             // 
             btnUrunEkle.BackColor = Color.CornflowerBlue;
-            btnUrunEkle.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUrunEkle.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnUrunEkle.Location = new Point(2, 567);
             btnUrunEkle.Name = "btnUrunEkle";
-            btnUrunEkle.Size = new Size(94, 43);
+            btnUrunEkle.Size = new Size(89, 43);
             btnUrunEkle.TabIndex = 9;
             btnUrunEkle.Text = "Ürün Ekle";
             btnUrunEkle.UseVisualStyleBackColor = false;
@@ -546,10 +560,10 @@
             // btnUrunSil
             // 
             btnUrunSil.BackColor = Color.CornflowerBlue;
-            btnUrunSil.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnUrunSil.Location = new Point(460, 567);
+            btnUrunSil.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUrunSil.Location = new Point(448, 569);
             btnUrunSil.Name = "btnUrunSil";
-            btnUrunSil.Size = new Size(86, 43);
+            btnUrunSil.Size = new Size(81, 43);
             btnUrunSil.TabIndex = 5;
             btnUrunSil.Text = "Ürün Sil";
             btnUrunSil.UseVisualStyleBackColor = false;
@@ -557,10 +571,10 @@
             // btnFisİptal
             // 
             btnFisİptal.BackColor = Color.CornflowerBlue;
-            btnFisİptal.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnFisİptal.Location = new Point(375, 567);
+            btnFisİptal.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFisİptal.Location = new Point(365, 569);
             btnFisİptal.Name = "btnFisİptal";
-            btnFisİptal.Size = new Size(82, 43);
+            btnFisİptal.Size = new Size(77, 43);
             btnFisİptal.TabIndex = 2;
             btnFisİptal.Text = "Fiş İptal";
             btnFisİptal.UseVisualStyleBackColor = false;
@@ -568,10 +582,10 @@
             // btnOdemeAl
             // 
             btnOdemeAl.BackColor = Color.CornflowerBlue;
-            btnOdemeAl.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnOdemeAl.Location = new Point(280, 567);
+            btnOdemeAl.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnOdemeAl.Location = new Point(272, 567);
             btnOdemeAl.Name = "btnOdemeAl";
-            btnOdemeAl.Size = new Size(92, 43);
+            btnOdemeAl.Size = new Size(87, 43);
             btnOdemeAl.TabIndex = 3;
             btnOdemeAl.Text = "Ödeme Al";
             btnOdemeAl.UseVisualStyleBackColor = false;
@@ -579,10 +593,10 @@
             // btnIndirim
             // 
             btnIndirim.BackColor = Color.CornflowerBlue;
-            btnIndirim.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnIndirim.Location = new Point(188, 567);
+            btnIndirim.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnIndirim.Location = new Point(185, 567);
             btnIndirim.Name = "btnIndirim";
-            btnIndirim.Size = new Size(86, 43);
+            btnIndirim.Size = new Size(81, 43);
             btnIndirim.TabIndex = 1;
             btnIndirim.Text = "İndirim";
             btnIndirim.UseVisualStyleBackColor = false;
@@ -590,10 +604,10 @@
             // btnFisYazdır
             // 
             btnFisYazdır.BackColor = Color.CornflowerBlue;
-            btnFisYazdır.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnFisYazdır.Location = new Point(102, 568);
+            btnFisYazdır.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFisYazdır.Location = new Point(99, 567);
             btnFisYazdır.Name = "btnFisYazdır";
-            btnFisYazdır.Size = new Size(85, 42);
+            btnFisYazdır.Size = new Size(80, 42);
             btnFisYazdır.TabIndex = 4;
             btnFisYazdır.Text = "Fiş Yazdır";
             btnFisYazdır.UseVisualStyleBackColor = false;
@@ -849,6 +863,6 @@
         private Button btncay;
         private Button btnUrunEkle;
         private DevExpress.XtraEditors.SimpleButton btnHome;
-
+        private Button button1;
     }
 }

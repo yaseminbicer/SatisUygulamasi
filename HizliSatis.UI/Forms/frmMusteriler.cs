@@ -8,7 +8,17 @@ namespace HizliSatis.UI.Forms
 {
     public partial class frmMusteriler : DevExpress.XtraEditors.XtraForm
     {
-        ICustomerService _CustomerService = new CustomerService();
+
+        private readonly ICustomerService _CustomerService;
+        
+        public frmMusteriler(ICustomerService CustomerService)
+        {
+            _CustomerService = CustomerService;
+
+            InitializeComponent();
+        }
+
+       
         BindingList<Musteri> Musteriler { get; set; }
         public frmMusteriler()
         {

@@ -12,7 +12,7 @@ namespace HizliSatis.Application.Abstract
         List<Kullanici> GetUsers();
         void AddUser(Kullanici user);
         void RemoveUser(Kullanici user);
-        public bool AuthenticateUser(string kullaniciAdi, string sifre);
+        bool AuthenticateUser(string kullaniciAdi, string sifre);
         int SaveChanges();
     }
 }

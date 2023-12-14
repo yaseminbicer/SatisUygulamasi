@@ -20,6 +20,7 @@ namespace HizliSatis.Domain.Entities
         public DateTime Tarih { get; set; }
         public string MusteriAdi { get; set; }
         public string FisNo { get; set; }
+
         [ForeignKey(nameof(Musteri))]
         public int MusteriId { get; set; }
         public Musteri Musteri { get; set; }

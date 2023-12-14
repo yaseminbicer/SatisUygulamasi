@@ -1,13 +1,30 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.DirectX.Common.Direct2D;
+using DevExpress.XtraEditors;
 using HizliSatis.Application.Abstractions;
 using HizliSatis.Domain.Entities;
 using HizliSatis.Persistence.Concretes;
+using Microsoft.Extensions.Logging;
 
 namespace HizliSatis.UI.Forms
 {
     public partial class frmUrunEkle : XtraForm
     {
-        private readonly IProductService _productService = new ProductService();
+
+        /*private readonly IProductService<frmUrunEkle> _productService;
+        public frmUrunEkle(IProductService<frmUrunEkle> productService)
+        {
+            _productService = productService;
+            InitializeComponent();
+        }*/
+
+        private readonly IProductService _productService;
+        public frmUrunEkle(IProductService ProductService)
+         {
+             _productService = ProductService;
+
+             InitializeComponent();
+         }
+
         public frmUrunEkle()
         {
             InitializeComponent();
@@ -62,8 +79,8 @@ namespace HizliSatis.UI.Forms
         {
             var guncellenecekStok = _productService.GetStokById(id);
 
-            if(guncellenecekStok != null) 
-            { 
+            if (guncellenecekStok != null)
+            {
                 guncellenecekStok.Aciklama = txtUrunAciklama.Text;
                 guncellenecekStok.SatisFiyati = Convert.ToDecimal(txtSatisFiyati.EditValue);
                 guncellenecekStok.Ad = txtUrunAdi.Text;
@@ -73,8 +90,8 @@ namespace HizliSatis.UI.Forms
                 guncellenecekStok.KdvOrani = Convert.ToInt32(txtKdvOrani.Text);
                 guncellenecekStok.UrunGrubu = txtUrunGrubu.Text;
 
-            _productService.UpdateProduct(id);
-            
+                _productService.UpdateProduct(id);
+
             }
         }
         private void Kaydet()
@@ -136,5 +153,7 @@ namespace HizliSatis.UI.Forms
             }
 
         }
+
+     
     }
 }

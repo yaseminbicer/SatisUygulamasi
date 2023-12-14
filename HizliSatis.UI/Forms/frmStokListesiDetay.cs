@@ -6,7 +6,15 @@ namespace HizliSatis.UI.Forms
 {
     public partial class frmStokListesiDetay : Form
     {
-        private readonly IProductService _productService = new ProductService();
+        private readonly IProductService _productService;
+
+        public frmStokListesiDetay(IProductService ProductService)
+        {
+            _productService = ProductService;
+
+            InitializeComponent();
+        }
+       
         private int Id;
         public frmStokListesiDetay(int id)
         {
@@ -27,7 +35,7 @@ namespace HizliSatis.UI.Forms
                     txtBirimi.Text = urun.Birim;
                     txtKdvOrani.Text = Convert.ToString(urun.KdvOrani);
                     txtUrunGrubu.Text = urun.UrunGrubu;
-            
+
                 }
             }
 
@@ -53,7 +61,7 @@ namespace HizliSatis.UI.Forms
                 _productService.AddProduct(stok);
             else
                 _productService.UpdateProduct(Id);
-                _productService.SaveChanges();
+            _productService.SaveChanges();
 
             Close();
 

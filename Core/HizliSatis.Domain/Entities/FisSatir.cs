@@ -12,13 +12,13 @@ namespace HizliSatis.Domain.Entities
     {
         [ForeignKey(nameof(Fis))]
         public int FisId { get; set; }
+
         [ForeignKey(nameof(Stok))]
         public int StokId { get; set; }
         public decimal Miktar { get; set; }
         public decimal BirimFiyat { get; set; }
         public decimal Iskonto { get; set; }
         public decimal Tutar => Miktar * BirimFiyat;
-        public virtual Fis Fis { get; set; }
-        public virtual Stok Stok { get; set; }
+       
     }
 }

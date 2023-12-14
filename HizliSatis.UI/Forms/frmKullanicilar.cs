@@ -18,13 +18,20 @@ namespace HizliSatis.UI.Forms
 {
     public partial class frmKullanicilar : DevExpress.XtraEditors.XtraForm
     {
-        IAccountService _accountService = new AccountService();
-    
-        BindingList<Kullanici> Kullanicilar { get; set; }
+        private readonly IAccountService _accountService;
+
+        public frmKullanicilar(IAccountService AccountService)
+        {
+            _accountService = AccountService;
+
+        }
         public frmKullanicilar()
         {
             InitializeComponent();
         }
+      
+        BindingList<Kullanici> Kullanicilar { get; set; }
+        
 
         private void frmKullanicilar_Load(object sender, EventArgs e)
         {

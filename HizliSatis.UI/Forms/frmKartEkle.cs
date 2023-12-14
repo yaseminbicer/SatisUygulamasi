@@ -6,7 +6,14 @@ namespace HizliSatis.UI.Forms
 {
     public partial class frmKartEkle : Form
     {
-        private readonly IProductService _productService = new ProductService();
+        private readonly IProductService _productService;
+
+
+        public frmKartEkle(IProductService ProductService)
+        {
+            _productService = ProductService;
+
+        }
         public frmKartEkle()
         {
             InitializeComponent();
@@ -17,11 +24,11 @@ namespace HizliSatis.UI.Forms
             {
                 Ad = UrunAdi.Text,
                 Birim = txtBirimi.Text,
-               
+
                 KdvOrani = Convert.ToInt32(txtKdvOrani.Text),
                 AlisFiyati = Convert.ToDecimal(txtAlisFiyati.Text),
                 SatisFiyati = Convert.ToDecimal(txtSatisFiyati.Text),
-               
+
 
             };
             _productService.AddProduct(YeniKart);
@@ -53,7 +60,7 @@ namespace HizliSatis.UI.Forms
                 guncellenecekStok.AlisFiyati = Convert.ToDecimal(txtAlisFiyati.Text);
                 guncellenecekStok.SatisFiyati = Convert.ToDecimal(txtSatisFiyati.Text);
                 _productService.UpdateProduct(id);
-           
+
             }
         }
 

@@ -10,7 +10,6 @@ using HizliSatis.Domain.Entities;
 namespace HizliSatis.Persistence.Context
 {
 
-
     public class AppDbContext:DbContext
     {
       

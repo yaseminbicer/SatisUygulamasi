@@ -8,7 +8,12 @@ namespace HizliSatis.UI.Forms
 
     public partial class frmStokListesi : Form
     {
-        private readonly IProductService _productService = new ProductService();
+        private readonly IProductService _productService;
+        
+        public frmStokListesi(ProductService productService)
+        {
+            _productService = productService;
+        }
         private void frmStokListesi_Load(object sender, EventArgs e)
         {
             UrunListele();
@@ -38,12 +43,8 @@ namespace HizliSatis.UI.Forms
 
         private void UrunListele()
         {
-
             gridStokListesi.DataSource = _productService.GetProducts();
-
-
         }
-
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
@@ -67,10 +68,10 @@ namespace HizliSatis.UI.Forms
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
-        { 
-                frmStokListesiDetay stokListesiDetay = new frmStokListesiDetay(0);
-                stokListesiDetay.ShowDialog();
-           
+        {
+            frmStokListesiDetay stokListesiDetay = new frmStokListesiDetay(0);
+            stokListesiDetay.ShowDialog();
+
         }
 
         private void btnSil_Click(object sender, EventArgs e)

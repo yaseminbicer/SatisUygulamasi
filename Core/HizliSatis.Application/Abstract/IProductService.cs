@@ -13,7 +13,7 @@ namespace HizliSatis.Application.Abstractions
         List<Stok> GetProducts();
         //void FindProduct(Stok product, int id=0);
         Stok GetStokById(int id);
-        Stok GetStokByAd(string ad);
+        Stok GetStokByName(string ad);
         
         void AddProduct(Stok product);
         void RemoveProduct(Stok product);

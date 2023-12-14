@@ -38,7 +38,6 @@
             btnKaydet = new DevExpress.XtraEditors.SimpleButton();
             btnIptal = new DevExpress.XtraEditors.SimpleButton();
             txtKdvOrani = new DevExpress.XtraEditors.TextEdit();
-            txtAlisFiyati = new DevExpress.XtraEditors.TextEdit();
             txtSatisFiyati = new DevExpress.XtraEditors.TextEdit();
             txtBarkod = new DevExpress.XtraEditors.TextEdit();
             txtUrunAdi = new DevExpress.XtraEditors.TextEdit();
@@ -54,13 +53,13 @@
             panel2 = new Panel();
             gridUrunEkle = new DevExpress.XtraGrid.GridControl();
             gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            txtAlisFiyati = new DevExpress.XtraEditors.TextEdit();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtBirimi.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtUrunGrubu.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtId.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtKdvOrani.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtAlisFiyati.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtSatisFiyati.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtBarkod.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtUrunAdi.Properties).BeginInit();
@@ -68,6 +67,7 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridUrunEkle).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtAlisFiyati.Properties).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -118,14 +118,14 @@
             // 
             txtBirimi.Location = new Point(478, 107);
             txtBirimi.Name = "txtBirimi";
-            txtBirimi.Size = new Size(84, 28);
+            txtBirimi.Size = new Size(84, 20);
             txtBirimi.TabIndex = 6;
             // 
             // txtUrunGrubu
             // 
-            txtUrunGrubu.Location = new Point(129, 147);
+            txtUrunGrubu.Location = new Point(129, 141);
             txtUrunGrubu.Name = "txtUrunGrubu";
-            txtUrunGrubu.Size = new Size(177, 28);
+            txtUrunGrubu.Size = new Size(177, 20);
             txtUrunGrubu.TabIndex = 3;
             // 
             // txtId
@@ -133,7 +133,7 @@
             txtId.EditValue = "0";
             txtId.Location = new Point(591, 22);
             txtId.Name = "txtId";
-            txtId.Size = new Size(105, 28);
+            txtId.Size = new Size(105, 20);
             txtId.TabIndex = 46;
             txtId.Visible = false;
             // 
@@ -197,51 +197,43 @@
             // 
             txtKdvOrani.Location = new Point(478, 141);
             txtKdvOrani.Name = "txtKdvOrani";
-            txtKdvOrani.Size = new Size(84, 28);
+            txtKdvOrani.Size = new Size(84, 20);
             txtKdvOrani.TabIndex = 7;
-            // 
-            // txtAlisFiyati
-            // 
-            txtAlisFiyati.EditValue = "0";
-            txtAlisFiyati.Location = new Point(478, 42);
-            txtAlisFiyati.Name = "txtAlisFiyati";
-            txtAlisFiyati.Size = new Size(84, 28);
-            txtAlisFiyati.TabIndex = 4;
             // 
             // txtSatisFiyati
             // 
             txtSatisFiyati.EditValue = "0";
             txtSatisFiyati.Location = new Point(478, 75);
             txtSatisFiyati.Name = "txtSatisFiyati";
-            txtSatisFiyati.Size = new Size(84, 28);
+            txtSatisFiyati.Size = new Size(84, 20);
             txtSatisFiyati.TabIndex = 5;
             // 
             // txtBarkod
             // 
             txtBarkod.Location = new Point(129, 40);
             txtBarkod.Name = "txtBarkod";
-            txtBarkod.Size = new Size(177, 28);
+            txtBarkod.Size = new Size(177, 20);
             txtBarkod.TabIndex = 0;
             // 
             // txtUrunAdi
             // 
             txtUrunAdi.Location = new Point(129, 73);
             txtUrunAdi.Name = "txtUrunAdi";
-            txtUrunAdi.Size = new Size(177, 28);
+            txtUrunAdi.Size = new Size(177, 20);
             txtUrunAdi.TabIndex = 1;
             // 
             // txtUrunAciklama
             // 
             txtUrunAciklama.Location = new Point(129, 107);
             txtUrunAciklama.Name = "txtUrunAciklama";
-            txtUrunAciklama.Size = new Size(177, 28);
+            txtUrunAciklama.Size = new Size(177, 20);
             txtUrunAciklama.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(384, 149);
+            label1.Location = new Point(384, 140);
             label1.Name = "label1";
             label1.Size = new Size(88, 21);
             label1.TabIndex = 30;
@@ -251,7 +243,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(416, 117);
+            label2.Location = new Point(416, 106);
             label2.Name = "label2";
             label2.Size = new Size(56, 21);
             label2.TabIndex = 26;
@@ -261,7 +253,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(382, 81);
+            label4.Location = new Point(382, 74);
             label4.Name = "label4";
             label4.Size = new Size(90, 21);
             label4.TabIndex = 24;
@@ -271,7 +263,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(390, 42);
+            label5.Location = new Point(390, 41);
             label5.Name = "label5";
             label5.Size = new Size(82, 21);
             label5.TabIndex = 23;
@@ -281,7 +273,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(25, 148);
+            label6.Location = new Point(25, 140);
             label6.Name = "label6";
             label6.Size = new Size(98, 21);
             label6.TabIndex = 19;
@@ -291,27 +283,29 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(5, 116);
+            label7.Location = new Point(5, 106);
             label7.Name = "label7";
             label7.Size = new Size(118, 21);
             label7.TabIndex = 18;
             label7.Text = "Ürün Açıklama:";
+           
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(45, 80);
+            label8.Location = new Point(45, 72);
             label8.Name = "label8";
             label8.Size = new Size(78, 21);
             label8.TabIndex = 17;
             label8.Text = "Ürün Adı:";
+            
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(57, 47);
+            label9.Location = new Point(57, 39);
             label9.Name = "label9";
             label9.Size = new Size(66, 21);
             label9.TabIndex = 16;
@@ -346,6 +340,14 @@
             gridView1.OptionsView.ShowGroupPanel = false;
             gridView1.RowClick += gridView1_RowClick;
             // 
+            // txtAlisFiyati
+            // 
+            txtAlisFiyati.EditValue = "0";
+            txtAlisFiyati.Location = new Point(478, 42);
+            txtAlisFiyati.Name = "txtAlisFiyati";
+            txtAlisFiyati.Size = new Size(84, 20);
+            txtAlisFiyati.TabIndex = 4;
+            // 
             // frmUrunEkle
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
@@ -363,7 +365,6 @@
             ((System.ComponentModel.ISupportInitialize)txtUrunGrubu.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtId.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtKdvOrani.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtAlisFiyati.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtSatisFiyati.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtBarkod.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtUrunAdi.Properties).EndInit();
@@ -371,6 +372,7 @@
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gridUrunEkle).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtAlisFiyati.Properties).EndInit();
             ResumeLayout(false);
         }
 
@@ -387,7 +389,6 @@
         private Label label9;
         private Panel panel2;
         private DevExpress.XtraEditors.TextEdit txtKdvOrani;
-        private DevExpress.XtraEditors.TextEdit txtAlisFiyati;
         private DevExpress.XtraEditors.TextEdit txtSatisFiyati;
         private DevExpress.XtraEditors.TextEdit txtBarkod;
         private DevExpress.XtraEditors.TextEdit txtUrunAdi;
@@ -401,5 +402,6 @@
         private DevExpress.XtraEditors.TextEdit txtId;
         private DevExpress.XtraEditors.TextEdit txtBirimi;
         private DevExpress.XtraEditors.TextEdit txtUrunGrubu;
+        private DevExpress.XtraEditors.TextEdit txtAlisFiyati;
     }
 }

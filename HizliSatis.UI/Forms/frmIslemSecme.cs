@@ -21,7 +21,7 @@ namespace HizliSatis.UI.Forms
         private void btnKullaniciDegistir_Click(object sender, EventArgs e)
         {
             this.Hide();
-          
+
             var loginform = System.Windows.Forms.Application.OpenForms[0];
             if (loginform != null && loginform is frmLogin)
             {
@@ -50,6 +50,7 @@ namespace HizliSatis.UI.Forms
 
         private void btnKullanicilar_Click(object sender, EventArgs e)
         {
+          
             new frmKullanicilar().ShowDialog();
         }
 
