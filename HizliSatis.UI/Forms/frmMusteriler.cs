@@ -1,4 +1,6 @@
-﻿using HizliSatis.Domain.Entities;
+﻿using HizliSatis.Application.Abstract;
+using HizliSatis.Application.Concretes;
+using HizliSatis.Domain.Entities;
 using System.ComponentModel;
 using System.Data;
 
@@ -6,17 +8,24 @@ namespace HizliSatis.UI.Forms
 {
     public partial class frmMusteriler : DevExpress.XtraEditors.XtraForm
     {
-        AppDbContext dbContext = new AppDbContext();
-        BindingList<Musteri> Musteriler { get; set; }
+        private readonly IRepository<Musteri> _repository;
+
+        public frmMusteriler(IRepository<Musteri> repository)
+        { 
+            _repository = repository;
+        }
+
         public frmMusteriler()
         {
             InitializeComponent();
-
         }
+
+
+        BindingList<Musteri> Musteriler { get; set; }
 
         private void frmMusteriler_Load(object sender, EventArgs e)
         {
-            var data = dbContext.Musteri.ToList();
+            var data = _repository.GetAllList();
             Musteriler = new BindingList<Musteri>(data);
             gridMusteri.DataSource = Musteriler;
 
@@ -27,15 +36,14 @@ namespace HizliSatis.UI.Forms
         {
             foreach (var musteri in Musteriler.Where(s => s.Id == 0))
             {
-                dbContext.Add(musteri);
+                _repository.Create(musteri);
             }
-            int result = dbContext.SaveChanges();
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
             var musteri = (Musteri)viewMusteri.GetFocusedRow();
-            dbContext.Remove(musteri);
+            _repository.Delete(musteri);
             viewMusteri.DeleteRow(viewMusteri.FocusedRowHandle);
         }
 
@@ -44,7 +52,7 @@ namespace HizliSatis.UI.Forms
         {
             Close();
             new frmIslemSecme().Show();
-
         }
+
     }
 }

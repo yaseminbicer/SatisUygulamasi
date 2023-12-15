@@ -47,9 +47,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Castellar", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.Olive;
-            label1.Location = new Point(12, 9);
+            label1.Location = new Point(14, 12);
             label1.Name = "label1";
-            label1.Size = new Size(170, 23);
+            label1.Size = new Size(213, 29);
             label1.TabIndex = 5;
             label1.Text = "Cosmos Sales";
             // 
@@ -59,9 +59,10 @@
             btnCikis.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnCikis.ForeColor = Color.White;
             btnCikis.Image = (Image)resources.GetObject("btnCikis.Image");
-            btnCikis.Location = new Point(473, 152);
+            btnCikis.Location = new Point(541, 203);
+            btnCikis.Margin = new Padding(3, 4, 3, 4);
             btnCikis.Name = "btnCikis";
-            btnCikis.Size = new Size(72, 88);
+            btnCikis.Size = new Size(82, 117);
             btnCikis.TabIndex = 18;
             btnCikis.Text = "Çıkış";
             btnCikis.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -74,9 +75,10 @@
             btnKullaniciDegistir.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnKullaniciDegistir.ForeColor = Color.White;
             btnKullaniciDegistir.Image = (Image)resources.GetObject("btnKullaniciDegistir.Image");
-            btnKullaniciDegistir.Location = new Point(385, 152);
+            btnKullaniciDegistir.Location = new Point(440, 203);
+            btnKullaniciDegistir.Margin = new Padding(3, 4, 3, 4);
             btnKullaniciDegistir.Name = "btnKullaniciDegistir";
-            btnKullaniciDegistir.Size = new Size(82, 88);
+            btnKullaniciDegistir.Size = new Size(94, 117);
             btnKullaniciDegistir.TabIndex = 17;
             btnKullaniciDegistir.Text = "Kullanıcı Değiştir";
             btnKullaniciDegistir.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -89,9 +91,10 @@
             button7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button7.ForeColor = Color.White;
             button7.Image = (Image)resources.GetObject("button7.Image");
-            button7.Location = new Point(385, 62);
+            button7.Location = new Point(440, 83);
+            button7.Margin = new Padding(3, 4, 3, 4);
             button7.Name = "button7";
-            button7.Size = new Size(160, 88);
+            button7.Size = new Size(183, 117);
             button7.TabIndex = 16;
             button7.Text = "Ayarlar";
             button7.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -103,9 +106,10 @@
             btnUrunEkle.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnUrunEkle.ForeColor = Color.White;
             btnUrunEkle.Image = (Image)resources.GetObject("btnUrunEkle.Image");
-            btnUrunEkle.Location = new Point(219, 152);
+            btnUrunEkle.Location = new Point(250, 203);
+            btnUrunEkle.Margin = new Padding(3, 4, 3, 4);
             btnUrunEkle.Name = "btnUrunEkle";
-            btnUrunEkle.Size = new Size(160, 88);
+            btnUrunEkle.Size = new Size(183, 117);
             btnUrunEkle.TabIndex = 15;
             btnUrunEkle.Text = "Ürün Ekle";
             btnUrunEkle.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -118,9 +122,10 @@
             btnStokTakibi.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnStokTakibi.ForeColor = Color.White;
             btnStokTakibi.Image = (Image)resources.GetObject("btnStokTakibi.Image");
-            btnStokTakibi.Location = new Point(219, 62);
+            btnStokTakibi.Location = new Point(250, 83);
+            btnStokTakibi.Margin = new Padding(3, 4, 3, 4);
             btnStokTakibi.Name = "btnStokTakibi";
-            btnStokTakibi.Size = new Size(160, 88);
+            btnStokTakibi.Size = new Size(183, 117);
             btnStokTakibi.TabIndex = 14;
             btnStokTakibi.Text = "Stok Takibi";
             btnStokTakibi.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -133,9 +138,10 @@
             button10.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button10.ForeColor = Color.White;
             button10.Image = (Image)resources.GetObject("button10.Image");
-            button10.Location = new Point(53, 152);
+            button10.Location = new Point(61, 203);
+            button10.Margin = new Padding(3, 4, 3, 4);
             button10.Name = "button10";
-            button10.Size = new Size(160, 88);
+            button10.Size = new Size(183, 117);
             button10.TabIndex = 13;
             button10.Text = "Fiyatı Güncelle";
             button10.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -149,9 +155,10 @@
             button11.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button11.ForeColor = Color.White;
             button11.Image = (Image)resources.GetObject("button11.Image");
-            button11.Location = new Point(53, 62);
+            button11.Location = new Point(61, 83);
+            button11.Margin = new Padding(3, 4, 3, 4);
             button11.Name = "button11";
-            button11.Size = new Size(160, 88);
+            button11.Size = new Size(183, 117);
             button11.TabIndex = 12;
             button11.Text = "Satış İşlemi";
             button11.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -163,10 +170,10 @@
             btnKullanicilar.Appearance.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnKullanicilar.Appearance.Options.UseFont = true;
             btnKullanicilar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            btnKullanicilar.ImageOptions.SvgImage = Properties.Resources.allowuserstoeditranges;
-            btnKullanicilar.Location = new Point(53, 246);
+            btnKullanicilar.Location = new Point(61, 328);
+            btnKullanicilar.Margin = new Padding(3, 4, 3, 4);
             btnKullanicilar.Name = "btnKullanicilar";
-            btnKullanicilar.Size = new Size(159, 74);
+            btnKullanicilar.Size = new Size(182, 99);
             btnKullanicilar.TabIndex = 19;
             btnKullanicilar.Text = "Kullanıcılar";
             btnKullanicilar.Click += btnKullanicilar_Click;
@@ -176,10 +183,10 @@
             btnMusteriler.Appearance.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnMusteriler.Appearance.Options.UseFont = true;
             btnMusteriler.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            btnMusteriler.ImageOptions.SvgImage = Properties.Resources.allowuserstoeditranges;
-            btnMusteriler.Location = new Point(220, 246);
+            btnMusteriler.Location = new Point(251, 328);
+            btnMusteriler.Margin = new Padding(3, 4, 3, 4);
             btnMusteriler.Name = "btnMusteriler";
-            btnMusteriler.Size = new Size(159, 74);
+            btnMusteriler.Size = new Size(182, 99);
             btnMusteriler.TabIndex = 20;
             btnMusteriler.Text = "Müşteriler";
             btnMusteriler.Click += btnMusteriler_Click;
@@ -189,9 +196,10 @@
             btnStokListesi.BackColor = Color.FromArgb(225, 185, 95);
             btnStokListesi.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnStokListesi.ForeColor = Color.White;
-            btnStokListesi.Location = new Point(385, 247);
+            btnStokListesi.Location = new Point(440, 329);
+            btnStokListesi.Margin = new Padding(3, 4, 3, 4);
             btnStokListesi.Name = "btnStokListesi";
-            btnStokListesi.Size = new Size(160, 78);
+            btnStokListesi.Size = new Size(183, 104);
             btnStokListesi.TabIndex = 21;
             btnStokListesi.Text = "Stok Listesi";
             btnStokListesi.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -200,10 +208,10 @@
             // 
             // frmIslemSecme
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(595, 357);
+            ClientSize = new Size(680, 476);
             Controls.Add(btnStokListesi);
             Controls.Add(btnMusteriler);
             Controls.Add(btnKullanicilar);
@@ -215,7 +223,6 @@
             Controls.Add(button10);
             Controls.Add(button11);
             Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "frmIslemSecme";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "İşlemler";

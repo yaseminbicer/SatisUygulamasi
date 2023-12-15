@@ -1,16 +1,23 @@
-﻿namespace HizliSatis.UI.Forms
+﻿using HizliSatis.Application.Abstract;
+using HizliSatis.Application.Concretes;
+using HizliSatis.Domain.Entities;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace HizliSatis.UI.Forms
 {
     public partial class frmStokTakibi : DevExpress.XtraEditors.XtraForm
     {
-        public frmStokTakibi()
+        private readonly IRepository<Stok> _repository;
+        public frmStokTakibi(IRepository<Stok> repository)
         {
             InitializeComponent();
+            _repository = repository;
         }
 
         private void btnKartEkle_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmKartEkle KartEkle = new frmKartEkle();
+            var KartEkle = Program.ServiceProvider.GetRequiredService<frmKartEkle>();
             KartEkle.Show();
         }
 

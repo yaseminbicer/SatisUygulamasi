@@ -43,6 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Infrastructure\Persistance\Migrations\" />
     <Folder Include="Servis\NewFolder\" />
   </ItemGroup>
 

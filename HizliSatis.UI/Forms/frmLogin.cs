@@ -1,17 +1,24 @@
 ﻿using DevExpress.XtraEditors;
+using HizliSatis.Application.Abstract;
+using HizliSatis.Application.Concretes;
 using HizliSatis.Domain.Entities;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Identity.Client;
 using Microsoft.Win32;
 
 namespace HizliSatis.UI.Forms
 {
     public partial class frmLogin : XtraForm
     {
-        AppDbContext dbContext = new AppDbContext();
-        public frmLogin()
+        private readonly IRepository<Kullanici> _repository;
+
+        public frmLogin(IRepository<Kullanici> repository)
         {
             InitializeComponent();
+            _repository = repository;
             KullanicilariOlustur();
         }
+
 
         private RegistryKey BaseFolderPath = Registry.CurrentUser;
         private string SubFolderPath = "KullaniciGirisBilgileri";
@@ -42,10 +49,10 @@ namespace HizliSatis.UI.Forms
         {
             string kullaniciadi = txtKullaniciAdi.Text;
             string sifre = txtSifre.Text;
-            if (GirisYap(kullaniciadi, sifre))
+            if ( GirisYap(kullaniciadi, sifre))
             {
                 this.Hide();
-                frmIslemSecme frm = new frmIslemSecme();
+                var frm = Program.ServiceProvider.GetRequiredService<frmIslemSecme>();
                 frm.Show();
             }
             else
@@ -69,7 +76,7 @@ namespace HizliSatis.UI.Forms
 
         private bool GirisYap(string kullaniciAdi, string sifre)
         {
-            var kullanici = dbContext.Kullanici.FirstOrDefault(s => s.KullaniciAdi == kullaniciAdi && s.Sifre == sifre);
+            var kullanici = _repository.GetByFilter(s => s.KullaniciAdi == kullaniciAdi && s.Sifre == sifre);
             return kullanici != null;
         }
 
@@ -77,7 +84,7 @@ namespace HizliSatis.UI.Forms
         {
             try
             {
-                var kullanicilar = dbContext.Kullanici.ToList();
+                var kullanicilar = _repository.GetAllList();
                 if (!kullanicilar.Any())
                 {
                     var kullanici = new Kullanici();
@@ -85,8 +92,7 @@ namespace HizliSatis.UI.Forms
                     kullanici.Sifre = "admin1";
                     kullanici.AdSoyad = "Yönetici";
                     kullanici.Yonetici = true;
-                    dbContext.Add(kullanici);
-                    dbContext.SaveChanges();
+                    _repository.Create(kullanici);
                 }
 
             }

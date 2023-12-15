@@ -16,16 +16,22 @@ namespace HizliSatis.UI.Forms
 {
     public partial class frmKullanicilar : DevExpress.XtraEditors.XtraForm
     {
-        IAccountService _accountService = new AccountService();
-        BindingList<Kullanici> Kullanicilar { get; set; }
+        private readonly IRepository<Kullanici> _repository;
+
+        public frmKullanicilar(IRepository<Kullanici> repository)
+        {
+            _repository = repository;
+        }
         public frmKullanicilar()
         {
             InitializeComponent();
         }
 
+        BindingList<Kullanici> Kullanicilar { get; set; }
+
         private void frmKullanicilar_Load(object sender, EventArgs e)
         {
-            var data = _accountService.GetUsers();
+            var data = _repository.GetAllList();
             Kullanicilar = new BindingList<Kullanici>(data);
             gridKullanici.DataSource = Kullanicilar;
         }
@@ -36,15 +42,14 @@ namespace HizliSatis.UI.Forms
         {
             foreach (var kullanici in Kullanicilar.Where(s => s.Id == 0))
             {
-                _accountService.AddUser(kullanici);
+                _repository.Create(kullanici);
             }
-            int result = _accountService.SaveChanges();
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
             var kullanici = (Kullanici)viewKullanici.GetFocusedRow();
-            _accountService.RemoveUser(kullanici);
+            _repository.Delete(kullanici);
             viewKullanici.DeleteRow(viewKullanici.FocusedRowHandle);
         }
 

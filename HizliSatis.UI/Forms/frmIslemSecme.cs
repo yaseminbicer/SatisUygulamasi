@@ -1,4 +1,7 @@
-﻿
+﻿using DevExpress.XtraRichEdit.API.Native;
+using HizliSatis.Application.Abstract;
+using HizliSatis.Domain.Entities;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +24,7 @@ namespace HizliSatis.UI.Forms
         private void btnKullaniciDegistir_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var loginForm = Application.OpenForms[0];
+            var loginForm = System.Windows.Forms.Application.OpenForms[nameof(frmLogin)];
             if (loginForm != null && loginForm is frmLogin)
             {
                 ((frmLogin)loginForm).Show();
@@ -38,13 +41,13 @@ namespace HizliSatis.UI.Forms
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmUrunEkle urunEkle = new frmUrunEkle();
+            var urunEkle = Program.ServiceProvider.GetRequiredService<frmUrunEkle>();
             urunEkle.Show();
         }
 
         private void frmIslemSecme_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void btnKullanicilar_Click(object sender, EventArgs e)
@@ -54,12 +57,12 @@ namespace HizliSatis.UI.Forms
 
         private void button4_Click(object sender, EventArgs e)
         {
-            new frmLogin().Show();
+            //new frmLogin().Show();
         }
 
         private void btnCikis_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void btnKullaniciDegistir_Click_1(object sender, EventArgs e)
@@ -67,7 +70,7 @@ namespace HizliSatis.UI.Forms
             this.Hide();
             //frmLogin frmLogin = new frmLogin();
             //frmLogin.Show();
-            var loginForm = Application.OpenForms[0];
+            var loginForm = System.Windows.Forms.Application.OpenForms[nameof(frmLogin)];
             if (loginForm != null && loginForm is frmLogin)
             {
                 ((frmLogin)loginForm).Show();
@@ -77,7 +80,7 @@ namespace HizliSatis.UI.Forms
         private void button11_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmSatis Satisİslemi = new frmSatis();
+            var Satisİslemi = Program.ServiceProvider.GetRequiredService<frmSatis>();
             Satisİslemi.Show();
         }
 
@@ -89,14 +92,14 @@ namespace HizliSatis.UI.Forms
         private void btnStokTakibi_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmStokTakibi stokTakibi = new frmStokTakibi();
+            var stokTakibi = Program.ServiceProvider.GetRequiredService<frmStokTakibi>();
             stokTakibi.Show();
         }
 
         private void btnStokListesi_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmStokListesi frmStokListesi = new frmStokListesi();
+            var frmStokListesi = Program.ServiceProvider.GetRequiredService<frmStokListesi>();
             frmStokListesi.Show();
         }
     }

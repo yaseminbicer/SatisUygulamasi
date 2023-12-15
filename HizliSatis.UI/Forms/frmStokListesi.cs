@@ -1,17 +1,21 @@
-﻿using HizliSatis.Application.Abstractions;
+﻿using HizliSatis.Application.Abstract;
+using HizliSatis.Application.Abstractions;
 using HizliSatis.Domain.Entities;
 using HizliSatis.Persistence.Concretes;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace HizliSatis.UI.Forms
 {
 
     public partial class frmStokListesi : Form
     {
-        private readonly IProductService _productService = new ProductService();
-        private void frmStokListesi_Load(object sender, EventArgs e)
+        private readonly IRepository<Stok> _repository;
+
+        public frmStokListesi(IRepository<Stok> repository)
         {
-            UrunListele();
+            _repository = repository;
         }
+
         public frmStokListesi()
         {
             InitializeComponent();
@@ -30,6 +34,11 @@ namespace HizliSatis.UI.Forms
             btnIptal.Click += (s, e) => Close();
         }
 
+        private void frmStokListesi_Load(object sender, EventArgs e)
+        {
+            UrunListele();
+        }
+
         private void btnDuzenle_Click(object? sender, EventArgs e)
         {
             Duzenle();
@@ -38,9 +47,7 @@ namespace HizliSatis.UI.Forms
         private void UrunListele()
         {
 
-            gridStokListesi.DataSource = _productService.GetProducts();
-
-
+            gridStokListesi.DataSource = _repository.GetAllList();
         }
 
 
@@ -56,7 +63,7 @@ namespace HizliSatis.UI.Forms
         private void Duzenle()
         {
             var stok = ((Stok)gridView1.GetFocusedRow());
-            frmStokListesiDetay stokListesiDetay = new frmStokListesiDetay(stok.Id);
+            var stokListesiDetay = Program.ServiceProvider.GetRequiredService<frmStokListesiDetay>();
             stokListesiDetay.ShowDialog();
         }
 
@@ -67,17 +74,15 @@ namespace HizliSatis.UI.Forms
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            frmStokListesiDetay stokListesiDetay = new frmStokListesiDetay();
+            var stokListesiDetay = Program.ServiceProvider.GetRequiredService<frmStokListesiDetay>();
             stokListesiDetay.ShowDialog();
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
             var stok = ((Stok)gridView1.GetFocusedRow());
-            using var dbcontext = new AppDbContext();
-            var silinecekStok = dbcontext.Stok.Find(stok.Id);
-            dbcontext.Remove(silinecekStok);
-            dbcontext.SaveChanges();
+            var silinecekStok =  _repository.Get(stok.Id);
+             _repository.Delete(silinecekStok);
             UrunListele();
         }
     }

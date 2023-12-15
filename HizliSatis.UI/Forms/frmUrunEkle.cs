@@ -1,13 +1,20 @@
 ﻿using DevExpress.XtraEditors;
+using HizliSatis.Application.Abstract;
+using HizliSatis.Application.Abstractions;
 using HizliSatis.Domain.Entities;
+using HizliSatis.Persistence.Concretes;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace HizliSatis.UI.Forms
 {
     public partial class frmUrunEkle : XtraForm
     {
-        public frmUrunEkle()
+        private readonly IRepository<Stok> _repository;
+
+        public frmUrunEkle(IRepository<Stok> repository)
         {
             InitializeComponent();
+            _repository = repository;
         }
 
         private void frmUrunEkle_Load(object sender, EventArgs e)
@@ -51,14 +58,13 @@ namespace HizliSatis.UI.Forms
         private void Kapat()
         {
             Close();
-            frmIslemSecme IslemSecme = new frmIslemSecme();
+            var IslemSecme = Program.ServiceProvider.GetRequiredService<frmIslemSecme>();
             IslemSecme.Show();
         }
 
         private void Guncelle(int id)
         {
-            using var dbContext = new AppDbContext();
-            var guncellenecekStok = dbContext.Stok.Find(id);
+            var guncellenecekStok = _repository.Get(id);
             guncellenecekStok.Aciklama = txtUrunAciklama.Text;
             guncellenecekStok.SatisFiyati = Convert.ToDecimal(txtSatisFiyati.EditValue);
             guncellenecekStok.Ad = txtUrunAdi.Text;
@@ -67,8 +73,7 @@ namespace HizliSatis.UI.Forms
             guncellenecekStok.Birim = txtBirimi.Text;
             guncellenecekStok.KdvOrani = Convert.ToInt32(txtKdvOrani.Text);
             guncellenecekStok.UrunGrubu = txtUrunGrubu.Text;
-            dbContext.Update(guncellenecekStok);
-            dbContext.SaveChanges();
+            _repository.Update(guncellenecekStok);
         }
 
         private void Kaydet()
@@ -81,7 +86,6 @@ namespace HizliSatis.UI.Forms
 
         private void Yeni()
         {
-            using var dbContext = new AppDbContext();
             var yeniStok = new Stok
             {
                 Aciklama = txtUrunAciklama.Text,
@@ -94,22 +98,18 @@ namespace HizliSatis.UI.Forms
                 UrunGrubu = txtUrunGrubu.Text
             };
 
-            dbContext.Add(yeniStok);
-            dbContext.SaveChanges();
+            _repository.Create(yeniStok);
         }
 
         private void UrunListele()
         {
-            using var dbContext = new AppDbContext();
-            gridUrunEkle.DataSource = dbContext.Stok.ToList();
+            gridUrunEkle.DataSource = _repository.GetAllList();
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            using var dbContext = new AppDbContext();
             var silinecekUrun = (Stok)gridView1.GetFocusedRow();
-            dbContext.Remove(silinecekUrun);
-            dbContext.SaveChanges();
+            _repository.Delete(silinecekUrun);
             UrunListele();
         }
 

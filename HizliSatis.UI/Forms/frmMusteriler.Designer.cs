@@ -44,20 +44,24 @@
             // 
             // gridMusteri
             // 
-            gridMusteri.Location = new Point(3, 41);
+            gridMusteri.EmbeddedNavigator.Margin = new Padding(4, 4, 4, 4);
+            gridMusteri.Location = new Point(4, 50);
             gridMusteri.MainView = viewMusteri;
+            gridMusteri.Margin = new Padding(4, 4, 4, 4);
             gridMusteri.Name = "gridMusteri";
-            gridMusteri.Size = new Size(674, 387);
+            gridMusteri.Size = new Size(786, 476);
             gridMusteri.TabIndex = 0;
             gridMusteri.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { viewMusteri });
             // 
             // viewMusteri
             // 
             viewMusteri.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { gridColumn1, gridColumn2, gridColumn3, gridColumn4, gridColumn5 });
+            viewMusteri.DetailHeight = 431;
             viewMusteri.GridControl = gridMusteri;
             viewMusteri.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] { new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "") });
             viewMusteri.Name = "viewMusteri";
             viewMusteri.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditForm;
+            viewMusteri.OptionsEditForm.PopupEditFormWidth = 933;
             viewMusteri.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             viewMusteri.OptionsView.ShowGroupPanel = false;
             // 
@@ -65,41 +69,51 @@
             // 
             gridColumn1.Caption = "Ad Soyad";
             gridColumn1.FieldName = "AdSoyad";
+            gridColumn1.MinWidth = 23;
             gridColumn1.Name = "gridColumn1";
             gridColumn1.Visible = true;
             gridColumn1.VisibleIndex = 0;
+            gridColumn1.Width = 87;
             // 
             // gridColumn2
             // 
             gridColumn2.Caption = "Unvan";
             gridColumn2.FieldName = "Unvan";
+            gridColumn2.MinWidth = 23;
             gridColumn2.Name = "gridColumn2";
             gridColumn2.Visible = true;
             gridColumn2.VisibleIndex = 1;
+            gridColumn2.Width = 87;
             // 
             // gridColumn3
             // 
             gridColumn3.Caption = "Adres";
             gridColumn3.FieldName = "Adres";
+            gridColumn3.MinWidth = 23;
             gridColumn3.Name = "gridColumn3";
             gridColumn3.Visible = true;
             gridColumn3.VisibleIndex = 2;
+            gridColumn3.Width = 87;
             // 
             // gridColumn4
             // 
             gridColumn4.Caption = "Telefon";
             gridColumn4.FieldName = "Telefon";
+            gridColumn4.MinWidth = 23;
             gridColumn4.Name = "gridColumn4";
             gridColumn4.Visible = true;
             gridColumn4.VisibleIndex = 3;
+            gridColumn4.Width = 87;
             // 
             // gridColumn5
             // 
             gridColumn5.Caption = "EPosta";
             gridColumn5.FieldName = "EPosta";
+            gridColumn5.MinWidth = 23;
             gridColumn5.Name = "gridColumn5";
             gridColumn5.Visible = true;
             gridColumn5.VisibleIndex = 4;
+            gridColumn5.Width = 87;
             // 
             // btnSil
             // 
@@ -107,9 +121,10 @@
             btnSil.Appearance.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnSil.Appearance.Options.UseBackColor = true;
             btnSil.Appearance.Options.UseFont = true;
-            btnSil.Location = new Point(461, 8);
+            btnSil.Location = new Point(538, 10);
+            btnSil.Margin = new Padding(4, 4, 4, 4);
             btnSil.Name = "btnSil";
-            btnSil.Size = new Size(105, 27);
+            btnSil.Size = new Size(122, 33);
             btnSil.TabIndex = 1;
             btnSil.Text = "SİL";
             btnSil.Click += btnSil_Click;
@@ -120,9 +135,10 @@
             btnKaydet.Appearance.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnKaydet.Appearance.Options.UseBackColor = true;
             btnKaydet.Appearance.Options.UseFont = true;
-            btnKaydet.Location = new Point(350, 8);
+            btnKaydet.Location = new Point(408, 10);
+            btnKaydet.Margin = new Padding(4, 4, 4, 4);
             btnKaydet.Name = "btnKaydet";
-            btnKaydet.Size = new Size(105, 27);
+            btnKaydet.Size = new Size(122, 33);
             btnKaydet.TabIndex = 0;
             btnKaydet.Text = "KAYDET";
             btnKaydet.Click += btnKaydet_Click;
@@ -133,22 +149,24 @@
             btnIptal.Appearance.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnIptal.Appearance.Options.UseBackColor = true;
             btnIptal.Appearance.Options.UseFont = true;
-            btnIptal.Location = new Point(572, 8);
+            btnIptal.Location = new Point(667, 10);
+            btnIptal.Margin = new Padding(4, 4, 4, 4);
             btnIptal.Name = "btnIptal";
-            btnIptal.Size = new Size(105, 27);
+            btnIptal.Size = new Size(122, 33);
             btnIptal.TabIndex = 2;
             btnIptal.Text = "İPTAL";
             btnIptal.Click += btnIptal_Click;
             // 
             // frmMusteriler
             // 
-            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(685, 436);
+            ClientSize = new Size(799, 537);
             Controls.Add(btnIptal);
             Controls.Add(btnKaydet);
             Controls.Add(btnSil);
             Controls.Add(gridMusteri);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "frmMusteriler";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmMusteriler";

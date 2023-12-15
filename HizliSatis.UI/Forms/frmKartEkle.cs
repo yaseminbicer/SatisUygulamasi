@@ -1,29 +1,36 @@
-﻿using HizliSatis.Domain.Entities;
+﻿using HizliSatis.Application.Abstract;
+using HizliSatis.Application.Abstractions;
+using HizliSatis.Domain.Entities;
+using HizliSatis.Persistence.Concretes;
+using Microsoft.Extensions.DependencyInjection;
+using System.Runtime.CompilerServices;
 
 namespace HizliSatis.UI.Forms
 {
     public partial class frmKartEkle : Form
     {
+        private readonly IRepository<Stok> _repository;
+
+        public frmKartEkle(IRepository<Stok> repository)
+        {
+            _repository = repository;
+        }
         public frmKartEkle()
         {
             InitializeComponent();
         }
         private void YeniKart()
         {
-            using var dbContextKart = new AppDbContext();
             var YeniKart = new Stok
             {
                 Ad = UrunAdi.Text,
                 Birim = txtBirimi.Text,
-               
+
                 KdvOrani = Convert.ToInt32(txtKdvOrani.Text),
                 AlisFiyati = Convert.ToDecimal(txtAlisFiyati.Text),
                 SatisFiyati = Convert.ToDecimal(txtSatisFiyati.Text),
-               
-
             };
-            dbContextKart.Add(YeniKart);
-            dbContextKart.SaveChanges();
+            _repository.Create(YeniKart);
         }
 
 
@@ -36,21 +43,19 @@ namespace HizliSatis.UI.Forms
         private void btnIptal_Click(object sender, EventArgs e)
         {
             Close();
-            frmKartEkle kartEkle = new frmKartEkle();
+            var kartEkle = Program.ServiceProvider.GetRequiredService<frmKartEkle>();
             kartEkle.ShowDialog();
         }
 
         public void Guncelle(int id)
         {
-            using var dbContextKart = new AppDbContext();
-            var GuncellenecekKart = dbContextKart.Stok.Find(id);
+            var GuncellenecekKart = _repository.Get(id);
             GuncellenecekKart.Ad = UrunAdi.Text;
             GuncellenecekKart.Birim = txtBirimi.Text;
             GuncellenecekKart.KdvOrani = Convert.ToInt32(txtKdvOrani.Text);
             GuncellenecekKart.AlisFiyati = Convert.ToDecimal(txtAlisFiyati.Text);
             GuncellenecekKart.SatisFiyati = Convert.ToDecimal(txtSatisFiyati.Text);
-            dbContextKart.Update(GuncellenecekKart);
-            dbContextKart.SaveChanges();
+            _repository.Update(GuncellenecekKart);
         }
     }
 }

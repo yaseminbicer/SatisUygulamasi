@@ -17,7 +17,7 @@ namespace SatisUygulamaForm
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             var dbContext = new AppDbContext();
-            dbContext.Database.Migrate();
+            //dbContext.Database.Migrate();
             Application.Run(new frmLogin());
         }
     }

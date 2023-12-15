@@ -1,5 +1,9 @@
 ﻿using DevExpress.XtraEditors;
+using HizliSatis.Application.Abstract;
+using HizliSatis.Application.Abstractions;
 using HizliSatis.Domain.Entities;
+using HizliSatis.Persistence.Concretes;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +19,15 @@ namespace HizliSatis.UI.Forms
 {
     public partial class frmSatis : Form
     {
-        AppDbContext dbContext = new AppDbContext();
+        private readonly IRepository<Stok> _repository;
         BindingList<Stok> Stok { get; set; }
         Fis fis = new Fis();
+
+        public frmSatis(IRepository<Stok> repository)
+        {
+            _repository = repository;
+        }
+
         public frmSatis()
         {
             InitializeComponent();
@@ -27,7 +37,7 @@ namespace HizliSatis.UI.Forms
 
         private void frmSatis_Load(object sender, EventArgs e)
         {
-            var data = dbContext.Stok.ToList();
+            var data = _repository.GetAllList();
             Stok = new BindingList<Stok>(data);
             gridsatis.DataSource = Stok;
         }
@@ -36,14 +46,14 @@ namespace HizliSatis.UI.Forms
 
 
             string girilenbarkod = txtBarkod.Text;
-            var arananUrun = dbContext.Stok.FirstOrDefault(stok => stok.Barkod == girilenbarkod);
+            Stok arananUrun = _repository.GetByFilter(stok => stok.Barkod == girilenbarkod);
 
             if (arananUrun != null)
             {
-                
+
                 List<Stok> urunListesi = gridsatis.DataSource as List<Stok>;
 
-             
+
                 if (urunListesi == null)
                 {
                     urunListesi = new List<Stok>();
@@ -58,7 +68,7 @@ namespace HizliSatis.UI.Forms
             {
                 MessageBox.Show("Ürün bulunamadı.");
             }
-            
+
 
         }
 
@@ -100,7 +110,7 @@ namespace HizliSatis.UI.Forms
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
-            frmUrunEkle frmUrunEkle = new frmUrunEkle();
+            var frmUrunEkle = Program.ServiceProvider.GetRequiredService<frmUrunEkle>();
             frmUrunEkle.Show();
         }
 
@@ -109,25 +119,22 @@ namespace HizliSatis.UI.Forms
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var frmIslemSecme = Application.OpenForms[1];
-            if (frmIslemSecme != null && frmIslemSecme is frmIslemSecme)
+            var FrmIslemSecme = System.Windows.Forms.Application.OpenForms[nameof(frmIslemSecme)];
+            if (FrmIslemSecme != null && FrmIslemSecme is frmIslemSecme)
             {
-                ((frmIslemSecme)frmIslemSecme).Show();
+                ((frmIslemSecme)FrmIslemSecme).Show();
             }
         }
 
         private void UrunYazdırbutonu_Click(object sender, EventArgs e)
         {
-
-            using (var context = new AppDbContext())
             {
-
                 Button clickedButton = (Button)sender;
                 string buttonName = clickedButton.Text;
 
-                var EslesenUrun = context.Stok.FirstOrDefault(stok => stok.Ad == buttonName);
+                var EslesenUrun = _repository.GetByFilter(stok => stok.Ad == buttonName);
 
-              
+
 
                 if (EslesenUrun != null)
                 {
@@ -155,7 +162,7 @@ namespace HizliSatis.UI.Forms
 
 
         }
-        
+
 
     }
 

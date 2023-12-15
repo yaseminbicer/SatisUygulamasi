@@ -41,13 +41,13 @@ namespace SatisUygulamaForm.Presentation.Forms
             {
                 dbContext.Add(kullanici);
             }
-            int result = dbContext.SaveChanges();
+             dbContext.SaveChanges();
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
             var kullanici = (Kullanici)viewKullanici.GetFocusedRow();
-            dbContext.Remove(kullanici);
+            dbContext.Kullanici.Remove(kullanici);
             viewKullanici.DeleteRow(viewKullanici.FocusedRowHandle);
         }
 

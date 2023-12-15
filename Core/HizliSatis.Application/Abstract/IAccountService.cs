@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +13,11 @@ namespace HizliSatis.Application.Abstract
         List<Kullanici> GetUsers();
         void AddUser(Kullanici user);
         void RemoveUser(Kullanici user);
-        int SaveChanges();
+        void SaveChanges();
+        void Update(Kullanici user);
+        Kullanici GetUserByFilter(Expression<Func<Kullanici, bool>> filter);
+        Kullanici GetUserById(int id);
+
+
     }
 }

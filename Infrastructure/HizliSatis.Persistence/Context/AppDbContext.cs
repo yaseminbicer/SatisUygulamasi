@@ -13,18 +13,25 @@ namespace HizliSatis.Persistence.Context
 
     public class AppDbContext:DbContext
     {
-      
+        public AppDbContext()
+        {
+                
+        }
+
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+                
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS; Database=HizliSatis;TrustServerCertificate=True; integrated security= true");
+        }
+
         public DbSet<Fis> Fis { get; set; }
         public DbSet<FisSatir> FisSatir { get; set; }
         public DbSet<Kullanici> Kullanici { get; set; }
         public DbSet<Musteri> Musteri { get; set; }
         public DbSet<Stok> Stok { get; set; }
-
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS; Database=HizliSatis;TrustServerCertificate=True; integrated security= true");
-        }
     }
 
 
