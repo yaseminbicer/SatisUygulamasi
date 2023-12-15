@@ -1,4 +1,5 @@
-﻿using HizliSatis.Application.Abstractions;
+﻿using DevExpress.Mvvm.POCO;
+using HizliSatis.Application.Abstractions;
 using HizliSatis.Domain.Entities;
 using HizliSatis.Persistence.Concretes;
 
@@ -8,15 +9,11 @@ namespace HizliSatis.UI.Forms
     {
         private readonly IProductService _productService;
 
-
         public frmKartEkle(IProductService ProductService)
         {
+            InitializeComponent();
             _productService = ProductService;
 
-        }
-        public frmKartEkle()
-        {
-            InitializeComponent();
         }
         private void YeniKart()
         {
@@ -45,7 +42,8 @@ namespace HizliSatis.UI.Forms
         private void btnIptal_Click(object sender, EventArgs e)
         {
             Close();
-            frmKartEkle kartEkle = new frmKartEkle();
+            var kartEkle = Program.ServiceProvider.GetRequiredService<frmKartEkle>();
+
             kartEkle.ShowDialog();
         }
 

@@ -1,4 +1,7 @@
 ﻿
+using DevExpress.Mvvm.POCO;
+using HizliSatis.Application.Abstractions;
+using HizliSatis.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,13 +11,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 namespace HizliSatis.UI.Forms
 {
     public partial class frmIslemSecme : Form
     {
-        public frmIslemSecme()
+
+        private readonly IProductService _productService;
+
+        public frmIslemSecme(IProductService ProductService)
         {
             InitializeComponent();
+            _productService = ProductService;
         }
 
 
@@ -50,13 +58,14 @@ namespace HizliSatis.UI.Forms
 
         private void btnKullanicilar_Click(object sender, EventArgs e)
         {
-          
-            new frmKullanicilar().ShowDialog();
+            var frmKullanicilar = Program.ServiceProvider.GetRequiredService<frmKullanicilar>();
+            frmKullanicilar.ShowDialog();
         }
-
+     
         private void button4_Click(object sender, EventArgs e)
         {
-            new frmLogin().Show();
+            var _frmLogin = Program.ServiceProvider.GetRequiredService<frmLogin>();
+            _frmLogin.Show();
         }
 
         private void btnCikis_Click_1(object sender, EventArgs e)
@@ -84,13 +93,15 @@ namespace HizliSatis.UI.Forms
 
         private void btnMusteriler_Click(object sender, EventArgs e)
         {
-            new frmMusteriler().ShowDialog();
+            var frmMusteriler = Program.ServiceProvider.GetRequiredService<frmMusteriler>();
+            frmMusteriler.ShowDialog();
         }
 
         private void btnStokTakibi_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmStokTakibi stokTakibi = new frmStokTakibi();
+            var stokTakibi = Program.ServiceProvider.GetRequiredService<frmStokTakibi>();
+            
             stokTakibi.Show();
         }
 

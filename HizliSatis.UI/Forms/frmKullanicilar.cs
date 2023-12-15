@@ -22,13 +22,11 @@ namespace HizliSatis.UI.Forms
 
         public frmKullanicilar(IAccountService AccountService)
         {
+            InitializeComponent();
             _accountService = AccountService;
 
         }
-        public frmKullanicilar()
-        {
-            InitializeComponent();
-        }
+      
       
         BindingList<Kullanici> Kullanicilar { get; set; }
         

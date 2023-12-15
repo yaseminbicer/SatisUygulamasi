@@ -36,10 +36,19 @@ namespace HizliSatis.UI
             services.AddTransient(typeof(ICustomerService), typeof(CustomerService));
             services.AddTransient(typeof(IProductService), typeof(ProductService));
             services.AddTransient(typeof(frmKullanicilar));
-
+            services.AddTransient(typeof(frmIslemSecme));
+            services.AddTransient(typeof(frmKartEkle));
+            services.AddTransient(typeof(frmLogin));
+            services.AddTransient(typeof(frmMusteriler));
+            services.AddTransient(typeof(frmSatis));
+            services.AddTransient(typeof(frmStokListesi));
+            services.AddTransient(typeof(frmStokListesiDetay));
+            services.AddTransient(typeof(frmStokTakibi));
+            services.AddTransient(typeof(frmUrunEkle));
             ServiceProvider = services.BuildServiceProvider();
 
             var frmLogin = ServiceProvider.GetRequiredService<frmLogin>();
+   
             ApplicationConfiguration.Initialize();
             System.Windows.Forms.Application.Run(frmLogin);
 
@@ -50,13 +59,6 @@ namespace HizliSatis.UI
         }
         public static ServiceProvider ServiceProvider { get; private set; }
 
-        public static void RegisterServices()
-        {
-
-        }
-        public static void RegisterServices(IServiceCollection services)
-        {
-
-        }
+        
     }
 }

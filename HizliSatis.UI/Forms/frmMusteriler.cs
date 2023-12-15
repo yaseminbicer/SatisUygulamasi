@@ -1,18 +1,19 @@
-﻿using HizliSatis.Application.Abstract;
+﻿using DevExpress.Mvvm.POCO;
+using HizliSatis.Application.Abstract;
 using HizliSatis.Application.Concretes;
 using HizliSatis.Domain.Entities;
 using System.ComponentModel;
 using System.Data;
-
 namespace HizliSatis.UI.Forms
 {
     public partial class frmMusteriler : DevExpress.XtraEditors.XtraForm
     {
 
         private readonly ICustomerService _CustomerService;
-        
+
         public frmMusteriler(ICustomerService CustomerService)
         {
+            
             _CustomerService = CustomerService;
 
             InitializeComponent();
@@ -20,11 +21,6 @@ namespace HizliSatis.UI.Forms
 
        
         BindingList<Musteri> Musteriler { get; set; }
-        public frmMusteriler()
-        {
-            InitializeComponent();
-
-        }
 
         private void frmMusteriler_Load(object sender, EventArgs e)
         {
@@ -57,7 +53,8 @@ namespace HizliSatis.UI.Forms
         private void btnIptal_Click(object sender, EventArgs e)
         {
             Close();
-            new frmIslemSecme().Show();
+            var _frmIslemSecme = Program.ServiceProvider.GetRequiredService<frmIslemSecme>();
+            _frmIslemSecme.ShowDialog();
 
         }
     }
