@@ -8,15 +8,34 @@ namespace HizliSatis.UI.Forms
     {
         private readonly IProductService _productService;
 
-        public frmStokListesiDetay(IProductService ProductService)
+        public frmStokListesiDetay(int id, IProductService productService = null)
         {
-            _productService = ProductService;
-
             InitializeComponent();
+            _productService = productService;
+            Id = id;
+
+            if (id > 0 && _productService != null)
+            {
+                var urun = _productService.GetStokById(Id);
+
+                if (urun != null)
+                {
+                    txtUrunAciklama.Text = urun.Aciklama;
+                    txtSatisFiyati.Text = Convert.ToString(urun.SatisFiyati);
+                    txtUrunAdi.Text = urun.Ad;
+                    txtAlisFiyati.Text = Convert.ToString(urun.AlisFiyati);
+                    txtBarkod.Text = urun.Barkod;
+                    txtBirimi.Text = urun.Birim;
+                    txtKdvOrani.Text = Convert.ToString(urun.KdvOrani);
+                    txtUrunGrubu.Text = urun.UrunGrubu;
+
+                }
+            }
+
         }
-       
+      
         private int Id;
-        public frmStokListesiDetay(int id)
+       /* public frmStokListesiDetay(int id)
         {
             InitializeComponent();
             Id = id;
@@ -39,7 +58,7 @@ namespace HizliSatis.UI.Forms
                 }
             }
 
-        }
+        }*/
         private void frmStokListesiDetay_Load(object sender, EventArgs e)
         {
 

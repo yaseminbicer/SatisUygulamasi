@@ -12,7 +12,7 @@ namespace HizliSatis.Persistence.Concretes
 {
     public class ProductService : IProductService
     {
-        private readonly AppDbContext _dbContext= new AppDbContext();
+        private readonly AppDbContext _dbContext;
 
         public ProductService(AppDbContext dbContext)
         {

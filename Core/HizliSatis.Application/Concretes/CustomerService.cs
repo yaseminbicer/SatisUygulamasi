@@ -11,7 +11,7 @@ namespace HizliSatis.Application.Concretes
 {
     public class CustomerService :ICustomerService
     {
-        private readonly AppDbContext _dbContext=new AppDbContext();
+        private readonly AppDbContext _dbContext;
         public CustomerService(AppDbContext dbContext)
         {
             _dbContext = dbContext;

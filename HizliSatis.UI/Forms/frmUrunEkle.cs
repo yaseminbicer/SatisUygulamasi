@@ -1,8 +1,10 @@
 ﻿using DevExpress.DirectX.Common.Direct2D;
+
 using DevExpress.XtraEditors;
 using HizliSatis.Application.Abstractions;
 using HizliSatis.Domain.Entities;
 using HizliSatis.Persistence.Concretes;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace HizliSatis.UI.Forms
@@ -71,7 +73,8 @@ namespace HizliSatis.UI.Forms
         private void Kapat()
         {
             Close();
-            frmIslemSecme IslemSecme = new frmIslemSecme();
+            var IslemSecme = Program.ServiceProvider.GetRequiredService<frmIslemSecme>();
+            
             IslemSecme.Show();
         }
 

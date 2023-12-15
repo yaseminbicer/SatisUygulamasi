@@ -6,13 +6,19 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using HizliSatis.Domain.Entities;
+using Microsoft.IdentityModel.Tokens;
 
 namespace HizliSatis.Persistence.Context
 {
 
     public class AppDbContext:DbContext
     {
-      
+       
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+        }
+    
+
         public DbSet<Fis> Fis { get; set; }
         public DbSet<FisSatir> FisSatir { get; set; }
         public DbSet<Kullanici> Kullanici { get; set; }

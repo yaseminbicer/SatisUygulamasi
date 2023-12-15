@@ -1,7 +1,8 @@
 ﻿
-using DevExpress.Mvvm.POCO;
 using HizliSatis.Application.Abstractions;
+using DevExpress.XtraEditors;
 using HizliSatis.Domain.Entities;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,10 +20,10 @@ namespace HizliSatis.UI.Forms
 
         private readonly IProductService _productService;
 
-        public frmIslemSecme(IProductService ProductService)
+        public frmIslemSecme(IProductService productService)
         {
             InitializeComponent();
-            _productService = ProductService;
+            _productService = productService;
         }
 
 
@@ -87,8 +88,8 @@ namespace HizliSatis.UI.Forms
         private void button11_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmSatis Satisİslemi = new frmSatis();
-            Satisİslemi.Show();
+            var SatisIslemi = Program.ServiceProvider.GetRequiredService<frmSatis>();
+            SatisIslemi.Show();
         }
 
         private void btnMusteriler_Click(object sender, EventArgs e)
@@ -108,7 +109,7 @@ namespace HizliSatis.UI.Forms
         private void btnStokListesi_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmStokListesi frmStokListesi = new frmStokListesi();
+            var frmStokListesi = Program.ServiceProvider.GetRequiredService<frmStokListesi>();
             frmStokListesi.Show();
         }
     }

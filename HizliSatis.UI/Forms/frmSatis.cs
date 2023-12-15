@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraEditors;
 using HizliSatis.Application.Abstractions;
 using HizliSatis.Domain.Entities;
 using HizliSatis.Persistence.Concretes;
@@ -19,20 +20,18 @@ namespace HizliSatis.UI.Forms
     public partial class frmSatis : Form
     {
         private readonly IProductService _productService;
-        private readonly Fis _fis;
-        public frmSatis(IProductService ProductService, Fis _fis)
-        {
-            _productService = ProductService;
-        }
-       
-        BindingList<Stok> Stok { get; set; }
-       // Fis fis = new Fis();
-        public frmSatis()
+
+        public frmSatis(IProductService productService)
         {
             InitializeComponent();
             _fis.Tarih = DateTime.Now;
             _fis.FisNo = DateTime.Now.ToString("yyyyMMddHHmmss");
+            _productService = productService;
         }
+       
+        BindingList<Stok> Stok { get; set; }
+        Fis _fis = new Fis();
+       
 
         private void frmSatis_Load(object sender, EventArgs e)
         {
@@ -49,7 +48,7 @@ namespace HizliSatis.UI.Forms
             if (arananUrun != null)
             {
 
-                List<Stok> urunListesi = gridsatis.DataSource as List<Stok>;
+                List<Stok> urunListesi = (List<Stok>)gridsatis.DataSource;
 
 
                 if (urunListesi == null)
@@ -89,7 +88,7 @@ namespace HizliSatis.UI.Forms
             if (EslesenUrun != null)
             {
 
-                List<Stok> urunListesi = gridsatis.DataSource as List<Stok>;
+                List<Stok> urunListesi = (List<Stok>)gridsatis.DataSource;
 
 
                 if (urunListesi == null)

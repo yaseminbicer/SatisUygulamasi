@@ -1,9 +1,10 @@
-﻿using DevExpress.Mvvm.POCO;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using HizliSatis.Application.Abstract;
 using HizliSatis.Application.Concretes;
 using HizliSatis.Domain.Entities;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Win32;
+
 
 namespace HizliSatis.UI.Forms
 {
@@ -51,7 +52,6 @@ namespace HizliSatis.UI.Forms
             {
                 this.Hide();
                 var _frmIslemSecme = Program.ServiceProvider.GetRequiredService<frmIslemSecme>();
-                
                 _frmIslemSecme.Show();
             }
             else

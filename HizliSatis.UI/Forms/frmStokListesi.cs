@@ -2,7 +2,8 @@
 using HizliSatis.Domain.Entities;
 using HizliSatis.Persistence.Concretes;
 using Microsoft.EntityFrameworkCore;
-
+using DevExpress.XtraEditors;
+using Microsoft.Extensions.DependencyInjection;
 namespace HizliSatis.UI.Forms
 {
 
@@ -10,15 +11,7 @@ namespace HizliSatis.UI.Forms
     {
         private readonly IProductService _productService;
         
-        public frmStokListesi(ProductService productService)
-        {
-            _productService = productService;
-        }
-        private void frmStokListesi_Load(object sender, EventArgs e)
-        {
-            UrunListele();
-        }
-        public frmStokListesi()
+        public frmStokListesi(IProductService productService)
         {
             InitializeComponent();
             btnDuzenle.Click += btnDuzenle_Click;
@@ -34,7 +27,15 @@ namespace HizliSatis.UI.Forms
             };
 
             btnIptal.Click += (s, e) => Close();
+            _productService = productService;
+           
+
         }
+        private void frmStokListesi_Load(object sender, EventArgs e)
+        {
+            UrunListele();
+        }
+      
 
         private void btnDuzenle_Click(object? sender, EventArgs e)
         {

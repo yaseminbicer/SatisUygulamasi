@@ -12,7 +12,7 @@ namespace HizliSatis.Application.Concretes
 {
     public class AccountService : IAccountService
     {
-        private readonly AppDbContext _dbContext= new AppDbContext();
+        private readonly AppDbContext _dbContext;
 
         public AccountService(AppDbContext dbContext)
         {
