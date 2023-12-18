@@ -19,5 +19,6 @@ namespace HizliSatis.Application.Abstractions
         void RemoveProduct(Stok product);
         public Stok UpdateProduct(int id);
         int SaveChanges();
+      
     }
 }

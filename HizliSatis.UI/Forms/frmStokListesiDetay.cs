@@ -7,8 +7,8 @@ namespace HizliSatis.UI.Forms
     public partial class frmStokListesiDetay : Form
     {
         private readonly IProductService _productService;
-
-        public frmStokListesiDetay(int id, IProductService productService = null)
+          int Id;
+        public frmStokListesiDetay(int id, IProductService productService=null)
         {
             InitializeComponent();
             _productService = productService;
@@ -33,8 +33,8 @@ namespace HizliSatis.UI.Forms
             }
 
         }
+
       
-        private int Id;
        /* public frmStokListesiDetay(int id)
         {
             InitializeComponent();

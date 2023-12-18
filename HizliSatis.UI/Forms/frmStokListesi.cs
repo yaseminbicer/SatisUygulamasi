@@ -4,6 +4,8 @@ using HizliSatis.Persistence.Concretes;
 using Microsoft.EntityFrameworkCore;
 using DevExpress.XtraEditors;
 using Microsoft.Extensions.DependencyInjection;
+using DevExpress.CodeParser;
+using DevExpress.Data.Helpers;
 namespace HizliSatis.UI.Forms
 {
 
@@ -57,9 +59,9 @@ namespace HizliSatis.UI.Forms
         }
 
         private void Duzenle()
-        {
+        {            
             var stok = ((Stok)gridView1.GetFocusedRow());
-            frmStokListesiDetay stokListesiDetay = new frmStokListesiDetay(stok.Id);
+            var stokListesiDetay =  new frmStokListesiDetay(stok.Id,Program.ServiceProvider.GetRequiredService<IProductService>());            
             stokListesiDetay.ShowDialog();
         }
 
@@ -70,7 +72,9 @@ namespace HizliSatis.UI.Forms
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            frmStokListesiDetay stokListesiDetay = new frmStokListesiDetay(0);
+            var stokListesiDetay = Program.ServiceProvider.GetRequiredService<frmStokListesiDetay>();
+           // _productService.AddProduct();
+     
             stokListesiDetay.ShowDialog();
 
         }
