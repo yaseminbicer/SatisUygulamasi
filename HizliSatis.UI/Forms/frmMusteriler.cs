@@ -10,16 +10,11 @@ namespace HizliSatis.UI.Forms
     {
         private readonly IRepository<Musteri> _repository;
 
-        public frmMusteriler(IRepository<Musteri> repository)
-        { 
-            _repository = repository;
-        }
-
-        public frmMusteriler()
+        public frmMusteriler(IRepository<Musteri> repository = null)
         {
             InitializeComponent();
+            _repository = repository;
         }
-
 
         BindingList<Musteri> Musteriler { get; set; }
 

@@ -11,29 +11,29 @@ namespace HizliSatis.UI.Forms
         private int Id;
         private readonly IRepository<Stok> _repository;
 
-        public frmStokListesiDetay(IRepository<Stok> repository,int id = 0)
-        {
-            _repository = repository;
-            Id = id;
-            if (id > 0)
-            {
-                Stok stok = _repository.Get(id);
 
-                txtUrunAciklama.Text = stok.Aciklama;
-                txtSatisFiyati.Text = Convert.ToString(stok.SatisFiyati);
-                txtUrunAdi.Text = stok.Ad;
-                txtAlisFiyati.Text = Convert.ToString(stok.AlisFiyati);
-                txtBarkod.Text = stok.Barkod;
-                txtBirimi.Text = stok.Birim;
-                txtKdvOrani.Text = Convert.ToString(stok.KdvOrani);
-                txtUrunGrubu.Text = stok.UrunGrubu;
-            }
-        }
-
-
-        public frmStokListesiDetay()
+        public frmStokListesiDetay(IRepository<Stok> repository)
         {
             InitializeComponent();
+
+
+            _repository = repository;
+           
+        }
+
+        public void GetStok(int id)
+        {
+            Id = id;
+            Stok stok = _repository.Get(id);
+
+            txtUrunAciklama.Text = stok.Aciklama;
+            txtSatisFiyati.Text = Convert.ToString(stok.SatisFiyati);
+            txtUrunAdi.Text = stok.Ad;
+            txtAlisFiyati.Text = Convert.ToString(stok.AlisFiyati);
+            txtBarkod.Text = stok.Barkod;
+            txtBirimi.Text = stok.Birim;
+            txtKdvOrani.Text = Convert.ToString(stok.KdvOrani);
+            txtUrunGrubu.Text = stok.UrunGrubu;
         }
 
         private void frmStokListesiDetay_Load(object sender, EventArgs e)

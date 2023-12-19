@@ -13,11 +13,8 @@ namespace HizliSatis.UI.Forms
 
         public frmKartEkle(IRepository<Stok> repository)
         {
-            _repository = repository;
-        }
-        public frmKartEkle()
-        {
             InitializeComponent();
+            _repository = repository;
         }
         private void YeniKart()
         {

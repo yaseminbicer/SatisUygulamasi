@@ -18,13 +18,10 @@ namespace HizliSatis.UI.Forms
     {
         private readonly IRepository<Kullanici> _repository;
 
-        public frmKullanicilar(IRepository<Kullanici> repository)
-        {
-            _repository = repository;
-        }
-        public frmKullanicilar()
+        public frmKullanicilar(IRepository<Kullanici> repository = null)
         {
             InitializeComponent();
+            _repository = repository;
         }
 
         BindingList<Kullanici> Kullanicilar { get; set; }

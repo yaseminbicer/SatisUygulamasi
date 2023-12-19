@@ -13,11 +13,6 @@ namespace HizliSatis.UI.Forms
 
         public frmStokListesi(IRepository<Stok> repository)
         {
-            _repository = repository;
-        }
-
-        public frmStokListesi()
-        {
             InitializeComponent();
             btnDuzenle.Click += btnDuzenle_Click;
             Activated += (s, e) =>
@@ -32,8 +27,8 @@ namespace HizliSatis.UI.Forms
             };
 
             btnIptal.Click += (s, e) => Close();
+            _repository = repository;
         }
-
         private void frmStokListesi_Load(object sender, EventArgs e)
         {
             UrunListele();
@@ -64,6 +59,7 @@ namespace HizliSatis.UI.Forms
         {
             var stok = ((Stok)gridView1.GetFocusedRow());
             var stokListesiDetay = Program.ServiceProvider.GetRequiredService<frmStokListesiDetay>();
+            stokListesiDetay.GetStok(stok.Id);
             stokListesiDetay.ShowDialog();
         }
 
@@ -81,8 +77,8 @@ namespace HizliSatis.UI.Forms
         private void btnSil_Click(object sender, EventArgs e)
         {
             var stok = ((Stok)gridView1.GetFocusedRow());
-            var silinecekStok =  _repository.Get(stok.Id);
-             _repository.Delete(silinecekStok);
+            var silinecekStok = _repository.Get(stok.Id);
+            _repository.Delete(silinecekStok);
             UrunListele();
         }
     }

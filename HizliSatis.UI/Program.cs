@@ -46,14 +46,6 @@ namespace HizliSatis.UI
             
             ApplicationConfiguration.Initialize();
             var frmLogin = ServiceProvider.GetRequiredService<frmLogin>();
-            var frmKartEkle = ServiceProvider.GetRequiredService<frmKartEkle>();
-            var frmKullanicilar = ServiceProvider.GetRequiredService<frmKullanicilar>();
-            var frmMusteriler = ServiceProvider.GetRequiredService<frmMusteriler>();
-            var frmSatis = ServiceProvider.GetRequiredService<frmSatis>();
-            var frmStokListesi = ServiceProvider.GetRequiredService<frmStokListesi>();
-            var frmStokListesiDetay = ServiceProvider.GetRequiredService<frmStokListesiDetay>();
-            var frmStokTakibi = ServiceProvider.GetRequiredService<frmStokTakibi>();
-            var frmIslemSecme = ServiceProvider.GetRequiredService<frmIslemSecme>();
             System.Windows.Forms.Application.Run(frmLogin);
 
         }

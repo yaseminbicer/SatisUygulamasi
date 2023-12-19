@@ -25,14 +25,10 @@ namespace HizliSatis.UI.Forms
 
         public frmSatis(IRepository<Stok> repository)
         {
-            _repository = repository;
-        }
-
-        public frmSatis()
-        {
             InitializeComponent();
             fis.Tarih = DateTime.Now;
             fis.FisNo = DateTime.Now.ToString("yyyyMMddHHmmss");
+            _repository = repository;
         }
 
         private void frmSatis_Load(object sender, EventArgs e)
