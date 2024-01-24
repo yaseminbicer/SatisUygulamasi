@@ -1,4 +1,5 @@
-﻿using HizliSatis.Application.Abstractions;
+﻿using HizliSatis.Application.Abstract;
+using HizliSatis.Application.Abstractions;
 using HizliSatis.Domain.Entities;
 using HizliSatis.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,7 @@ namespace HizliSatis.Persistence.Concretes
     {
         private readonly AppDbContext _dbContext;
 
+       
         public ProductService(AppDbContext dbContext)
         {
             _dbContext = dbContext;

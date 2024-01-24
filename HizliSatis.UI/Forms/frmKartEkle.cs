@@ -5,7 +5,7 @@ using HizliSatis.Persistence.Concretes;
 
 namespace HizliSatis.UI.Forms
 {
-    public partial class frmKartEkle : Form
+    public partial class frmKartEkle : DevExpress.XtraEditors.XtraForm
     {
         private readonly IProductService _productService;
 

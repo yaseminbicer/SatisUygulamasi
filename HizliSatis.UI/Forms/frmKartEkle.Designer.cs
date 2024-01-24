@@ -60,14 +60,14 @@
             // 
             txtBirimi.Location = new Point(126, 62);
             txtBirimi.Name = "txtBirimi";
-            txtBirimi.Size = new Size(84, 20);
+            txtBirimi.Size = new Size(84, 28);
             txtBirimi.TabIndex = 33;
             // 
             // txtMiktar
             // 
             txtMiktar.Location = new Point(126, 103);
             txtMiktar.Name = "txtMiktar";
-            txtMiktar.Size = new Size(84, 20);
+            txtMiktar.Size = new Size(84, 28);
             txtMiktar.TabIndex = 34;
             // 
             // txtUrunAdi
@@ -75,7 +75,7 @@
             txtUrunAdi.EditValue = "";
             txtUrunAdi.Location = new Point(126, 29);
             txtUrunAdi.Name = "txtUrunAdi";
-            txtUrunAdi.Size = new Size(84, 20);
+            txtUrunAdi.Size = new Size(84, 28);
             txtUrunAdi.TabIndex = 31;
             // 
             // Miktar
@@ -113,7 +113,7 @@
             txtAlisFiyati.EditValue = "0";
             txtAlisFiyati.Location = new Point(392, 29);
             txtAlisFiyati.Name = "txtAlisFiyati";
-            txtAlisFiyati.Size = new Size(84, 20);
+            txtAlisFiyati.Size = new Size(84, 28);
             txtAlisFiyati.TabIndex = 39;
             // 
             // txtSatisFiyati
@@ -121,7 +121,7 @@
             txtSatisFiyati.EditValue = "0";
             txtSatisFiyati.Location = new Point(392, 62);
             txtSatisFiyati.Name = "txtSatisFiyati";
-            txtSatisFiyati.Size = new Size(84, 20);
+            txtSatisFiyati.Size = new Size(84, 28);
             txtSatisFiyati.TabIndex = 40;
             // 
             // label7
@@ -148,7 +148,7 @@
             // 
             txtToplam.Location = new Point(392, 103);
             txtToplam.Name = "txtToplam";
-            txtToplam.Size = new Size(84, 20);
+            txtToplam.Size = new Size(84, 28);
             txtToplam.TabIndex = 47;
             // 
             // Toplam
@@ -214,7 +214,7 @@
             // 
             txtKdvOrani.Location = new Point(126, 142);
             txtKdvOrani.Name = "txtKdvOrani";
-            txtKdvOrani.Size = new Size(84, 20);
+            txtKdvOrani.Size = new Size(84, 28);
             txtKdvOrani.TabIndex = 42;
             // 
             // txtId
@@ -222,7 +222,7 @@
             txtId.EditValue = "0";
             txtId.Location = new Point(517, 29);
             txtId.Name = "txtId";
-            txtId.Size = new Size(105, 20);
+            txtId.Size = new Size(105, 28);
             txtId.TabIndex = 53;
             txtId.Visible = false;
             // 
@@ -249,6 +249,7 @@
             Controls.Add(Miktar);
             Controls.Add(label2);
             Controls.Add(UrunAdi);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "frmKartEkle";
             Text = "frmKartEkle";
             ((System.ComponentModel.ISupportInitialize)txtBirimi.Properties).EndInit();

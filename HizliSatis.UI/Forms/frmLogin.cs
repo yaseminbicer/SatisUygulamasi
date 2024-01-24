@@ -94,13 +94,21 @@ namespace HizliSatis.UI.Forms
                     kullanici.Yonetici = true;
                     _accountService.AddUser(kullanici);
                     _accountService.SaveChanges();
-                    var form = Program.ServiceProvider.GetRequiredService<frmKullanicilar>();             }
+                    //var form = Program.ServiceProvider.GetRequiredService<frmKullanicilar>();
+                }
 
             }
             catch (Exception ex)
             {
                 XtraMessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+       
+
+        private void hccExit_ElementMouseClick(object sender, DevExpress.Utils.Html.DxHtmlElementMouseEventArgs e)
+        {
+            if (e.ElementId == "close") System.Windows.Forms.Application.Exit();
         }
     }
 }

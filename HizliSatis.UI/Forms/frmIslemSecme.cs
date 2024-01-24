@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace HizliSatis.UI.Forms
 {
-    public partial class frmIslemSecme : Form
+    public partial class frmIslemSecme : DevExpress.XtraEditors.XtraForm
     {
 
         private readonly IProductService _productService;
@@ -48,8 +48,8 @@ namespace HizliSatis.UI.Forms
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmUrunEkle urunEkle = new frmUrunEkle();
-            urunEkle.Show();
+            //var urunEkle = Program.ServiceProvider.GetRequiredService<frmStokEkle>();
+           // urunEkle.Show();
         }
 
         private void frmIslemSecme_FormClosed(object sender, FormClosedEventArgs e)
@@ -59,10 +59,10 @@ namespace HizliSatis.UI.Forms
 
         private void btnKullanicilar_Click(object sender, EventArgs e)
         {
-            var frmKullanicilar = Program.ServiceProvider.GetRequiredService<frmKullanicilar>();
-            frmKullanicilar.ShowDialog();
+            //var frmKullanicilar = Program.ServiceProvider.GetRequiredService<frmKullanicilar>();
+            //frmKullanicilar.ShowDialog();
         }
-     
+
         private void button4_Click(object sender, EventArgs e)
         {
             var _frmLogin = Program.ServiceProvider.GetRequiredService<frmLogin>();
@@ -88,7 +88,7 @@ namespace HizliSatis.UI.Forms
         private void button11_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var SatisIslemi = Program.ServiceProvider.GetRequiredService<frmSatis>();
+            var SatisIslemi = Program.ServiceProvider.GetRequiredService<frmSatisnew>();
             SatisIslemi.Show();
         }
 
@@ -102,7 +102,7 @@ namespace HizliSatis.UI.Forms
         {
             this.Hide();
             var stokTakibi = Program.ServiceProvider.GetRequiredService<frmStokTakibi>();
-            
+
             stokTakibi.Show();
         }
 
@@ -111,6 +111,13 @@ namespace HizliSatis.UI.Forms
             this.Hide();
             var frmStokListesi = Program.ServiceProvider.GetRequiredService<frmStokListesi>();
             frmStokListesi.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var frmHome = Program.ServiceProvider.GetRequiredService<frmAnaMenu>();
+            frmHome.Show();
         }
     }
 }

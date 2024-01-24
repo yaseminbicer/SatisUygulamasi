@@ -72,7 +72,8 @@ namespace HizliSatis.UI.Forms
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            var stokListesiDetay = Program.ServiceProvider.GetRequiredService<frmStokListesiDetay>();
+            var stokListesiDetay = new frmStokListesiDetay(0, Program.ServiceProvider.GetRequiredService<IProductService>());
+          
            // _productService.AddProduct();
      
             stokListesiDetay.ShowDialog();

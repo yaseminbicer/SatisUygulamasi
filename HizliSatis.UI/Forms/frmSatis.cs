@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Mvvm.POCO;
+using DevExpress.XtraEditors;
 using DevExpress.XtraEditors;
 using HizliSatis.Application.Abstractions;
 using HizliSatis.Domain.Entities;
@@ -72,8 +73,8 @@ namespace HizliSatis.UI.Forms
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
-            frmUrunEkle frmUrunEkle = new frmUrunEkle();
-            frmUrunEkle.Show();
+          //  var frmUrunEkle = Program.ServiceProvider.GetRequiredService<frmStokEkle>();
+           // frmUrunEkle.Show();
         }
         
 
@@ -119,10 +120,10 @@ namespace HizliSatis.UI.Forms
         {
             this.Hide();
 
-            var IslemSecme = System.Windows.Forms.Application.OpenForms[1];
-            if (IslemSecme != null && IslemSecme is frmIslemSecme)
+            var frmIslemSecme = System.Windows.Forms.Application.OpenForms[1];
+            if (frmIslemSecme != null && frmIslemSecme is frmIslemSecme)
             {
-                IslemSecme.Show();
+                frmIslemSecme.Show();
             }
         }
     }

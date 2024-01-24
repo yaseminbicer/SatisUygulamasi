@@ -35,11 +35,11 @@
             button7 = new Button();
             btnUrunEkle = new Button();
             btnStokTakibi = new Button();
-            button10 = new Button();
             button11 = new Button();
             btnKullanicilar = new DevExpress.XtraEditors.SimpleButton();
             btnMusteriler = new DevExpress.XtraEditors.SimpleButton();
             btnStokListesi = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -49,9 +49,8 @@
             label1.ForeColor = Color.Olive;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(170, 23);
+            label1.Size = new Size(0, 23);
             label1.TabIndex = 5;
-            label1.Text = "Cosmos Sales";
             // 
             // btnCikis
             // 
@@ -103,11 +102,11 @@
             btnUrunEkle.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnUrunEkle.ForeColor = Color.White;
             btnUrunEkle.Image = (Image)resources.GetObject("btnUrunEkle.Image");
-            btnUrunEkle.Location = new Point(219, 152);
+            btnUrunEkle.Location = new Point(53, 157);
             btnUrunEkle.Name = "btnUrunEkle";
             btnUrunEkle.Size = new Size(160, 88);
             btnUrunEkle.TabIndex = 15;
-            btnUrunEkle.Text = "Ürün Ekle";
+            btnUrunEkle.Text = "Stok Ekle";
             btnUrunEkle.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnUrunEkle.UseVisualStyleBackColor = false;
             btnUrunEkle.Click += btnUrunEkle_Click;
@@ -126,20 +125,6 @@
             btnStokTakibi.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnStokTakibi.UseVisualStyleBackColor = false;
             btnStokTakibi.Click += btnStokTakibi_Click;
-            // 
-            // button10
-            // 
-            button10.BackColor = Color.FromArgb(168, 106, 91);
-            button10.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button10.ForeColor = Color.White;
-            button10.Image = (Image)resources.GetObject("button10.Image");
-            button10.Location = new Point(53, 152);
-            button10.Name = "button10";
-            button10.Size = new Size(160, 88);
-            button10.TabIndex = 13;
-            button10.Text = "Fiyatı Güncelle";
-            button10.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button10.UseVisualStyleBackColor = false;
             // 
             // button11
             // 
@@ -187,21 +172,36 @@
             btnStokListesi.BackColor = Color.FromArgb(225, 185, 95);
             btnStokListesi.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnStokListesi.ForeColor = Color.White;
-            btnStokListesi.Location = new Point(385, 247);
+            btnStokListesi.Location = new Point(220, 157);
             btnStokListesi.Name = "btnStokListesi";
-            btnStokListesi.Size = new Size(160, 78);
+            btnStokListesi.Size = new Size(160, 83);
             btnStokListesi.TabIndex = 21;
             btnStokListesi.Text = "Stok Listesi";
             btnStokListesi.TextImageRelation = TextImageRelation.ImageAboveText;
             btnStokListesi.UseVisualStyleBackColor = false;
             btnStokListesi.Click += btnStokListesi_Click;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(168, 106, 91);
+            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(385, 246);
+            button1.Name = "button1";
+            button1.Size = new Size(160, 74);
+            button1.TabIndex = 22;
+            button1.Text = "Kasa Yönetimi";
+            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // frmIslemSecme
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(595, 357);
+            ClientSize = new Size(625, 373);
+            Controls.Add(button1);
             Controls.Add(btnStokListesi);
             Controls.Add(btnMusteriler);
             Controls.Add(btnKullanicilar);
@@ -210,9 +210,9 @@
             Controls.Add(button7);
             Controls.Add(btnUrunEkle);
             Controls.Add(btnStokTakibi);
-            Controls.Add(button10);
             Controls.Add(button11);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmIslemSecme";
             StartPosition = FormStartPosition.CenterScreen;
@@ -230,10 +230,10 @@
         private Button button7;
         private Button btnUrunEkle;
         private Button btnStokTakibi;
-        private Button button10;
         private Button button11;
         private DevExpress.XtraEditors.SimpleButton btnKullanicilar;
         private DevExpress.XtraEditors.SimpleButton btnMusteriler;
         private Button btnStokListesi;
+        private Button button1;
     }
 }

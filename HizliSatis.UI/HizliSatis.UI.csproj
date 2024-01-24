@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="DevExpress.Win.Design" Version="23.1.6" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.12">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -24,9 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Forms\frmKullanicilar.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -36,9 +34,22 @@
     <Compile Update="Forms\frmStokTakibi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\frmUrunEkle.cs">
-      <SubType>Form</SubType>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\UserControl\" />
   </ItemGroup>
 
 </Project>

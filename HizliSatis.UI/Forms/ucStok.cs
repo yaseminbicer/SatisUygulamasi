@@ -1,42 +1,43 @@
-﻿using DevExpress.DirectX.Common.Direct2D;
-
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using HizliSatis.Application.Abstractions;
 using HizliSatis.Domain.Entities;
-using HizliSatis.Persistence.Concretes;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HizliSatis.UI.Forms
 {
-    public partial class frmUrunEkle : XtraForm
+    public partial class ucStok : DevExpress.XtraEditors.XtraUserControl
     {
-
-        /*private readonly IProductService<frmUrunEkle> _productService;
-        public frmUrunEkle(IProductService<frmUrunEkle> productService)
-        {
-            _productService = productService;
-            InitializeComponent();
-        }*/
-
-        private readonly IProductService _productService;
-        public frmUrunEkle(IProductService ProductService)
-         {
-             _productService = ProductService;
-
-             InitializeComponent();
-         }
-
-        public frmUrunEkle()
+        public ucStok()
         {
             InitializeComponent();
         }
+        private readonly IProductService _productService;
+        public ucStok(IProductService ProductService)
+        {
+            _productService = ProductService;
 
+            InitializeComponent();
+        }
         private void frmUrunEkle_Load(object sender, EventArgs e)
         {
             UrunListele();
         }
 
+        private void Kaydet()
+        {
+            if (txtId.Text == "" || txtId.Text == "0")
+                Yeni();
+            else Guncelle(Convert.ToInt32(txtId.Text));
+            BilgileriTemizle();
+        }
 
         public void btnKaydet_Click(object sender, EventArgs e)
         {
@@ -72,10 +73,10 @@ namespace HizliSatis.UI.Forms
 
         private void Kapat()
         {
-            Close();
-            var IslemSecme = Program.ServiceProvider.GetRequiredService<frmIslemSecme>();
-            
-            IslemSecme.Show();
+            //Close();
+            //  var IslemSecme = Program.ServiceProvider.GetRequiredService<frmIslemSecme>();
+
+            //IslemSecme.Show();
         }
 
         private void Guncelle(int id)
@@ -97,13 +98,7 @@ namespace HizliSatis.UI.Forms
 
             }
         }
-        private void Kaydet()
-        {
-            if (txtId.Text == "" || txtId.Text == "0")
-                Yeni();
-            else Guncelle(Convert.ToInt32(txtId.Text));
-            BilgileriTemizle();
-        }
+
 
         private void Yeni()
         {
@@ -157,6 +152,6 @@ namespace HizliSatis.UI.Forms
 
         }
 
-     
+   
     }
 }

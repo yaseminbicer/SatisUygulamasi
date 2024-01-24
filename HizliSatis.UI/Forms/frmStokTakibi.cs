@@ -20,8 +20,8 @@ namespace HizliSatis.UI.Forms
         {
             this.Hide();
            
-            var _frmKartEkle = Program.ServiceProvider.GetRequiredService<frmKartEkle>();
-            _frmKartEkle.Show();
+            var frmKartEkle = Program.ServiceProvider.GetRequiredService<frmKartEkle>();
+            frmKartEkle.Show();
         }
 
     }
