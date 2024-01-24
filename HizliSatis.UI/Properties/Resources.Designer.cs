@@ -211,6 +211,16 @@ namespace HizliSatis.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bill_svgrepo_com {
+            get {
+                object obj = ResourceManager.GetObject("bill-svgrepo-com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage bo_notifications {
@@ -441,6 +451,16 @@ namespace HizliSatis.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_recycle_bin_trash_can_svgrepo_com {
+            get {
+                object obj = ResourceManager.GetObject("delete-recycle-bin-trash-can-svgrepo-com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage delete_svgrepo_com__1_ {
@@ -451,12 +471,42 @@ namespace HizliSatis.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_svgrepo_com__2_ {
+            get {
+                object obj = ResourceManager.GetObject("delete-svgrepo-com (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_svgrepo_com__2_1 {
+            get {
+                object obj = ResourceManager.GetObject("delete-svgrepo-com (2)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage discount_shape_svgrepo_com {
             get {
                 object obj = ResourceManager.GetObject("discount-shape-svgrepo-com", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap discount_svgrepo_com {
+            get {
+                object obj = ResourceManager.GetObject("discount-svgrepo-com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -566,6 +616,16 @@ namespace HizliSatis.UI.Properties {
         internal static System.Drawing.Bitmap gift_svgrepo_com {
             get {
                 object obj = ResourceManager.GetObject("gift-svgrepo-com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gift_svgrepo_com__1_ {
+            get {
+                object obj = ResourceManager.GetObject("gift-svgrepo-com (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

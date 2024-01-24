@@ -45,9 +45,13 @@
             pictureBox1 = new PictureBox();
             panelSatis = new Panel();
             panelKategoriler = new Panel();
+            panel3 = new Panel();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panelKategoriler.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -118,7 +122,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(163, 751);
+            panel1.Size = new Size(164, 751);
             panel1.TabIndex = 0;
             // 
             // button1
@@ -131,7 +135,7 @@
             button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.Location = new Point(0, 0);
             button1.Name = "button1";
-            button1.Size = new Size(163, 90);
+            button1.Size = new Size(164, 90);
             button1.TabIndex = 3;
             button1.TextAlign = ContentAlignment.MiddleLeft;
             button1.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -144,10 +148,11 @@
             btnIkram.FlatStyle = FlatStyle.Flat;
             btnIkram.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnIkram.ForeColor = Color.White;
+            btnIkram.Image = Properties.Resources.gift_svgrepo_com__1_;
             btnIkram.ImageAlign = ContentAlignment.MiddleLeft;
             btnIkram.Location = new Point(0, 90);
             btnIkram.Name = "btnIkram";
-            btnIkram.Size = new Size(163, 90);
+            btnIkram.Size = new Size(164, 90);
             btnIkram.TabIndex = 4;
             btnIkram.Text = "İkram";
             btnIkram.TextAlign = ContentAlignment.MiddleLeft;
@@ -161,11 +166,11 @@
             btnIndirim.FlatStyle = FlatStyle.Flat;
             btnIndirim.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnIndirim.ForeColor = Color.White;
-            btnIndirim.Image = (Image)resources.GetObject("btnIndirim.Image");
+            btnIndirim.Image = Properties.Resources.discount_svgrepo_com;
             btnIndirim.ImageAlign = ContentAlignment.MiddleLeft;
             btnIndirim.Location = new Point(0, 180);
             btnIndirim.Name = "btnIndirim";
-            btnIndirim.Size = new Size(163, 90);
+            btnIndirim.Size = new Size(164, 90);
             btnIndirim.TabIndex = 5;
             btnIndirim.Text = "İndirim";
             btnIndirim.TextAlign = ContentAlignment.MiddleLeft;
@@ -179,11 +184,11 @@
             btnFis.FlatStyle = FlatStyle.Flat;
             btnFis.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnFis.ForeColor = Color.White;
-            btnFis.Image = (Image)resources.GetObject("btnFis.Image");
+            btnFis.Image = Properties.Resources.bill_svgrepo_com;
             btnFis.ImageAlign = ContentAlignment.MiddleLeft;
             btnFis.Location = new Point(0, 270);
             btnFis.Name = "btnFis";
-            btnFis.Size = new Size(163, 90);
+            btnFis.Size = new Size(164, 90);
             btnFis.TabIndex = 6;
             btnFis.Text = "Fiş";
             btnFis.TextAlign = ContentAlignment.MiddleLeft;
@@ -197,11 +202,11 @@
             btnUrunSil.FlatStyle = FlatStyle.Flat;
             btnUrunSil.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnUrunSil.ForeColor = Color.White;
-            btnUrunSil.Image = (Image)resources.GetObject("btnUrunSil.Image");
+            btnUrunSil.Image = Properties.Resources.delete_svgrepo_com__2_;
             btnUrunSil.ImageAlign = ContentAlignment.MiddleLeft;
             btnUrunSil.Location = new Point(0, 360);
             btnUrunSil.Name = "btnUrunSil";
-            btnUrunSil.Size = new Size(163, 90);
+            btnUrunSil.Size = new Size(164, 90);
             btnUrunSil.TabIndex = 7;
             btnUrunSil.Text = "Ürün Sil";
             btnUrunSil.TextAlign = ContentAlignment.MiddleLeft;
@@ -215,11 +220,11 @@
             btnTemizle.FlatStyle = FlatStyle.Flat;
             btnTemizle.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnTemizle.ForeColor = Color.White;
-            btnTemizle.Image = (Image)resources.GetObject("btnTemizle.Image");
+            btnTemizle.Image = Properties.Resources.delete_recycle_bin_trash_can_svgrepo_com;
             btnTemizle.ImageAlign = ContentAlignment.MiddleLeft;
             btnTemizle.Location = new Point(0, 450);
             btnTemizle.Name = "btnTemizle";
-            btnTemizle.Size = new Size(163, 90);
+            btnTemizle.Size = new Size(164, 90);
             btnTemizle.TabIndex = 8;
             btnTemizle.Text = "Temizle";
             btnTemizle.TextAlign = ContentAlignment.MiddleLeft;
@@ -230,9 +235,9 @@
             // 
             panel2.BackColor = Color.FromArgb(41, 39, 40);
             panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(163, 0);
+            panel2.Location = new Point(164, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(894, 90);
+            panel2.Size = new Size(893, 90);
             panel2.TabIndex = 1;
             // 
             // pictureBox1
@@ -254,10 +259,32 @@
             // 
             // panelKategoriler
             // 
+            panelKategoriler.Controls.Add(panel3);
             panelKategoriler.Location = new Point(632, 90);
             panelKategoriler.Name = "panelKategoriler";
-            panelKategoriler.Size = new Size(422, 661);
+            panelKategoriler.Size = new Size(425, 661);
             panelKategoriler.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(67, 85, 167);
+            panel3.Controls.Add(label2);
+            panel3.Dock = DockStyle.Right;
+            panel3.Location = new Point(294, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(131, 661);
+            panel3.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(3, 13);
+            label2.Name = "label2";
+            label2.Size = new Size(132, 25);
+            label2.TabIndex = 0;
+            label2.Text = "KATEGORİLER";
             // 
             // frmSatisnew
             // 
@@ -274,6 +301,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panelKategoriler.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -295,5 +325,6 @@
         private PictureBox pictureBox1;
         private Panel panelSatis;
         private Panel panelKategoriler;
+        private Panel panel3;
     }
 }
