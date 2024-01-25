@@ -21,10 +21,6 @@ namespace HizliSatis.Persistence.Concretes
             _dbContext = dbContext;
         }
 
-        public ProductService()
-        {
-        }
-
         public List<Stok> GetProducts()
         {
             return _dbContext.Stok.ToList();

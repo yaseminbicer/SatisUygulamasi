@@ -315,7 +315,6 @@
         private PictureBox pictureBox2;
         private DevExpress.XtraEditors.DropDownButton btnUser;
         private Label label1;
-        private Extra.SideBar sideBar1;
         private Panel panel1;
         private Button btnTemizle;
         private Button btnUrunSil;

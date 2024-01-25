@@ -17,5 +17,11 @@ namespace HizliSatis.UI.Forms
         {
             InitializeComponent();
         }
+
+
+        private void btnIptal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

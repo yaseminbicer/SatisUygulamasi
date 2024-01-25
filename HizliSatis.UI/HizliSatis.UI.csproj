@@ -49,6 +49,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Extra\" />
     <Folder Include="Resources\UserControl\" />
   </ItemGroup>
 

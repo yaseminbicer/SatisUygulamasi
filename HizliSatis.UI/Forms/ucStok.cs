@@ -24,9 +24,8 @@ namespace HizliSatis.UI.Forms
         {
             _productService = ProductService;
 
-            InitializeComponent();
         }
-        private void frmUrunEkle_Load(object sender, EventArgs e)
+        private void ucStok_Load(object sender, EventArgs e)
         {
             UrunListele();
         }
@@ -124,7 +123,7 @@ namespace HizliSatis.UI.Forms
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            var silinecekUrun = (Stok)gridView1.GetFocusedRow();
+            var silinecekUrun = (Stok)viewUrunEkle.GetFocusedRow();
             _productService.RemoveProduct(silinecekUrun);
             _productService.SaveChanges();
             UrunListele();
@@ -132,7 +131,7 @@ namespace HizliSatis.UI.Forms
 
         private void Yazdir()
         {
-            var guncellenecekStok = (Stok)gridView1.GetFocusedRow();
+            var guncellenecekStok = (Stok)viewUrunEkle.GetFocusedRow();
             txtUrunAdi.Text = guncellenecekStok.Ad;
             txtAlisFiyati.Text = Convert.ToString(guncellenecekStok.AlisFiyati);
             txtBarkod.Text = guncellenecekStok.Barkod;
@@ -152,9 +151,12 @@ namespace HizliSatis.UI.Forms
 
         }
 
-        private void paneltop_Paint(object sender, PaintEventArgs e)
+        private void btnResimYukle_Click(object sender, EventArgs e)
         {
-
+            var ImageFile = new OpenFileDialog();
+            ImageFile.FileName = "";
+            ImageFile.Filter = "Resim Dosyası|*.png";
+            if(ImageFile.ShowDialog() == DialogResult.OK) pImage.Image=Image.FromFile(ImageFile.FileName);
         }
     }
 }

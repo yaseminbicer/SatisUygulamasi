@@ -28,6 +28,7 @@ namespace HizliSatis.UI
             services.AddTransient(typeof(IAccountService), typeof(AccountService));
             services.AddTransient(typeof(ICustomerService), typeof(CustomerService));
             services.AddTransient(typeof(IProductService), typeof(ProductService));
+            services.AddTransient(typeof(ICategoryService), typeof(CategoryService));
             services.AddTransient(typeof(frmIslemSecme));
             services.AddTransient(typeof(frmKartEkle));
             services.AddTransient(typeof(frmLogin));
@@ -37,9 +38,13 @@ namespace HizliSatis.UI
             services.AddTransient(typeof(frmStokListesiDetay));
             services.AddTransient(typeof(frmStokTakibi));
             services.AddTransient(typeof(ucKullanicilar));
-            services.AddTransient(typeof(ucStok));
             services.AddTransient(typeof(frmSatisnew));
             services.AddTransient(typeof(frmAnaMenu));
+            services.AddTransient(typeof(frmKategoriDetay));
+            services.AddTransient(typeof(ucStok));
+            services.AddTransient(typeof(ucKullanicilar));
+            services.AddTransient(typeof(ucKategoriDesign));
+            services.AddTransient(typeof(ucKategoriTanimlama));
             ServiceProvider = services.BuildServiceProvider();
 
             ApplicationConfiguration.Initialize();
@@ -54,7 +59,7 @@ namespace HizliSatis.UI
             // see https://aka.ms/applicationconfiguration.
 
         }
-        public static void Configure(IApplicationBuilder app)
+       /* public static void Configure(IApplicationBuilder app)
         {
            
             app.Use(async (context, next) =>
@@ -67,7 +72,7 @@ namespace HizliSatis.UI
             app.UseServiceMiddleware();
             
            
-        } 
+        } */
       
         
     }
