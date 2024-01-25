@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace HizliSatis.UI.Forms
 {
-    public partial class frmDeneme : DevExpress.XtraEditors.XtraForm
+    public partial class ucKategoriDesign : DevExpress.XtraEditors.XtraUserControl
     {
-        public frmDeneme()
+        public ucKategoriDesign()
         {
             InitializeComponent();
         }

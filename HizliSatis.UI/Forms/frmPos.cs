@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace HizliSatis.UI.Forms
 {
-    public partial class frmPos : Form
+    public partial class frmPos : DevExpress.XtraEditors.XtraForm
     {
         public frmPos()
         {

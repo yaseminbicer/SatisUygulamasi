@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace HizliSatis.UI.Forms
 {
-    public partial class ucKategori : DevExpress.XtraEditors.XtraUserControl
+    public partial class frmKategoriDetay : DevExpress.XtraEditors.XtraForm
     {
-        public ucKategori()
+        public frmKategoriDetay()
         {
             InitializeComponent();
         }

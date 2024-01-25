@@ -1,6 +1,6 @@
 ﻿namespace HizliSatis.UI.Forms
 {
-    partial class ucKategori
+    partial class ucKategoriDesign
     {
         /// <summary> 
         /// Required designer variable.

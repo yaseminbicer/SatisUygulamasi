@@ -42,6 +42,9 @@ namespace HizliSatis.UI.Forms
         {
             sidePanel.Height = btnKategoriler.Height;
             sidePanel.Top = btnKategoriler.Top;
+            ucKategoriTanimlama ucKategoriTanimlama = new ucKategoriTanimlama();
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(ucKategoriTanimlama);
         }
 
         private void btnKasaTanimlama_Click(object sender, EventArgs e)

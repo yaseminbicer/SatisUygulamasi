@@ -24,6 +24,8 @@ namespace HizliSatis.Persistence.Context
         public DbSet<Kullanici> Kullanici { get; set; }
         public DbSet<Musteri> Musteri { get; set; }
         public DbSet<Stok> Stok { get; set; }
+        public DbSet<Kategori> Kategori { get; set; }
+
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
