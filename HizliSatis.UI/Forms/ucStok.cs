@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using HizliSatis.Application.Abstractions;
+using Microsoft.Extensions.DependencyInjection;
 using HizliSatis.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -15,14 +16,13 @@ namespace HizliSatis.UI.Forms
 {
     public partial class ucStok : DevExpress.XtraEditors.XtraUserControl
     {
-        public ucStok()
-        {
-            InitializeComponent();
-        }
+      
         private readonly IProductService _productService;
         public ucStok(IProductService ProductService)
         {
+          
             _productService = ProductService;
+            InitializeComponent();
 
         }
         private void ucStok_Load(object sender, EventArgs e)
@@ -72,9 +72,9 @@ namespace HizliSatis.UI.Forms
 
         private void Kapat()
         {
+            System.Windows.Forms.Application.Exit();
             //Close();
-            //  var IslemSecme = Program.ServiceProvider.GetRequiredService<frmIslemSecme>();
-
+            //var IslemSecme = Program.ServiceProvider.GetRequiredService<frmIslemSecme>();
             //IslemSecme.Show();
         }
 

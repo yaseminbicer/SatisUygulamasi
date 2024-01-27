@@ -1,6 +1,7 @@
 ﻿using HizliSatis.Application.Abstract;
 using HizliSatis.Application.Abstractions;
 using HizliSatis.Domain.Entities;
+using Microsoft.Extensions.DependencyInjection;
 using HizliSatis.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -15,7 +16,6 @@ namespace HizliSatis.Persistence.Concretes
     {
         private readonly AppDbContext _dbContext;
 
-       
         public ProductService(AppDbContext dbContext)
         {
             _dbContext = dbContext;

@@ -1,5 +1,7 @@
 ﻿using DevExpress.DataAccess.Native;
 using DevExpress.XtraBars.FluentDesignSystem;
+using HizliSatis.Application.Abstractions;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,14 +16,15 @@ namespace HizliSatis.UI.Forms
 {
     public partial class frmAnaMenu : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
-        public frmAnaMenu()
+        private readonly IProductService _productService;
+
+        public frmAnaMenu(IProductService ProductService)
         {
             InitializeComponent();
+            _productService = ProductService;
             sidePanel.Height = btnStok.Height;
-
         }
-
-
+       
         private void frmAnaMenu_Load(object sender, EventArgs e)
         {
 
@@ -31,7 +34,7 @@ namespace HizliSatis.UI.Forms
         {
             sidePanel.Height = btnStok.Height;
             sidePanel.Top = btnStok.Top;
-            ucStok ucStok = new ucStok();
+            var ucStok = Program.ServiceProvider.GetService<ucStok>();
             panelMain.Controls.Clear();
             panelMain.Controls.Add(ucStok);
 
@@ -41,7 +44,7 @@ namespace HizliSatis.UI.Forms
         {
             sidePanel.Height = btnKategoriler.Height;
             sidePanel.Top = btnKategoriler.Top;
-            ucKategoriTanimlama ucKategoriTanimlama = new ucKategoriTanimlama();
+            var ucKategoriTanimlama = Program.ServiceProvider.GetService<ucKategoriTanimlama>();
             panelMain.Controls.Clear();
             panelMain.Controls.Add(ucKategoriTanimlama);
         }
@@ -56,7 +59,7 @@ namespace HizliSatis.UI.Forms
         {
             sidePanel.Height = btnKullanicilar.Height;
             sidePanel.Top = btnKullanicilar.Top;
-            ucKullanicilar ucKullanicilar = new ucKullanicilar();
+            var ucKullanicilar =Program.ServiceProvider.GetService<ucKullanicilar>();
             panelMain.Controls.Clear();
             panelMain.Controls.Add(ucKullanicilar);
         }

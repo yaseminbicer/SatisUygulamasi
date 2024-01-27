@@ -414,7 +414,7 @@
             // 
             // txtId
             // 
-            txtId.EditValue = "";
+            txtId.EditValue = "0";
             txtId.Location = new Point(22, 15);
             txtId.Name = "txtId";
             txtId.Properties.Appearance.BackColor = Color.White;
@@ -644,6 +644,7 @@
             // 
             // gridUrunEkle
             // 
+            gridUrunEkle.AccessibleName = "gridUrunEkle";
             gridUrunEkle.Dock = DockStyle.Fill;
             gridUrunEkle.Location = new Point(0, 0);
             gridUrunEkle.MainView = viewUrunEkle;
@@ -669,6 +670,7 @@
             Controls.Add(paneltop);
             Name = "ucStok";
             Size = new Size(814, 751);
+            Load += ucStok_Load;
             paneltop.ResumeLayout(false);
             paneltop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)chkSelectAll.Properties).EndInit();
