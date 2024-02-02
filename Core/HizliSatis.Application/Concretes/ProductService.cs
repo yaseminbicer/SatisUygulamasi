@@ -20,6 +20,7 @@ namespace HizliSatis.Persistence.Concretes
         {
             _dbContext = dbContext;
         }
+      
 
         public List<Stok> GetProducts()
         {
@@ -27,8 +28,10 @@ namespace HizliSatis.Persistence.Concretes
         }
         public void AddProduct(Stok product)
         {
+          
             _dbContext.Add(product);
             SaveChanges();
+            
         }
         public void RemoveProduct(Stok product)
         {

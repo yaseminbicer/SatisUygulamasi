@@ -33,7 +33,7 @@ namespace HizliSatis.UI.Forms
             BindingList<Kullanici> Kullanicilar { get; set; }
 
 
-            private void frmKullanicilar_Load(object sender, EventArgs e)
+            private void ucKullanicilar_Load(object sender, EventArgs e)
             {
                 var data = _accountService.GetUsers();
                 Kullanicilar = new BindingList<Kullanici>(data);

@@ -15,16 +15,17 @@ namespace HizliSatis.UI.Forms
 {
     public partial class ucStok : DevExpress.XtraEditors.XtraUserControl
     {
-        public ucStok()
-        {
-            InitializeComponent();
-        }
         private readonly IProductService _productService;
         public ucStok(IProductService ProductService)
         {
             _productService = ProductService;
 
         }
+        public ucStok()
+        {
+            InitializeComponent();
+        }
+    
         private void ucStok_Load(object sender, EventArgs e)
         {
             UrunListele();
