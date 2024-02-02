@@ -55,6 +55,7 @@
             viewKullanici.GridControl = gridKullanici;
             viewKullanici.Name = "viewKullanici";
             viewKullanici.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditForm;
+            viewKullanici.OptionsEditForm.EditFormColumnCount = 4;
             viewKullanici.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             viewKullanici.OptionsView.ShowGroupPanel = false;
             // 
@@ -120,6 +121,7 @@
             btnKaydet.Size = new Size(109, 37);
             btnKaydet.TabIndex = 3;
             btnKaydet.Text = "Kaydet";
+            btnKaydet.Click += btnKaydet_Click;
             // 
             // ucKullanicilar
             // 
@@ -130,6 +132,7 @@
             Controls.Add(gridKullanici);
             Name = "ucKullanicilar";
             Size = new Size(814, 751);
+            Load += frmKullanicilar_Load;
             ((System.ComponentModel.ISupportInitialize)gridKullanici).EndInit();
             ((System.ComponentModel.ISupportInitialize)viewKullanici).EndInit();
             ResumeLayout(false);

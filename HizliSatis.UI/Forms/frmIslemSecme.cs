@@ -116,8 +116,8 @@ namespace HizliSatis.UI.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var frmHome = Program.ServiceProvider.GetRequiredService<frmAnaMenu>();
-            frmHome.Show();
+            var frmAnaMenu = Program.ServiceProvider.GetRequiredService<frmAnaMenu>();
+            frmAnaMenu.Show();
         }
     }
 }

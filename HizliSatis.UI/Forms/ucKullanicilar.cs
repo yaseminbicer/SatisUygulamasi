@@ -15,12 +15,8 @@ namespace HizliSatis.UI.Forms
 {
     public partial class ucKullanicilar : DevExpress.XtraEditors.XtraUserControl
     {
-        public ucKullanicilar()
-        {
-            InitializeComponent();
-        }
-       
-            private readonly IAccountService _accountService;
+        BindingList<Kullanici> Kullanicilar { get; set; }
+        private readonly IAccountService _accountService;
 
             public ucKullanicilar(IAccountService AccountService)
             {
@@ -29,8 +25,6 @@ namespace HizliSatis.UI.Forms
 
             }
 
-
-            BindingList<Kullanici> Kullanicilar { get; set; }
 
 
             private void ucKullanicilar_Load(object sender, EventArgs e)
