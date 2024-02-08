@@ -42,6 +42,7 @@ namespace HizliSatis.UI
             services.AddTransient(typeof(frmAnaMenu));
             services.AddTransient(typeof(frmKategoriDetay));
             services.AddTransient(typeof(ucStok));
+            services.AddTransient(typeof(ucSettings));
             services.AddTransient(typeof(ucKullanicilar));
             services.AddTransient(typeof(ucKategoriDesign));
             services.AddTransient(typeof(ucKategoriTanimlama));

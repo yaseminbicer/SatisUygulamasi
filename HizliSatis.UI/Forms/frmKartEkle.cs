@@ -2,6 +2,8 @@
 using HizliSatis.Application.Abstractions;
 using HizliSatis.Domain.Entities;
 using HizliSatis.Persistence.Concretes;
+using System.Windows.Forms;
+
 
 namespace HizliSatis.UI.Forms
 {
@@ -42,9 +44,10 @@ namespace HizliSatis.UI.Forms
         private void btnIptal_Click(object sender, EventArgs e)
         {
             Close();
-            var kartEkle = Program.ServiceProvider.GetRequiredService<frmKartEkle>();
+            
+            var kartEkle = Program.ServiceProvider.GetRequiredService<frmStokTakibi>();
 
-            kartEkle.ShowDialog();
+            kartEkle.Show();
         }
 
         public void Guncelle(int id)
@@ -62,5 +65,6 @@ namespace HizliSatis.UI.Forms
             }
         }
 
+        
     }
 }

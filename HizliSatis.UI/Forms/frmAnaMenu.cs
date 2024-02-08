@@ -24,7 +24,7 @@ namespace HizliSatis.UI.Forms
             _productService = ProductService;
             sidePanel.Height = btnStok.Height;
         }
-       
+
         private void frmAnaMenu_Load(object sender, EventArgs e)
         {
 
@@ -53,13 +53,14 @@ namespace HizliSatis.UI.Forms
         {
             sidePanel.Height = btnKasaTanimlama.Height;
             sidePanel.Top = btnKasaTanimlama.Top;
+            panelMain.Controls.Clear();
         }
 
         private void btnKullanicilar_Click(object sender, EventArgs e)
         {
             sidePanel.Height = btnKullanicilar.Height;
             sidePanel.Top = btnKullanicilar.Top;
-            var ucKullanicilar =Program.ServiceProvider.GetService<ucKullanicilar>();
+            var ucKullanicilar = Program.ServiceProvider.GetService<ucKullanicilar>();
             panelMain.Controls.Clear();
             panelMain.Controls.Add(ucKullanicilar);
         }
@@ -68,18 +69,29 @@ namespace HizliSatis.UI.Forms
         {
             sidePanel.Height = btnOdemeTanimlama.Height;
             sidePanel.Top = btnOdemeTanimlama.Top;
+            panelMain.Controls.Clear();
         }
 
         private void btnFisveFaturalar_Click(object sender, EventArgs e)
         {
             sidePanel.Height = btnFisveFaturalar.Height;
             sidePanel.Top = btnFisveFaturalar.Top;
+            panelMain.Controls.Clear();
         }
 
         private void btnRaporlar_Click(object sender, EventArgs e)
         {
             sidePanel.Height = btnRaporlar.Height;
             sidePanel.Top = btnRaporlar.Top;
+            panelMain.Controls.Clear();
+        }
+
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var _frmSatisnew = System.Windows.Forms.Application.OpenForms[1];
+            _frmSatisnew.Show();
+            
         }
     }
 }

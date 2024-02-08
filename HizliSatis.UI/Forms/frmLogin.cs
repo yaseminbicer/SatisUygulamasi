@@ -51,8 +51,8 @@ namespace HizliSatis.UI.Forms
             if (GirisYap(kullaniciadi, sifre))
             {
                 this.Hide();
-                var _frmIslemSecme = Program.ServiceProvider.GetRequiredService<frmIslemSecme>();
-                _frmIslemSecme.Show();
+                var _frmSatisnew = Program.ServiceProvider.GetRequiredService<frmSatisnew>();
+                _frmSatisnew.Show();
             }
             else
             {

@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Data;
 namespace HizliSatis.UI.Forms
 {
-    public partial class frmMusteriler : DevExpress.XtraEditors.XtraForm
+    public partial class frmMusteriler : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
 
         private readonly ICustomerService _CustomerService;
@@ -53,8 +53,8 @@ namespace HizliSatis.UI.Forms
         private void btnIptal_Click(object sender, EventArgs e)
         {
             Close();
-            var _frmIslemSecme = Program.ServiceProvider.GetRequiredService<frmIslemSecme>();
-            _frmIslemSecme.ShowDialog();
+            var _frmSatisnew = System.Windows.Forms.Application.OpenForms[1];
+            _frmSatisnew.Show();
 
         }
     }

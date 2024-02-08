@@ -152,6 +152,7 @@
             Name = "frmMusteriler";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmMusteriler";
+            Activated += frmMusteriler_Load;
             ((System.ComponentModel.ISupportInitialize)gridMusteri).EndInit();
             ((System.ComponentModel.ISupportInitialize)viewMusteri).EndInit();
             ResumeLayout(false);

@@ -34,6 +34,7 @@
             btnNotification = new DevExpress.XtraEditors.SimpleButton();
             pictureBox2 = new PictureBox();
             panel1 = new Panel();
+            sidePanel = new DevExpress.XtraEditors.SidePanel();
             btnAyarlar = new Button();
             btnTuslar = new Button();
             pictureBox1 = new PictureBox();
@@ -44,7 +45,7 @@
             btnIkram = new Button();
             button1 = new Button();
             panel2 = new Panel();
-            panel3 = new Panel();
+            panelMain = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -108,6 +109,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(41, 39, 40);
+            panel1.Controls.Add(sidePanel);
             panel1.Controls.Add(btnAyarlar);
             panel1.Controls.Add(btnTuslar);
             panel1.Controls.Add(pictureBox1);
@@ -123,6 +125,18 @@
             panel1.Size = new Size(212, 954);
             panel1.TabIndex = 0;
             // 
+            // sidePanel
+            // 
+            sidePanel.Appearance.BackColor = Color.FromArgb(67, 85, 167);
+            sidePanel.Appearance.BorderColor = Color.Blue;
+            sidePanel.Appearance.Options.UseBackColor = true;
+            sidePanel.Appearance.Options.UseBorderColor = true;
+            sidePanel.Location = new Point(3, 120);
+            sidePanel.Name = "sidePanel";
+            sidePanel.Size = new Size(13, 84);
+            sidePanel.TabIndex = 1;
+            sidePanel.Text = "sidePanel1";
+            // 
             // btnAyarlar
             // 
             btnAyarlar.Dock = DockStyle.Bottom;
@@ -131,7 +145,6 @@
             btnAyarlar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnAyarlar.ForeColor = Color.White;
             btnAyarlar.Image = Properties.Resources.settings_svgrepo_com__2_;
-            btnAyarlar.ImageAlign = ContentAlignment.MiddleLeft;
             btnAyarlar.Location = new Point(0, 774);
             btnAyarlar.Name = "btnAyarlar";
             btnAyarlar.Size = new Size(212, 90);
@@ -140,6 +153,7 @@
             btnAyarlar.TextAlign = ContentAlignment.MiddleLeft;
             btnAyarlar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAyarlar.UseVisualStyleBackColor = true;
+            btnAyarlar.Click += btnAyarlar_Click;
             // 
             // btnTuslar
             // 
@@ -149,7 +163,6 @@
             btnTuslar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnTuslar.ForeColor = Color.White;
             btnTuslar.Image = Properties.Resources.phone_numpad_svgrepo_com__4_;
-            btnTuslar.ImageAlign = ContentAlignment.MiddleLeft;
             btnTuslar.Location = new Point(0, 864);
             btnTuslar.Name = "btnTuslar";
             btnTuslar.Size = new Size(212, 90);
@@ -158,6 +171,7 @@
             btnTuslar.TextAlign = ContentAlignment.MiddleLeft;
             btnTuslar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnTuslar.UseVisualStyleBackColor = true;
+            btnTuslar.Click += btnTuslar_Click;
             // 
             // pictureBox1
             // 
@@ -178,7 +192,6 @@
             btnTemizle.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnTemizle.ForeColor = Color.White;
             btnTemizle.Image = Properties.Resources.delete_recycle_bin_trash_can_svgrepo_com;
-            btnTemizle.ImageAlign = ContentAlignment.MiddleLeft;
             btnTemizle.Location = new Point(0, 474);
             btnTemizle.Name = "btnTemizle";
             btnTemizle.Size = new Size(212, 90);
@@ -187,6 +200,7 @@
             btnTemizle.TextAlign = ContentAlignment.MiddleLeft;
             btnTemizle.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnTemizle.UseVisualStyleBackColor = true;
+            btnTemizle.Click += btnTemizle_Click;
             // 
             // btnUrunSil
             // 
@@ -196,7 +210,6 @@
             btnUrunSil.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnUrunSil.ForeColor = Color.White;
             btnUrunSil.Image = Properties.Resources.delete_svgrepo_com__2_;
-            btnUrunSil.ImageAlign = ContentAlignment.MiddleLeft;
             btnUrunSil.Location = new Point(0, 384);
             btnUrunSil.Name = "btnUrunSil";
             btnUrunSil.Size = new Size(212, 90);
@@ -205,6 +218,7 @@
             btnUrunSil.TextAlign = ContentAlignment.MiddleLeft;
             btnUrunSil.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnUrunSil.UseVisualStyleBackColor = true;
+            btnUrunSil.Click += btnUrunSil_Click;
             // 
             // btnFis
             // 
@@ -214,7 +228,6 @@
             btnFis.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnFis.ForeColor = Color.White;
             btnFis.Image = Properties.Resources.bill_svgrepo_com;
-            btnFis.ImageAlign = ContentAlignment.MiddleLeft;
             btnFis.Location = new Point(0, 294);
             btnFis.Name = "btnFis";
             btnFis.Size = new Size(212, 90);
@@ -223,6 +236,7 @@
             btnFis.TextAlign = ContentAlignment.MiddleLeft;
             btnFis.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnFis.UseVisualStyleBackColor = true;
+            btnFis.Click += btnFis_Click;
             // 
             // btnIndirim
             // 
@@ -232,7 +246,6 @@
             btnIndirim.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnIndirim.ForeColor = Color.White;
             btnIndirim.Image = Properties.Resources.discount_svgrepo_com;
-            btnIndirim.ImageAlign = ContentAlignment.MiddleLeft;
             btnIndirim.Location = new Point(0, 204);
             btnIndirim.Name = "btnIndirim";
             btnIndirim.Size = new Size(212, 90);
@@ -241,6 +254,7 @@
             btnIndirim.TextAlign = ContentAlignment.MiddleLeft;
             btnIndirim.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnIndirim.UseVisualStyleBackColor = true;
+            btnIndirim.Click += btnIndirim_Click;
             // 
             // btnIkram
             // 
@@ -250,7 +264,6 @@
             btnIkram.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnIkram.ForeColor = Color.White;
             btnIkram.Image = Properties.Resources.gift_svgrepo_com__1_;
-            btnIkram.ImageAlign = ContentAlignment.MiddleLeft;
             btnIkram.Location = new Point(0, 114);
             btnIkram.Name = "btnIkram";
             btnIkram.Size = new Size(212, 90);
@@ -259,6 +272,7 @@
             btnIkram.TextAlign = ContentAlignment.MiddleLeft;
             btnIkram.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnIkram.UseVisualStyleBackColor = true;
+            btnIkram.Click += btnIkram_Click;
             // 
             // button1
             // 
@@ -285,20 +299,20 @@
             panel2.Size = new Size(979, 114);
             panel2.TabIndex = 1;
             // 
-            // panel3
+            // panelMain
             // 
-            panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(212, 114);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(979, 840);
-            panel3.TabIndex = 2;
+            panelMain.Dock = DockStyle.Fill;
+            panelMain.Location = new Point(212, 114);
+            panelMain.Name = "panelMain";
+            panelMain.Size = new Size(979, 840);
+            panelMain.TabIndex = 2;
             // 
             // frmSatisnew
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1191, 954);
-            Controls.Add(panel3);
+            Controls.Add(panelMain);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -326,6 +340,7 @@
         private PictureBox pictureBox1;
         private Button btnAyarlar;
         private Button btnTuslar;
-        private Panel panel3;
+        private Panel panelMain;
+        private DevExpress.XtraEditors.SidePanel sidePanel;
     }
 }

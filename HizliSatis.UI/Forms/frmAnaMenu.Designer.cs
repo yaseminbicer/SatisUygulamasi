@@ -39,12 +39,18 @@
             btnKategoriler = new Button();
             btnStok = new Button();
             panelMain = new Panel();
+            ucKategoriTanimlama2 = new ucKategoriTanimlama();
+            ucKategoriDesign1 = new ucKategoriDesign();
+            ucKategoriTanimlama1 = new ucKategoriTanimlama();
+            btnGeri = new Button();
             panelMenu.SuspendLayout();
+            panelMain.SuspendLayout();
             SuspendLayout();
             // 
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(41, 39, 40);
+            panelMenu.Controls.Add(btnGeri);
             panelMenu.Controls.Add(sidePanel);
             panelMenu.Controls.Add(btnRaporlar);
             panelMenu.Controls.Add(btnFisveFaturalar);
@@ -196,11 +202,52 @@
             // 
             // panelMain
             // 
+            panelMain.Controls.Add(ucKategoriTanimlama2);
+            panelMain.Controls.Add(ucKategoriDesign1);
+            panelMain.Controls.Add(ucKategoriTanimlama1);
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(243, 0);
             panelMain.Name = "panelMain";
             panelMain.Size = new Size(814, 751);
             panelMain.TabIndex = 1;
+            // 
+            // ucKategoriTanimlama2
+            // 
+            ucKategoriTanimlama2.Location = new Point(0, 0);
+            ucKategoriTanimlama2.Name = "ucKategoriTanimlama2";
+            ucKategoriTanimlama2.Size = new Size(814, 620);
+            ucKategoriTanimlama2.TabIndex = 2;
+            // 
+            // ucKategoriDesign1
+            // 
+            ucKategoriDesign1.Location = new Point(8, 8);
+            ucKategoriDesign1.Name = "ucKategoriDesign1";
+            ucKategoriDesign1.Size = new Size(294, 661);
+            ucKategoriDesign1.TabIndex = 1;
+            // 
+            // ucKategoriTanimlama1
+            // 
+            ucKategoriTanimlama1.Location = new Point(0, 0);
+            ucKategoriTanimlama1.Name = "ucKategoriTanimlama1";
+            ucKategoriTanimlama1.Size = new Size(814, 620);
+            ucKategoriTanimlama1.TabIndex = 0;
+            // 
+            // btnGeri
+            // 
+            btnGeri.Dock = DockStyle.Top;
+            btnGeri.FlatAppearance.BorderColor = Color.FromArgb(41, 39, 40);
+            btnGeri.FlatStyle = FlatStyle.Flat;
+            btnGeri.Font = new Font("Segoe UI Semibold", 19F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGeri.ForeColor = Color.White;
+            btnGeri.ImageAlign = ContentAlignment.MiddleLeft;
+            btnGeri.Location = new Point(0, 609);
+            btnGeri.Name = "btnGeri";
+            btnGeri.Size = new Size(243, 87);
+            btnGeri.TabIndex = 7;
+            btnGeri.Text = "Geri Dön";
+            btnGeri.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnGeri.UseVisualStyleBackColor = true;
+            btnGeri.Click += btnGeri_Click;
             // 
             // frmAnaMenu
             // 
@@ -215,6 +262,7 @@
             Text = "frmHome";
             Load += frmAnaMenu_Load;
             panelMenu.ResumeLayout(false);
+            panelMain.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -232,5 +280,9 @@
         private Button btnStok;
         private Panel sidePanel;
         private Panel panelMain;
+        private ucKategoriTanimlama ucKategoriTanimlama2;
+        private ucKategoriDesign ucKategoriDesign1;
+        private ucKategoriTanimlama ucKategoriTanimlama1;
+        private Button btnGeri;
     }
 }
